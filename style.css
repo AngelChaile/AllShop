@@ -640,6 +640,22 @@ footer .copyright {
   color: var(--blanco);
 }
 
+
+/* estilo para la descripcion del producto */
+
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: hidden;
+  }
+
+  #product-description {
+    display: block;
+    width: 100%;
+  }
+
+/* fin descripcion */
+
 /* Blog Page */
 #page-header.blog-header {
   background-image: url("img/banner/b19.jpg");

@@ -29,82 +29,9 @@
       </div>
     </section>
 
-    <!-- DETAILS PRODUCTS -->
+    <!-- SINGLE PRODUCT DETAILS -->
     <section id="prodetails" class="section-p1">
-      <div class="single-pro-image">
-        <img src="img/Productos/molde_acero1.webp" width="100%" id="MainImg" alt="Producto principal" />
 
-        <div class="small-img-group">
-
-          <div class="small-img-col">
-            <img
-              src="img/Productos/molde_acero2.webp"
-              width="100%"
-              class="small-img"
-              alt="Producto imagen 2"
-            />
-          </div>
-          <div class="small-img-col">
-            <img
-              src="img/Productos/molde_acero3.webp"
-              width="100%"
-              class="small-img"
-              alt="Producto imagen 3"
-            />
-          </div>
-          <div class="small-img-col">
-            <img
-              src="img/Productos/molde_acero4.webp"
-              width="100%"
-              class="small-img"
-              alt="Producto imagen 3"
-            />
-          </div>
-          <div class="small-img-col">
-            <img
-              src="img/Productos/molde_acero1.webp"
-              width="100%"
-              class="small-img"
-              alt="Producto imagen 3"
-            />
-          </div>
-    
-        </div>
-      </div>
-
-      <div class="single-pro-details">
-        <h6>Inicio / Camisa</h6>
-        <h4>Asadera Molde Repostería Cocina Antiadherente 32cm</h4>
-        <h2>$4.000</h2>
-        <select>
-          <option>Seleccionar Tamaño</option>
-          <option>XL</option>
-          <option>L</option>
-          <option>M</option>
-          <option>S</option>
-        </select>
-        <input type="number" value="1" />
-        <button class="normal">Agregar al carrito</button>
-        <h4>Descripción del Producto</h4>
-        <span
-          >
-          ASADERA ANTIADHERENTE THE KITCHEN LINEA YO COCINO
-          
-          El aroma del pan o de la torta al horno llena la casa con las mejores sensaciones. Para un mejor resultado de sus recetas, observe la calidad de las asaderas y moldes.
-          
-          El espesor del acero y las capas de antiadherente de esta linea permiten cocción uniforme, dejando sus creaciones más sabrosas.
-          
-          Con diferentes formatos, se pueden utilizar en hornos a gas y eléctricos y llevarse a lavavajillas. Se caracteriza por ser un teflón reforzado, de mayor durabilidad asegurando una cocción rápida y uniforme.
-          
-          CARACTERISTICAS
-          Fácil de limpiar
-          Acero con revestimiento antiadherente
-          Apto para lavavajillas
-          Material: Teflón
-          Linea: Yo Cocino
-          Medidas: 32x22x4.5cm</span
-        >
-      </div>
     </section>
 
     <!-- PRODUCTOS HOME 2 -->
@@ -197,7 +124,7 @@
     <!-- Footer -->
     <footer class="section-p1">
       <div class="col">
-        <img class="logo" src="img/logo.png" alt="" />
+        <img class="logo" src="img/Logos/logo1.png" alt="" />
         <h4>Contacto</h4>
         <p><strong>Dirección:</strong> Av Siempre Viva 123, Morón</p>
         <p><strong>Telefono:</strong> 161158649</p>
@@ -247,6 +174,75 @@
     </footer>
 
     <script>
+      // Mostrar detalles del producto en sproduct.html
+      const productDetailsContainer = document.getElementById("prodetails");
+      const product = JSON.parse(localStorage.getItem("selectedProduct"));
+
+      if (product) {
+        const { id, nombre, precio, descripcion, img } = product;
+
+        productDetailsContainer.innerHTML = `
+          <div class="single-pro-image">
+          <img src="${img[0]}" width="100%" id="MainImg" alt="${nombre}" />
+
+          <div class="small-img-group">
+
+            <div class="small-img-col">
+              <img
+                src="${img[1]}"
+                width="100%"
+                class="small-img"
+                alt="${nombre} 1"
+              />
+            </div>
+            <div class="small-img-col">
+              <img
+                src="${img[2]}"
+                width="100%"
+                class="small-img"
+                alt="${nombre} 2"
+              />
+            </div>
+            <div class="small-img-col">
+              <img
+                src="${img[3]}"
+                width="100%"
+                class="small-img"
+                alt="${nombre} 3"
+              />
+            </div>
+            <div class="small-img-col">
+              <img
+                src="${img[4]}"
+                width="100%"
+                class="small-img"
+                alt="${nombre} 4"
+              />
+            </div>
+      
+          </div>
+        </div>
+        <div class="single-pro-details">
+              <h6>Inicio / Producto</h6>
+              <h4 id="product-title">${nombre}</h4>
+              <h2 id="product-price">$ ${precio}</h2>
+              <select>
+                  <option>Seleccione el tamaño</option>
+                  <option>Pequeño</option>
+                  <option>Mediano</option>
+                  <option>Grande</option>
+                  <option>XL</option>
+              </select>
+              <input type="number" value="1">
+              <button class="normal">Agregar al Carrito</button>
+              <h4>Detalles del Producto</h4>
+              <pre><span id="product-description">${descripcion}</span></pre>
+          </div>
+        `;
+      } else {
+        productDetailsContainer.innerHTML = `<p>No se ha seleccionado ningún producto.</p>`;
+      }
+
       const mainImg = document.getElementById("MainImg");
       const smallImgs = document.querySelectorAll(".small-img");
 
@@ -255,22 +251,6 @@
           mainImg.src = img.src;
         });
       });
-
-      /*       var MainImg = document.getElementById("MainImg");
-      var smallImg = document.getElementsByClassName("small-img");
-
-      smallImg[0].onclick = ()  => {
-        MainImg.src = smallImg[0].src;
-      }
-      smallImg[1].onclick = ()  => {
-        MainImg.src = smallImg[1].src;
-      }
-      smallImg[2].onclick = () => {
-        MainImg.src = smallImg[2].src;
-      }
-      smallImg[3].onclick = () => {
-        MainImg.src = smallImg[3].src;
-      } */
     </script>
 
     <script
