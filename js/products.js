@@ -26,7 +26,7 @@ const products = [
   {
     id: 4,
     nombre:
-      "Asadera Molde Rectangular The Kitchen Antiadherente 32cm Color Gris",
+      "Asadera Molde Rectangular The Kitchen",
     img: [
       "img/productos/moldes/molde_acero.png",
       "img/productos/moldes/molde_acero1.webp",
