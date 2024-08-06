@@ -592,7 +592,8 @@ footer .copyright {
 
 .small-img-group {
   display: flex;
-  justify-content: space-between;
+  justify-content:left;
+  gap: 7px;
 }
 
 .small-img-col {
@@ -639,6 +640,22 @@ footer .copyright {
   background-color: var(--verdeAzulado);
   color: var(--blanco);
 }
+
+
+/* estilo para la descripcion del producto */
+
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: hidden;
+  }
+
+  #product-description {
+    display: block;
+    width: 100%;
+  }
+
+/* fin descripcion */
 
 /* Blog Page */
 #page-header.blog-header {
