@@ -256,14 +256,22 @@ Metal con mango plástico
   },
   {
     id: 14,
-    nombre: "Espumadera de Acero The Kitchen Elements",
+    nombre: "Pizarra Mágica Lcd 8,5 pulgadas",
     img: [
-      "img/productos/utensillos/espumaderaAcero.png",
-      "img/productos/utensillos/espumaderaAcero1.png",
+      "img/productos/varios/pizarraMagica.webp",
+      "img/productos/varios/pizarraMagica1.webp",
     ],
-    detalle: "Espumadera The Kitchen Elements",
-    descripcion: ``,
-    precio: 3500,
+    detalle: "Pizarra Infantil Magic Pad Tablet",
+    descripcion: `
+Estas pizarras estimulan la imaginación de los niños, las pizarras magnéticas les producen fascinación a los niños y les puede servir para estimular su capacidad creativa y potenciar la imaginación.
+Las pizarras magicas favorecen el proceso de aprendizaje en los niños, y estimulan la memoria , Una pizarra mágica ofrece una oportunidad para compartir tiempo con el niño.
+Incluye lápiz: Sí
+Materiales: Lapiz
+Personaje: LISIBLE
+Largo x Ancho: 22 cm x 14 cm
+Edad mínima recomendada
+3 años`,
+    precio: 6500,
   },
   {
     id: 15,
@@ -297,4 +305,16 @@ Colador Acero inoxidable
 9 cm de diametro aprox.`,
     precio: 1500,
   },
+  {
+    id: 17,
+    nombre: "Espumadera de Acero The Kitchen Elements",
+    img: [
+      "img/productos/utensillos/espumaderaAcero.png",
+      "img/productos/utensillos/espumaderaAcero1.png",
+    ],
+    detalle: "Espumadera The Kitchen Elements",
+    descripcion: ``,
+    precio: 3500,
+  },
+  
 ];

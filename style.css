@@ -152,10 +152,10 @@ body {
 /* Home Page */
 #hero {
   background-image: url("img/hero//sale2.jpg");
-  height: 90vh;
+  height: 112vh;
   width: 100%;
   background-size: cover;
-  background-position: top 25% right 0; /* aca el top estaba en 25% */
+  background-position: top 72% right 0;
   padding: 0 80px;
   display: flex;
   flex-direction: column;
@@ -1104,6 +1104,20 @@ footer .copyright {
   }
 
   #hero {
+    /*  */
+    
+    /*   background-image: url("img/hero//sale2.jpg");
+      height: 90vh;
+      width: 100%;
+      background-size: cover;
+      background-position: top 25% right 0;
+      padding: 0 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center; */
+  
+    /*  */
     padding: 0 20px;
     background-position: 55%;
   }
