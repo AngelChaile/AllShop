@@ -264,10 +264,12 @@ es un conjunto marca Lotto Original!`,
     img: [
       "img/productos/varios/linterna.png",
       "img/productos/varios/linterna1.png",
-      "img/productos/varios/linterna2.png",
+      "img/productos/varios/linterna2.webp",
     ],
     detalle: "Mini Linterna 9 Leds",
-    descripcion: ``,
+    descripcion: `Práctica linterna de mano ideal para llevar a todos lados. Con sus 9 leds tiene una gran potencia de iluminación.
+Es liviana y su cuerpo de aluminio la hace resistente pero a la vez portable y de fácil manipulación, resistente al agua y antideslizante.
+Es bajo consumo y utiliza pilas triple AAA (No vienen incluidas)`,
     precio: 8000,
   },
   {
