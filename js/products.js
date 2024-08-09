@@ -218,6 +218,48 @@ Temporada: 23-Q4`,
   },
   {
     id: 11,
+    nombre: "Buzo Champion",
+    img: [
+      "img/productos/ropa/buzoChampion.jpeg",
+      "img/productos/ropa/buzoChampion1.jpeg",
+      "img/productos/ropa/buzoChampion2.jpeg",
+      "img/productos/ropa/buzoChampion3.jpeg",
+      "img/productos/ropa/buzoChampion4.jpeg",
+      "img/productos/ropa/buzoChampion5.jpeg",
+    ],
+    detalle: "Talle S",
+    descripcion: `
+Género: Unisex
+Edad: Adulto
+Talle: S
+Color predominante: Amarillo
+Material Principal: Algodón con frizza`,
+    precio: 30000,
+  },
+  {
+    id: 12,
+    nombre: "Conjunto Lotto",
+    img: [
+      "img/productos/ropa/conjuntoLotto.png",
+      "img/productos/ropa/conjuntoLotto0.jpeg",
+      "img/productos/ropa/conjuntoLotto1.jpeg",
+      "img/productos/ropa/conjuntoLotto2.jpeg",
+    ],
+    detalle: "Conjunto Deportivo",
+    descripcion: `
+Género: Mujer
+Edad: Adulto
+Talle: S
+Color predominante: Lila y Negro
+
+********************************
+
+Atencion! este es un producto usado pero en excelente estado
+es un conjunto marca Lotto Original!`,
+    precio: 25000,
+  },
+  {
+    id: 13,
     nombre: "Mini Linterna",
     img: [
       "img/productos/varios/linterna.png",
@@ -229,7 +271,7 @@ Temporada: 23-Q4`,
     precio: 8000,
   },
   {
-    id: 12,
+    id: 14,
     nombre: "Abrelatas",
     img: [
       "img/productos/utensillos/abreLata.png",
@@ -244,7 +286,7 @@ Metal con mango plástico
     precio: 2000,
   },
   {
-    id: 13,
+    id: 15,
     nombre: "Pisa Papas The Kitchen Elements",
     img: [
       "img/productos/utensillos/pisaPapas.png",
@@ -255,7 +297,7 @@ Metal con mango plástico
     precio: 3500,
   },
   {
-    id: 14,
+    id: 16,
     nombre: "Pizarra Mágica Lcd 8,5 pulgadas",
     img: [
       "img/productos/varios/pizarraMagica.webp",
@@ -274,7 +316,7 @@ Edad mínima recomendada
     precio: 6500,
   },
   {
-    id: 15,
+    id: 17,
     nombre: "Espumadera The Kitchen Elements",
     img: [
       "img/productos/utensillos/espumaderaNegra.webp",
@@ -292,7 +334,7 @@ Es apto para lavavajillas: Sí`,
     precio: 2000,
   },
   {
-    id: 16,
+    id: 18,
     nombre: "Colador The Kitchen Elements",
     img: [
       "img/productos/utensillos/colador.png",
@@ -306,7 +348,7 @@ Colador Acero inoxidable
     precio: 1500,
   },
   {
-    id: 17,
+    id: 19,
     nombre: "Espumadera de Acero The Kitchen Elements",
     img: [
       "img/productos/utensillos/espumaderaAcero.png",
