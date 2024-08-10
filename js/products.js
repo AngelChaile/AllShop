@@ -25,8 +25,7 @@ const products = [
   },
   {
     id: 4,
-    nombre:
-      "Asadera Molde Rectangular The Kitchen",
+    nombre: "Asadera Molde Rectangular The Kitchen",
     img: [
       "img/productos/moldes/molde_acero.png",
       "img/productos/moldes/molde_acero1.webp",
@@ -263,8 +262,8 @@ es un conjunto marca Lotto Original!`,
     nombre: "Mini Linterna",
     img: [
       "img/productos/varios/linterna.png",
-      "img/productos/varios/linterna1.png",
-      "img/productos/varios/linterna2.webp",
+      "img/productos/varios/linterna1.webp",
+      "img/productos/varios/linterna2.png",
     ],
     detalle: "Mini Linterna 9 Leds",
     descripcion: `Práctica linterna de mano ideal para llevar a todos lados. Con sus 9 leds tiene una gran potencia de iluminación.
@@ -285,7 +284,7 @@ Abrelatas Mariposa
 Metal con mango plástico
 
     20 cm aprox`,
-    precio: 2000,
+    precio: 3000,
   },
   {
     id: 15,
@@ -300,6 +299,17 @@ Metal con mango plástico
   },
   {
     id: 16,
+    nombre: "Espumadera de Acero The Kitchen Elements",
+    img: [
+      "img/productos/utensillos/espumaderaAcero.png",
+      "img/productos/utensillos/espumaderaAcero1.png",
+    ],
+    detalle: "Espumadera The Kitchen Elements",
+    descripcion: ``,
+    precio: 3500,
+  },
+  {
+    id: 17,
     nombre: "Pizarra Mágica Lcd 8,5 pulgadas",
     img: [
       "img/productos/varios/pizarraMagica.webp",
@@ -318,7 +328,7 @@ Edad mínima recomendada
     precio: 6500,
   },
   {
-    id: 17,
+    id: 18,
     nombre: "Espumadera The Kitchen Elements",
     img: [
       "img/productos/utensillos/espumaderaNegra.webp",
@@ -336,7 +346,7 @@ Es apto para lavavajillas: Sí`,
     precio: 2000,
   },
   {
-    id: 18,
+    id: 19,
     nombre: "Colador The Kitchen Elements",
     img: [
       "img/productos/utensillos/colador.png",
@@ -349,16 +359,4 @@ Colador Acero inoxidable
 9 cm de diametro aprox.`,
     precio: 1500,
   },
-  {
-    id: 19,
-    nombre: "Espumadera de Acero The Kitchen Elements",
-    img: [
-      "img/productos/utensillos/espumaderaAcero.png",
-      "img/productos/utensillos/espumaderaAcero1.png",
-    ],
-    detalle: "Espumadera The Kitchen Elements",
-    descripcion: ``,
-    precio: 3500,
-  },
-  
 ];
