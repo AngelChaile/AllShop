@@ -40,7 +40,7 @@ let mostrarProductos = (page = 1) => {
     pro.className = "pro";
 
     pro.innerHTML = `
-      <img src="${product.img[0]}" alt="${product.img[0]}">
+      <img src="${product.img[0]}" alt="${product.nombre}">
       <div class="des">
           <span>${product.detalle}</span>
           <h5>${product.nombre}</h5>
