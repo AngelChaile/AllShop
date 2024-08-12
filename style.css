@@ -577,7 +577,16 @@ footer .copyright {
   border-radius: 4px;
   color: var(--blanco);
   font-weight: 600;
+  margin-left: 8px;
 }
+
+#pagination a.active {
+  background-color: var(--verdeClaro);
+  color: var(--verdeAzulado);
+}
+
+
+
 
 /* Single Product */
 #prodetails {
@@ -961,7 +970,7 @@ footer .copyright {
   }
 
   #mobile i {
-    color: var(--grisOscuro); /* Estaba en color negroMenosOscuro */
+    color: var(--grisOscuro); /* tambien puede ser color negroMenosOscuro */
     font-size: 24px;
     padding-left: 20px;
   }
