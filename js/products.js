@@ -223,8 +223,6 @@ Temporada: 23-Q4`,
       "img/productos/ropa/buzoChampion1.jpeg",
       "img/productos/ropa/buzoChampion2.jpeg",
       "img/productos/ropa/buzoChampion3.jpeg",
-      "img/productos/ropa/buzoChampion4.jpeg",
-      "img/productos/ropa/buzoChampion5.jpeg",
     ],
     detalle: "Talle S",
     descripcion: `
@@ -310,7 +308,7 @@ Metal con mango plástico
   },
   {
     id: 17,
-    nombre: "Pizarra Mágica Lcd 8,5 pulgadas",
+    nombre: "Pizarra Mágica",
     img: [
       "img/productos/varios/pizarraMagica.webp",
       "img/productos/varios/pizarraMagica1.webp",

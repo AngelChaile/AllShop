@@ -1,21 +1,3 @@
-// Botones para abir menu en patallas pequeñas
-const bar = document.getElementById("bar");
-const close = document.getElementById("close");
-const nav = document.getElementById("navbar");
-
-
-if (bar) {
-  bar.addEventListener("click", () => {
-    nav.classList.add("active");
-  });
-}
-
-if (close) {
-  close.addEventListener("click", () => {
-    nav.classList.remove("active");
-  });
-}
-
 // Mostrar productos con paginación
 const proContainer = document.getElementById("pro-container");
 
@@ -58,12 +40,13 @@ let mostrarProductos = (page = 1) => {
 
     pro.addEventListener("click", () => {
       localStorage.setItem("selectedProduct", JSON.stringify(product));
+      localStorage.setItem("origenProducto", "shop");
       window.location.href = "sproduct.html";
     });
 
     proContainer.append(pro);
   });
-  
+
   // Actualizar la paginación
   mostrarPaginacion(page);
 };
