@@ -181,6 +181,7 @@ CARACTERISTICAS:
     img: [
       "img/productos/moldes/tarteraSilicona.png",
       "img/productos/moldes/tarteraSilicona1.png",
+      "img/productos/moldes/tarteraSilicona3.jpeg",
     ],
     detalle: "Tartera de silicona",
     descripcion: `Molde de Silicona Flexible
@@ -194,16 +195,124 @@ CARACTERISTICAS:
 - Directo al horno. Soporta temperaturas hasta 280 grados.
 
 `,
-    precio: 4000,
+    precio: 3500,
   },
+  
   {
     id: 10,
+    nombre: "PANTALON CHAMPIÓN UNISEX",
+    img: [
+      "img/productos/ropa/pantalonChampionBordo.webp",
+      "img/productos/ropa/pantalonChampionBordo1.jpeg",
+      "img/productos/ropa/pantalonChampionBordo2.jpeg",
+      "img/productos/ropa/pantalonChampionBordo3.jpeg",
+      "img/productos/ropa/pantalonChampionBordo4.jpeg",
+
+    ],
+    detalle: "CHAMPIÓN",
+    descripcion: `
+Género: Unisex
+Color: Rojo
+Disciplina: Moda
+Marca: CHAMPION
+Talle: L
+
+Pantalon Champion 100% Originial!
+
+Se puede ver el detalle de una marca sobre la franja blanca es por eso que su precio está casi a la mitad de su precio normal`,
+    precio: 45000,
+  },
+ 
+  {
+    id: 11,
+    nombre: "Pantalón Champion Jogger Negro",
+    img: [
+      "img/productos/ropa/pantalonChampionNegro.webp",
+      "img/productos/ropa/pantalonChampionNegro1.jpg",
+      "img/productos/ropa/pantalonChampionNegro2.jpg",
+      "img/productos/ropa/pantalonChampionNegro3.jpg",
+      "img/productos/ropa/pantalonChampionNegro4.png",
+      "img/productos/ropa/pantalonChampionNegro5.png",
+    ],
+    detalle: "Pantalón Deportivo CH Hombre Logo estampado",
+    descripcion: `
+Pantalón Deportivo CH Hombre Logo estampado
+
+Cintura con elastico reforzado
+
+Detalle de puños al tobillo 
+
+Corte Jogger 
+
+con bolsillos laterales
+
+Detalle en pierna de firma champion engomado 
+
+Confeccionado en Algodón
+
+Colores 👇
+
+NEGRO
+
+ 
+
+Talles 👇👇
+
+XS
+
+************************
+
+SU COLOR ES NEGRO OSCURO.
+QUIZAS EN LAS FOTO PUEDA VERSE EN OTRO TONO PERO ES NEGRO OSCURO.`,
+    precio: 40000,
+  },
+  {
+    id: 12,
+    nombre: "Buzo Champion C/ Capucha",
+    img: [
+      "img/productos/ropa/buzoChampionGris.jpg",
+      "img/productos/ropa/buzoChampionGris1.jpg",
+      "img/productos/ropa/buzoChampionGris2.jpg",
+      "img/productos/ropa/buzoChampionGris3.jpg",
+      "img/productos/ropa/buzoChampionGris4.webp",
+      "img/productos/ropa/buzoChampionGris5.webp",
+      "img/productos/ropa/buzoChampionGris6.webp",
+    ],
+    detalle: "Buzo Champion Logo Jersey Rustico Casual Urbano",
+    descripcion: `
+Productos 100% originales.
+Buzo Champion Logo Jersey Rustico C/ Capucha Casual Urbano.
+
+Edad: Adultos
+Tipo de prenda: Hoodie
+Material principal: Algodón
+Con capucha: Sí
+Es oversize: Sí
+Tipo de tela: Algodón
+Composición: 100% algodón
+Usos recomendados: Urbano
+
+TALLE XS`,
+    precio: 35000,
+  },
+  {
+    id: 13,
+    nombre: "Remera Champión",
+    img: [
+      "img/productos/ropa/remeraChampionGris.jpg",
+      "img/productos/ropa/remeraChampionGris1.jpg",
+      "img/productos/ropa/remeraChampionGris2.jpg",
+    ],
+    detalle: "REMERA CHAMPIÓN DEPORTIVA GRIS",
+    descripcion: ``,
+    precio: 25000,
+  },
+  {
+    id: 14,
     nombre: "Remera Champion Deportiva",
     img: [
       "img/productos/ropa/remeraChampion.webp",
       "img/productos/ropa/remeraChampion1.webp",
-      "img/productos/ropa/remeraChampion2.webp",
-      "img/productos/ropa/remeraChampion3.webp",
     ],
     detalle: "Talle M",
     descripcion: `
@@ -213,28 +322,10 @@ Talle: M
 Color predominante: Anaranjado
 Material Principal: Algodón
 Temporada: 23-Q4`,
-    precio: 15000,
+    precio: "AGOTADO",
   },
   {
-    id: 11,
-    nombre: "Buzo Champion",
-    img: [
-      "img/productos/ropa/buzoChampion.jpeg",
-      "img/productos/ropa/buzoChampion1.jpeg",
-      "img/productos/ropa/buzoChampion2.jpeg",
-      "img/productos/ropa/buzoChampion3.jpeg",
-    ],
-    detalle: "Talle S",
-    descripcion: `
-Género: Unisex
-Edad: Adulto
-Talle: S
-Color predominante: Amarillo
-Material Principal: Algodón con frizza`,
-    precio: 30000,
-  },
-  {
-    id: 12,
+    id: 15,
     nombre: "Conjunto Lotto",
     img: [
       "img/productos/ropa/conjuntoLotto.png",
@@ -256,7 +347,7 @@ es un conjunto marca Lotto Original!`,
     precio: 25000,
   },
   {
-    id: 13,
+    id: 16,
     nombre: "Mini Linterna",
     img: [
       "img/productos/varios/linterna.png",
@@ -265,27 +356,32 @@ es un conjunto marca Lotto Original!`,
     ],
     detalle: "Mini Linterna 9 Leds",
     descripcion: `Práctica linterna de mano ideal para llevar a todos lados. Con sus 9 leds tiene una gran potencia de iluminación.
-Es liviana y su cuerpo de aluminio la hace resistente pero a la vez portable y de fácil manipulación, resistente al agua y antideslizante.
-Es bajo consumo y utiliza pilas triple AAA (No vienen incluidas)`,
+  Es liviana y su cuerpo de aluminio la hace resistente pero a la vez portable y de fácil manipulación, resistente al agua y antideslizante.
+  Es bajo consumo y utiliza pilas triple AAA (No vienen incluidas)`,
     precio: 8000,
   },
   {
-    id: 14,
-    nombre: "Abrelatas",
+    id: 17,
+    nombre: "Buzo Champion",
     img: [
-      "img/productos/utensillos/abreLata.png",
-      "img/productos/utensillos/abreLata1.png",
+      "img/productos/ropa/buzoChampion.jpeg",
+      "img/productos/ropa/buzoChampion1.jpeg",
+      "img/productos/ropa/buzoChampion2.jpeg",
+      "img/productos/ropa/buzoChampion3.jpeg",
     ],
-    detalle: "Abrelatas The Kitchen Elements",
+    detalle: "Talle S",
     descripcion: `
-Abrelatas Mariposa
-Metal con mango plástico
-
-    20 cm aprox`,
-    precio: 3000,
+Género: Unisex
+Edad: Adulto
+Talle: S
+Color predominante: Amarillo
+Material Principal: Algodón con frizza`,
+    precio: "AGOTADO",
   },
+
+
   {
-    id: 15,
+    id: 18,
     nombre: "Pisa Papas The Kitchen Elements",
     img: [
       "img/productos/utensillos/pisaPapas.png",
@@ -295,19 +391,9 @@ Metal con mango plástico
     descripcion: ``,
     precio: 3500,
   },
+
   {
-    id: 16,
-    nombre: "Espumadera de Acero The Kitchen Elements",
-    img: [
-      "img/productos/utensillos/espumaderaAcero.png",
-      "img/productos/utensillos/espumaderaAcero1.png",
-    ],
-    detalle: "Espumadera The Kitchen Elements",
-    descripcion: ``,
-    precio: 3500,
-  },
-  {
-    id: 17,
+    id: 19,
     nombre: "Pizarra Mágica",
     img: [
       "img/productos/varios/pizarraMagica.webp",
@@ -315,6 +401,7 @@ Metal con mango plástico
     ],
     detalle: "Pizarra Infantil Magic Pad Tablet",
     descripcion: `
+Pizarra Infantil Magic Pad Tablet LCD 8,5".
 Estas pizarras estimulan la imaginación de los niños, las pizarras magnéticas les producen fascinación a los niños y les puede servir para estimular su capacidad creativa y potenciar la imaginación.
 Las pizarras magicas favorecen el proceso de aprendizaje en los niños, y estimulan la memoria , Una pizarra mágica ofrece una oportunidad para compartir tiempo con el niño.
 Incluye lápiz: Sí
@@ -326,35 +413,50 @@ Edad mínima recomendada
     precio: 6500,
   },
   {
-    id: 18,
-    nombre: "Espumadera The Kitchen Elements",
+    id: 20,
+    nombre: "Espumadera Nylon C/ Mango De Acero Inoxidable",
     img: [
       "img/productos/utensillos/espumaderaNegra.webp",
       "img/productos/utensillos/espumaderaNegra1.webp",
       "img/productos/utensillos/espumaderaNegra2.webp",
       "img/productos/utensillos/espumaderaNegra3.webp",
     ],
-    detalle: "Espumadera Nylon C/ Mango De Acero Inoxidable",
+    detalle: "The Kitchen Elements",
     descripcion: `
-Otras características
 Largo total: 35 cm
 Material del mango: Acero
 Material de la espumadera: Nylon
-Es apto para lavavajillas: Sí`,
+Es apto para lavavajillas: Sí
+
+UTENSILIO DE COCINA ESPUMADERA
+
+LINEA PREMIUM MANGO DE ACERO INOXIDABLE Y NYLON    
+`,
     precio: 2000,
   },
   {
-    id: 19,
-    nombre: "Colador The Kitchen Elements",
+    id: 18,
+    nombre: "Batidor Manual Silicona Mango Acero Inoxidable",
     img: [
-      "img/productos/utensillos/colador.png",
-      "img/productos/utensillos/colador1.png",
+      "img/productos/utensillos/batidor.webp",
+      "img/productos/utensillos/batidor1.webp",
+      "img/productos/utensillos/batidor2.webp",
+      "img/productos/utensillos/batidor3.webp",
     ],
-    detalle: "Colador de Acero",
+    detalle: "Batidor The Kitchen Elements",
     descripcion: `
-Colador Acero inoxidable
+Fuerte y duradero: este batidor de cocina está hecho de acero inoxidable duradero de alta calidad y pera de silicona que no rayan los platos.
 
-9 cm de diametro aprox.`,
-    precio: 1500,
+Diseño ergonómico para un excelente equilibrio y control para una diferencia que realmente puedes sentir en la mano.
+
+Multifuncional: los batidores de globos hacen que cocinar sea mucho más fácil y agradable.
+Fácil de almacenar: los extremos del mango de acero inoxidable son fáciles de colgar en cualquier gancho de tu cocina, lo que permite un fácil almacenamiento. Imprescindible para cocineros caseros y chefs de restaurantes.
+
+Material del batidor: Silicona
+Material del mango: Acero inoxidable
+Largo total: 25 cm
+`,
+    precio: 2000,
   },
+
 ];
