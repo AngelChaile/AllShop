@@ -81,3 +81,4 @@ botonComprar.addEventListener("click", () => {
   console.log(carrito);
   console.log("carrito agregado")
 });
+
