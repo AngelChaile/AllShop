@@ -7,7 +7,7 @@ products.forEach((product) => {
     aStar.addEventListener("click", () => {
       localStorage.setItem("productStar", JSON.stringify(product));
       localStorage.setItem("origenProducto", "index");
-      window.location.href = "sproduct.html";
+      window.location.href = "productDetails.html";
     });
   }
 });

@@ -41,7 +41,7 @@ let mostrarProductos = (page = 1) => {
     pro.addEventListener("click", () => {
       localStorage.setItem("selectedProduct", JSON.stringify(product));
       localStorage.setItem("origenProducto", "shop");
-      window.location.href = "sproduct.html";
+      window.location.href = "productDetails.html";
     });
 
     proContainer.append(pro);
