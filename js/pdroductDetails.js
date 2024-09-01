@@ -13,11 +13,10 @@ if (origenProducto === "index") {
   product = JSON.parse(localStorage.getItem("selectedProduct"));
 }
 
-
 carrito = [];
 
 if (product) {
-  const { id, nombre, precio, descripcion, img } = product;
+  const { id, nombre, precio, descripcion, img, stock } = product;
 
   // Crear los divs de las imágenes pequeñas dinámicamente
   const smallImgDivs = img
@@ -41,14 +40,12 @@ if (product) {
             <h6>Inicio / Producto</h6>
             <h4 id="product-title">${nombre}</h4>
             <h2 id="product-price">$ ${precio}</h2>
-            <select>
-              <option>Seleccione el tamaño</option>
-              <option>Pequeño</option>
-              <option>Mediano</option>
-              <option>Grande</option>
-              <option>XL</option>
-            </select>
-            <input id="cantidad" type="number" value="1">
+      
+            <h4 id="product-stock">
+              <span class="stock-label">Stock:</span>
+              <span class="stock-value">${stock}</span>
+            </h4>
+
             <button id="comprar" class="normal">Agregar al Carrito</button>
             <h4>Detalles del Producto</h4>
             <pre><span id="product-description">${descripcion}</span></pre>
@@ -79,6 +76,5 @@ botonComprar.addEventListener("click", () => {
     cantidad: cantidad.value,
   });
   console.log(carrito);
-  console.log("carrito agregado")
+  console.log("carrito agregado");
 });
-

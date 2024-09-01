@@ -1,7 +1,7 @@
 //PRODUCTO ESTRELLA DEL INDEX
 
 products.forEach((product) => {
-  if (product.id == 17) {
+  if (product.id == 23) {
     const aStar = document.getElementById("a");
 
     aStar.addEventListener("click", () => {

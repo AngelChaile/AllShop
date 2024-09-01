@@ -5,6 +5,7 @@ const products = [
     img: ["img/productos/platos/bandeja_oval_floreada.png"],
     detalle: "The Kitchen Elements",
     descripcion: `Bandeja oval 25cm x 18cm aprox. Melamina`,
+    stock: "AGOTADO",
     precio: 1500,
   },
   {
@@ -13,6 +14,7 @@ const products = [
     img: ["img/productos/platos/bandeja_oval_verde_claro.png"],
     detalle: "The Kitchen Elements",
     descripcion: `Bandeja oval 25cm x 18cm aprox. Melamina`,
+    stock: "AGOTADO",
     precio: 1500,
   },
   {
@@ -21,6 +23,7 @@ const products = [
     img: ["img/productos/platos/bandeja_oval_verde.png"],
     detalle: "The Kitchen Elements",
     descripcion: `Bandeja oval 25cm x 18cm aprox. Melamina`,
+    stock: "AGOTADO",
     precio: 1500,
   },
   {
@@ -49,6 +52,7 @@ Apto para lavavajillas
 Material: Teflón
 Linea: Yo Cocino
 Medidas: 32x22x4.5cm`,
+    stock: "AGOTADO", 
     precio: 4000,
   },
   {
@@ -80,6 +84,7 @@ Apto para lavavajillas
 Material: Teflón
 Linea: Yo Cocino
 Medidas: 20 Diámetro x 3cm altura`,
+    stock: "AGOTADO",
     precio: 3800,
   },
   {
@@ -113,6 +118,7 @@ Este es un producto usado pero en excelente estado!
 
 La primer imagen es ilustrativa no es una foto real
 `,
+    stock: 1,
     precio: 40000,
   },
   {
@@ -139,6 +145,7 @@ Cantidad de ruedas: 1
 Diámetro de la rueda: 7 cm
 Largo total: 19 cm
 Es apto para lavavajillas: No`,
+    stock: 4,
     precio: 1500,
   },
   {
@@ -172,11 +179,12 @@ CARACTERISTICAS:
 - Peso: 140g
 - Espesor: 2 cm
 - Se puede esterilizar en agua hervida, microondas o lavavajillas.`,
+    stock: 6,
     precio: 3500,
   },
 
   {
-    id: 10,
+    id: 9,
     nombre: "PANTALON CHAMPION AZUL",
     img: ["img/productos/ropa/pantalonChampionAzul.png"],
     detalle: "Champion",
@@ -186,6 +194,7 @@ CARACTERISTICAS:
 - Genero: Unisex
 - Talle: M
 `,
+    stock: "AGOTADO",
     precio: 20000,
   },
 
@@ -210,6 +219,7 @@ Talle: L
 Pantalon Champion 100% Originial!
 
 Se puede ver el detalle de una marca sobre la franja blanca es por eso que su precio está casi a la mitad de su precio normal`,
+    stock: "AGOTADO",
     precio: 45000,
   },
 
@@ -254,6 +264,7 @@ XS
 
 SU COLOR ES NEGRO OSCURO.
 QUIZAS EN LAS FOTO PUEDA VERSE EN OTRO TONO PERO ES NEGRO OSCURO.`,
+    stock: 1,
     precio: 40000,
   },
   {
@@ -283,6 +294,7 @@ Composición: 100% algodón
 Usos recomendados: Urbano
 
 TALLE XS`,
+    stock: 1,
     precio: 35000,
   },
   {
@@ -295,6 +307,7 @@ TALLE XS`,
     ],
     detalle: "Champión",
     descripcion: ``,
+    stock: "AGOTADO",
     precio: 25000,
   },
   {
@@ -312,7 +325,8 @@ Talle: M
 Color predominante: Anaranjado
 Material Principal: Algodón
 Temporada: 23-Q4`,
-    precio: "AGOTADO",
+    stock: "AGOTADO",
+    precio: 15000,
   },
   {
     id: 15,
@@ -348,6 +362,7 @@ ESTE ES UN PRODUCTO USADO PERO EN EXCELENTE ESTADO!
 
 LA PRIMER FOTO NO ES REAL ES ILUSTRATIVA, LAS DEMAS FOTOS SI SON REALES
 `,
+    stock: 1,
     precio: 18000,
   },
   {
@@ -370,6 +385,7 @@ Color predominante: Lila y Negro
 
 Atencion! este es un producto usado pero en excelente estado
 es un conjunto marca Lotto Original!`,
+    stock: 1,
     precio: 25000,
   },
   {
@@ -384,10 +400,11 @@ es un conjunto marca Lotto Original!`,
     descripcion: `Práctica linterna de mano ideal para llevar a todos lados. Con sus 9 leds tiene una gran potencia de iluminación.
   Es liviana y su cuerpo de aluminio la hace resistente pero a la vez portable y de fácil manipulación, resistente al agua y antideslizante.
   Es bajo consumo y utiliza pilas triple AAA (No vienen incluidas)`,
+    stock: 2,
     precio: 8000,
   },
   {
-    id: 9,
+    id: 18,
     nombre: "TARTERA DE SILICONA",
     img: [
       "img/productos/moldes/tarteraSilicona.png",
@@ -406,10 +423,11 @@ es un conjunto marca Lotto Original!`,
 - Directo al horno. Soporta temperaturas hasta 280 grados.
 
 `,
+    stock: 8,
     precio: 3500,
   },
   {
-    id: 22,
+    id: 19,
     nombre: "BATIDOR MANUAL",
     img: [
       "img/productos/utensillos/batidor.webp",
@@ -430,10 +448,11 @@ Material del batidor: Silicona
 Material del mango: Acero inoxidable
 Largo total: 25 cm
 `,
+    stock: 10,
     precio: 2000,
   },
   {
-    id: 22,
+    id: 20,
     nombre: "BOMBILLAS",
     img: [
       "img/productos/utensillos/bombillas.png",
@@ -443,10 +462,11 @@ Largo total: 25 cm
     descripcion: `Bombillas de acero distintos tipos de colores!
 
 Elegi el que mas te guste!`,
+    stock: 20,
     precio: 1000,
   },
   {
-    id: 19,
+    id: 21,
     nombre: "PISA PAPAS DE ACERO ",
     img: [
       "img/productos/utensillos/pisaPapas.png",
@@ -454,10 +474,11 @@ Elegi el que mas te guste!`,
     ],
     detalle: "The Kitchen Elements",
     descripcion: ``,
+    stock: 5,
     precio: 3500,
   },
   {
-    id: 18,
+    id: 22,
     nombre: "BUZO CHAMPION CON FRIZA",
     img: [
       "img/productos/ropa/buzoChampion.jpeg",
@@ -472,11 +493,12 @@ Edad: Adulto
 Talle: S
 Color predominante: Amarillo
 Material Principal: Algodón con frizza`,
-    precio: "AGOTADO",
+    stock: "AGOTADO",
+    precio: 15000,
   },
 
   {
-    id: 20,
+    id: 23,
     nombre: "PIZARRA MÁGICA 8,5",
     img: [
       "img/productos/varios/pizarraMagica.webp",
@@ -493,10 +515,11 @@ Personaje: LISIBLE
 Largo x Ancho: 22 cm x 14 cm
 Edad mínima recomendada
 3 años`,
+    stock: 2,
     precio: 6500,
   },
   {
-    id: 21,
+    id: 24,
     nombre: "ESPUMADERA NYLON C/ MANGO ACERO",
     img: [
       "img/productos/utensillos/espumaderaNegra.webp",
@@ -515,6 +538,7 @@ UTENSILIO DE COCINA ESPUMADERA
 
 LINEA PREMIUM MANGO DE ACERO INOXIDABLE Y NYLON    
 `,
+    stock: 2,
     precio: 2000,
   },
 ];
