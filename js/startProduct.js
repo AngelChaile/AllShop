@@ -1,7 +1,7 @@
 //PRODUCTO ESTRELLA DEL INDEX
 
 products.forEach((product) => {
-  if (product.id == 23) {
+  if (product.nombre == "PIZARRA MÁGICA 8,5") {
     const aStar = document.getElementById("a");
 
     aStar.addEventListener("click", () => {

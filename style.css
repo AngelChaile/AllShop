@@ -151,7 +151,7 @@ body {
 
 /* Home Page */
 #hero {
-  background-image: url("img/hero//sale2.jpg");
+  background-image: url("img/hero/hero.jpg");
   height: 112vh;
   width: 100%;
   background-size: cover;
@@ -247,7 +247,6 @@ body {
 }
 
 #product1 .pro-container {
-  /* background-color: #c5caca94; le agregue este color, pero no es seguro cualquier cosa sacar */
   display: flex;
   justify-content: space-between;
   padding-top: 20px;

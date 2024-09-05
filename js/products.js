@@ -185,21 +185,6 @@ CARACTERISTICAS:
 
   {
     id: 9,
-    nombre: "PANTALON CHAMPION AZUL",
-    img: ["img/productos/ropa/pantalonChampionAzul.png"],
-    detalle: "Champion",
-    descripcion: `Pantalon Champion Original Nuevo
-
-- Color: Azul
-- Genero: Unisex
-- Talle: M
-`,
-    stock: "AGOTADO",
-    precio: 20000,
-  },
-
-  {
-    id: 10,
     nombre: "PANTALON CHAMPIÓN UNISEX",
     img: [
       "img/productos/ropa/pantalonChampionBordo.webp",
@@ -224,7 +209,7 @@ Se puede ver el detalle de una marca sobre la franja blanca es por eso que su pr
   },
 
   {
-    id: 11,
+    id: 10,
     nombre: "PANTALON JOGGER NEGRO",
     img: [
       "img/productos/ropa/pantalonChampionNegro.webp",
@@ -268,7 +253,7 @@ QUIZAS EN LAS FOTO PUEDA VERSE EN OTRO TONO PERO ES NEGRO OSCURO.`,
     precio: 40000,
   },
   {
-    id: 12,
+    id: 11,
     nombre: "BUZO CHAMPION C/ CAPUCHA",
     img: [
       "img/productos/ropa/buzoChampionGris.jpg",
@@ -298,7 +283,7 @@ TALLE XS`,
     precio: 35000,
   },
   {
-    id: 13,
+    id: 12,
     nombre: "REMERA CHAMPIÓN",
     img: [
       "img/productos/ropa/remeraChampionGris.jpg",
@@ -311,7 +296,7 @@ TALLE XS`,
     precio: 25000,
   },
   {
-    id: 14,
+    id: 13,
     nombre: "REMERA CHAMPIÓN",
     img: [
       "img/productos/ropa/remeraChampion.webp",
@@ -329,7 +314,7 @@ Temporada: 23-Q4`,
     precio: 15000,
   },
   {
-    id: 15,
+    id: 14,
     nombre: "REMERA ADIDAS CLASSICS",
     img: [
       "img/productos/ropa/remeraAdidas.webp",
@@ -366,7 +351,7 @@ LA PRIMER FOTO NO ES REAL ES ILUSTRATIVA, LAS DEMAS FOTOS SI SON REALES
     precio: 18000,
   },
   {
-    id: 16,
+    id: 15,
     nombre: "CONJUNTO DEPORTIVO LOTTO",
     img: [
       "img/productos/ropa/conjuntoLotto.png",
@@ -389,7 +374,7 @@ es un conjunto marca Lotto Original!`,
     precio: 25000,
   },
   {
-    id: 17,
+    id: 16,
     nombre: "MINI LINTERNA 9 LEDS",
     img: [
       "img/productos/varios/linterna.png",
@@ -401,10 +386,10 @@ es un conjunto marca Lotto Original!`,
   Es liviana y su cuerpo de aluminio la hace resistente pero a la vez portable y de fácil manipulación, resistente al agua y antideslizante.
   Es bajo consumo y utiliza pilas triple AAA (No vienen incluidas)`,
     stock: 2,
-    precio: 8000,
+    precio: 6000,
   },
   {
-    id: 18,
+    id: 17,
     nombre: "TARTERA DE SILICONA",
     img: [
       "img/productos/moldes/tarteraSilicona.png",
@@ -427,7 +412,7 @@ es un conjunto marca Lotto Original!`,
     precio: 3500,
   },
   {
-    id: 19,
+    id: 18,
     nombre: "BATIDOR MANUAL",
     img: [
       "img/productos/utensillos/batidor.webp",
@@ -452,7 +437,7 @@ Largo total: 25 cm
     precio: 2000,
   },
   {
-    id: 20,
+    id: 19,
     nombre: "BOMBILLAS",
     img: [
       "img/productos/utensillos/bombillas.png",
@@ -466,7 +451,7 @@ Elegi el que mas te guste!`,
     precio: 1000,
   },
   {
-    id: 21,
+    id: 20,
     nombre: "PISA PAPAS DE ACERO ",
     img: [
       "img/productos/utensillos/pisaPapas.png",
@@ -478,13 +463,11 @@ Elegi el que mas te guste!`,
     precio: 3500,
   },
   {
-    id: 22,
+    id: 21,
     nombre: "BUZO CHAMPION CON FRIZA",
     img: [
       "img/productos/ropa/buzoChampion.jpeg",
       "img/productos/ropa/buzoChampion1.jpeg",
-      "img/productos/ropa/buzoChampion2.jpeg",
-      "img/productos/ropa/buzoChampion3.jpeg",
     ],
     detalle: "Champión",
     descripcion: `
@@ -498,7 +481,7 @@ Material Principal: Algodón con frizza`,
   },
 
   {
-    id: 23,
+    id: 22,
     nombre: "PIZARRA MÁGICA 8,5",
     img: [
       "img/productos/varios/pizarraMagica.webp",
@@ -519,7 +502,7 @@ Edad mínima recomendada
     precio: 6500,
   },
   {
-    id: 24,
+    id: 23,
     nombre: "ESPUMADERA NYLON C/ MANGO ACERO",
     img: [
       "img/productos/utensillos/espumaderaNegra.webp",
