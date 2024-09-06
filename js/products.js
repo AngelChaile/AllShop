@@ -52,7 +52,7 @@ Apto para lavavajillas
 Material: Teflón
 Linea: Yo Cocino
 Medidas: 32x22x4.5cm`,
-    stock: "AGOTADO", 
+    stock: "AGOTADO",
     precio: 4000,
   },
   {
@@ -439,10 +439,7 @@ Largo total: 25 cm
   {
     id: 19,
     nombre: "BOMBILLAS",
-    img: [
-      "img/productos/utensillos/bombillas.png",
-
-    ],
+    img: ["img/productos/utensillos/bombillas.png"],
     detalle: "Bombillas Varios Colores",
     descripcion: `Bombillas de acero distintos tipos de colores!
 

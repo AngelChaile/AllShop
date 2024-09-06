@@ -85,7 +85,10 @@ function addToCart() {
 
   // Guardar el carrito actualizado en localStorage
   localStorage.setItem('cart', JSON.stringify(cart));
-  alert('Producto agregado al carrito');
+  Swal.fire({
+    title: "Producto agregado al carrito",
+    icon: "success"
+  });
 
 }
 
