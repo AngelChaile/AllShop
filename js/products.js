@@ -212,12 +212,9 @@ Se puede ver el detalle de una marca sobre la franja blanca es por eso que su pr
     id: 10,
     nombre: "PANTALON JOGGER NEGRO",
     img: [
-      "img/productos/ropa/pantalonChampionNegro.webp",
+      "img/productos/ropa/pantalonChampionNegro.jpg",
       "img/productos/ropa/pantalonChampionNegro1.jpg",
       "img/productos/ropa/pantalonChampionNegro2.jpg",
-      "img/productos/ropa/pantalonChampionNegro3.jpg",
-      "img/productos/ropa/pantalonChampionNegro4.png",
-      "img/productos/ropa/pantalonChampionNegro5.png",
     ],
     detalle: "Champión",
     descripcion: `
@@ -235,20 +232,16 @@ Detalle en pierna de firma champion engomado
 
 Confeccionado en Algodón
 
+Temporada	Atemporal
+
 Colores 👇
 
 NEGRO
 
- 
 
 Talles 👇👇
 
-XS
-
-************************
-
-SU COLOR ES NEGRO OSCURO.
-QUIZAS EN LAS FOTO PUEDA VERSE EN OTRO TONO PERO ES NEGRO OSCURO.`,
+XS`,
     stock: 1,
     precio: 40000,
   },
@@ -256,15 +249,11 @@ QUIZAS EN LAS FOTO PUEDA VERSE EN OTRO TONO PERO ES NEGRO OSCURO.`,
     id: 11,
     nombre: "BUZO CHAMPION C/ CAPUCHA",
     img: [
-      "img/productos/ropa/buzoChampionGris.jpg",
-      "img/productos/ropa/buzoChampionGris1.jpg",
-      "img/productos/ropa/buzoChampionGris2.jpg",
-      "img/productos/ropa/buzoChampionGris3.jpg",
-      "img/productos/ropa/buzoChampionGris4.webp",
-      "img/productos/ropa/buzoChampionGris5.webp",
-      "img/productos/ropa/buzoChampionGris6.webp",
+      "img/productos/ropa/buzoChampionGris.webp",
+      "img/productos/ropa/buzoChampionGris1.webp",
+      "img/productos/ropa/buzoChampionGris2.webp",
     ],
-    detalle: "Champións",
+    detalle: "Champión",
     descripcion: `
 Productos 100% originales.
 Buzo Champion Logo Jersey Rustico C/ Capucha Casual Urbano.
@@ -280,7 +269,7 @@ Usos recomendados: Urbano
 
 TALLE XS`,
     stock: 1,
-    precio: 35000,
+    precio: 30000,
   },
   {
     id: 12,
@@ -500,6 +489,107 @@ Edad mínima recomendada
   },
   {
     id: 23,
+    nombre: "BUZO CHAMPION HOMBRE",
+    img: [
+      "img/productos/ropa/buzoChampionGrey.webp",
+      "img/productos/ropa/buzoChampionGrey1.webp",
+      "img/productos/ropa/buzoChampionGrey2.webp",
+    ],
+    detalle: "Champion",
+    descripcion: `
+Especificaciones generales
+
+Género: Hombre
+Edad: Adulto
+Color predominante: Gris
+Material Principal: Algodón
+Temporada: 24-Q3
+Talle S:     
+`,
+    stock: 1,
+    precio: 31000,
+  },
+  {
+    id: 24,
+    nombre: "CAMPERA CHAMPION ROMPEVIENTO",
+    img: [
+      "img/productos/ropa/camperaChampionAzul.webp",
+      "img/productos/ropa/camperaChampionAzul1.webp",
+      "img/productos/ropa/camperaChampionAzul2.webp",
+      "img/productos/ropa/camperaChampionAzul3.webp",
+    ],
+    detalle: "Champion",
+    descripcion: `
+Características generales
+Género: Hombre
+Marca: Champion
+Modelo: Full Zip
+Talle: S
+
+Otras características
+Composición: 100% Poliéster
+Es impermeable: No
+Es térmica: No
+Usos recomendados: Urbano
+Cantidad de bolsillos externos: 2
+Material principal: Poliéster
+Es ultra liviana: Si
+Con bolsillos: Si
+Con capucha: Si
+
+Características principales
+Tipo de prenda: Campera Rompeviento
+Edad: Adulto
+Color: Azul marino
+SKU: CHICHHV1015549369072   
+`,
+    stock: 1,
+    precio: 35000,
+  },
+  {
+    id: 25,
+    nombre: "SHORT CHAMPION MODA 8",
+    img: [
+      "img/productos/ropa/shortChampionGris.webp",
+      "img/productos/ropa/shortChampionGris1.webp",
+    ],
+    detalle: "Champion",
+    descripcion: `
+TIPO DE PRODUCTO: INDUMENTARIA
+PRODUCTOS 100% ORIGINALES
+SEXO: HOMBRE
+NOMBRE: SHORT CHAMPION MODA 8 INCH POWERBLEND Hombre GR
+TALLE: M
+MODELO: 062330863293106
+
+Cálido y cómodo 9 oz. mezcla de forro polar de algodón y poliéster.
+Reducción de pelusas.
+Encogimiento reducido.
+Hecho con algodón cultivado en EE.UU.
+Detalles de puntadas adicionales para mayor durabilidad.
+Puños de canalé de 3 pulgadas y dobladillo plano.
+Etiqueta del cuello cosida en los 4 lados.
+Longitud del cuerpo de 28,5 pulgadas.
+Ajuste estándar para un look clásico.
+Parche icónico en forma de C en la manga izquierda.
+Color: Gris claro.    
+`,
+    stock: 1,
+    precio: 30000,
+  },
+  {
+    id: 26,
+    nombre: "PLATO PLAYO MELAMINA",
+    img: ["img/productos/platos/platoMelamina.webp"],
+    detalle: "The Kitchen Elements",
+    descripcion: `
+Los Platos Playos Melamina Decorada Cuadrados Pzas Color Celeste de la marca THE KITCHEN son la elección perfecta para agregar estilo y elegancia a tu mesa. Con su diseño cuadrado y su color celeste, estos platos son ideales para cualquier ocasión, ya sea una comida casual o una cena formal. Están fabricados en melamina de alta calidad, lo que los hace resistentes y duraderos.  Añade un toque moderno a tu vajilla con estos platos playos de melamina decorada.    
+`,
+    stock: 20,
+    precio: 1800,
+  },
+  {
+    id: 27,
     nombre: "ESPUMADERA NYLON C/ MANGO ACERO",
     img: [
       "img/productos/utensillos/espumaderaNegra.webp",
