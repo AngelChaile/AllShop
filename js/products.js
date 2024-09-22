@@ -191,7 +191,6 @@ CARACTERISTICAS:
       "img/productos/ropa/pantalonChampionBordo1.jpeg",
       "img/productos/ropa/pantalonChampionBordo2.jpeg",
       "img/productos/ropa/pantalonChampionBordo3.jpeg",
-      "img/productos/ropa/pantalonChampionBordo4.jpeg",
     ],
     detalle: "Champión",
     descripcion: `
@@ -201,10 +200,8 @@ Disciplina: Moda
 Marca: CHAMPIÓN
 Talle: L
 
-Pantalon Champion 100% Originial!
-
-Se puede ver el detalle de una marca sobre la franja blanca es por eso que su precio está casi a la mitad de su precio normal`,
-    stock: 0,
+Pantalon Champion 100% Originial!`,
+    stock: 1,
     precio: 45000,
   },
 

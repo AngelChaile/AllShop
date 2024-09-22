@@ -41,7 +41,7 @@ if (product) {
       
             <h4 id="product-stock">
               <span class="stock-label">Stock:</span>
-              <span class="stock-value">${stock}</span>
+              <span class="stock-value" id="stockValue">${stock}</span>
             </h4>
 
             <button id="comprar" class="normal">Agregar al Carrito</button>
@@ -76,25 +76,36 @@ function addToCart() {
   // Buscar si el producto ya existe en el carrito
   const existingItem = cart.find((item) => item.id === product.id);
 
-  if (product.stock >= 1) {
+  if (product.stock === 0) {
+    Swal.fire({
+      title: "Producto Agotado",
+      icon: "error",
+    });
+  } else {
     if (existingItem) {
       existingItem.quantity += 1; // Si el producto ya está en el carrito, incrementar la cantidad
       product.stock--;
     } else {
       cart.push({ ...product, quantity: 1 }); // Si no está, agregarlo con cantidad 1
+      product.stock--;
     }
+
+    // Actualizar stock en la interfaz
+    document.getElementById("stockValue").textContent = product.stock;
 
     // Guardar el carrito actualizado en localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Guardar el stock actualizado del producto en localStorage
+    if (origenProducto === "index") {
+      localStorage.setItem("productStar", JSON.stringify(product));
+    } else if (origenProducto === "shop") {
+      localStorage.setItem("selectedProduct", JSON.stringify(product));
+    }
+
     Swal.fire({
       title: "Producto agregado al carrito",
       icon: "success",
-    });
-  } else {
-    localStorage.setItem("cart", JSON.stringify(cart));
-    Swal.fire({
-      title: "Producto Agotado",
-      icon: "error",
     });
   }
 }
