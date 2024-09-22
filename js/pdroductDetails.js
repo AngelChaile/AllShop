@@ -62,8 +62,7 @@ smallImgs.forEach((img) => {
   });
 });
 
-
-// Carrito //
+// Cart //
 
 const btnComprar = document.getElementById("comprar");
 
@@ -72,23 +71,30 @@ btnComprar.addEventListener("click", addToCart);
 // Función para agregar un producto al carrito
 function addToCart() {
   // Obtener el carrito del localStorage, o inicializarlo como un array vacío si no existe
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   // Buscar si el producto ya existe en el carrito
-  const existingItem = cart.find(item => item.id === product.id);
+  const existingItem = cart.find((item) => item.id === product.id);
 
-  if (existingItem) {
+  if (product.stock >= 1) {
+    if (existingItem) {
       existingItem.quantity += 1; // Si el producto ya está en el carrito, incrementar la cantidad
-  } else {
+      product.stock--;
+    } else {
       cart.push({ ...product, quantity: 1 }); // Si no está, agregarlo con cantidad 1
+    }
+
+    // Guardar el carrito actualizado en localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
+    Swal.fire({
+      title: "Producto agregado al carrito",
+      icon: "success",
+    });
+  } else {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    Swal.fire({
+      title: "Producto Agotado",
+      icon: "error",
+    });
   }
-
-  // Guardar el carrito actualizado en localStorage
-  localStorage.setItem('cart', JSON.stringify(cart));
-  Swal.fire({
-    title: "Producto agregado al carrito",
-    icon: "success"
-  });
-
 }
-

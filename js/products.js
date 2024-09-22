@@ -5,7 +5,7 @@ const products = [
     img: ["img/productos/platos/bandeja_oval_floreada.png"],
     detalle: "The Kitchen Elements",
     descripcion: `Bandeja oval 25cm x 18cm aprox. Melamina`,
-    stock: "AGOTADO",
+    stock: 0,
     precio: 1500,
   },
   {
@@ -14,7 +14,7 @@ const products = [
     img: ["img/productos/platos/bandeja_oval_verde_claro.png"],
     detalle: "The Kitchen Elements",
     descripcion: `Bandeja oval 25cm x 18cm aprox. Melamina`,
-    stock: "AGOTADO",
+    stock: 0,
     precio: 1500,
   },
   {
@@ -23,7 +23,7 @@ const products = [
     img: ["img/productos/platos/bandeja_oval_verde.png"],
     detalle: "The Kitchen Elements",
     descripcion: `Bandeja oval 25cm x 18cm aprox. Melamina`,
-    stock: "AGOTADO",
+    stock: 0,
     precio: 1500,
   },
   {
@@ -52,7 +52,7 @@ Apto para lavavajillas
 Material: Teflón
 Linea: Yo Cocino
 Medidas: 32x22x4.5cm`,
-    stock: "AGOTADO",
+    stock: 0,
     precio: 4000,
   },
   {
@@ -84,7 +84,7 @@ Apto para lavavajillas
 Material: Teflón
 Linea: Yo Cocino
 Medidas: 20 Diámetro x 3cm altura`,
-    stock: "AGOTADO",
+    stock: 0,
     precio: 3800,
   },
   {
@@ -204,7 +204,7 @@ Talle: L
 Pantalon Champion 100% Originial!
 
 Se puede ver el detalle de una marca sobre la franja blanca es por eso que su precio está casi a la mitad de su precio normal`,
-    stock: "AGOTADO",
+    stock: 0,
     precio: 45000,
   },
 
@@ -281,7 +281,7 @@ TALLE XS`,
     ],
     detalle: "Champión",
     descripcion: ``,
-    stock: "AGOTADO",
+    stock: 0,
     precio: 25000,
   },
   {
@@ -299,7 +299,7 @@ Talle: M
 Color predominante: Anaranjado
 Material Principal: Algodón
 Temporada: 23-Q4`,
-    stock: "AGOTADO",
+    stock: 0,
     precio: 15000,
   },
   {
@@ -462,7 +462,7 @@ Edad: Adulto
 Talle: S
 Color predominante: Amarillo
 Material Principal: Algodón con frizza`,
-    stock: "AGOTADO",
+    stock: 0,
     precio: 15000,
   },
 
