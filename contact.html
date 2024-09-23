@@ -1,197 +1,181 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Shop</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="img/logoFavicon.png" type="image/x-icon">
-  </head>
-  <body>
-    <!-- HEADER START -->
-    <header id="header">
-      <a href="index.html"><img src="img/logo.png" class="logo" alt="logo" /></a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Shop</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="img/logoFavicon.png" type="image/x-icon">
+</head>
+
+<body>
+  <!-- HEADER START -->
+  <header id="header">
+    <a href="index.html"><img src="img/logo.png" class="logo" alt="logo" /></a>
+    <div>
+      <nav id="navbar">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="shop.html">Tienda</a></li>
+        <li><a href="about.html">Nosotros</a></li>
+        <li><a class="active" href="contact.html">Contacto</a></li>
+        <li id="lg-bag">
+          <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+        </li>
+        <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+      </nav>
+    </div>
+    <div id="mobile">
+      <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+      <i id="bar" class="fas fa-outdent"></i>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section id="page-header" class="about-header">
+    <h2>#Contáctanos</h2>
+    <p>Déjanos un mensaje, ¡nos encantaría saber de ti!</p>
+  </section>
+
+  <!-- CONTACT DETAILS -->
+  <section id="contact-details" class="section-p1">
+    <div class="details">
+      <span>PONTE EN CONTACTO</span>
+      <h2>Al no contar con un local físico, te facilitamos un punto de encuentro.</h2>
+      <h3>Rotonda de Texalar</h3>
       <div>
-        <nav id="navbar">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="shop.html">Tienda</a></li>
-          <li><a href="about.html">Nostros</a></li>
-          <li><a class="active" href="contact.html">Contacto</a></li>
-          <li id="lg-bag">
-            <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
-          </li>
-          <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
-        </nav>
+        <li>
+          <i class="fa-regular fa-map"></i>
+          <p>Av. Eva Perón 1423, Morón</p>
+        </li>
+        <li>
+          <i class="fa-regular fa-envelope"></i>
+          <p>angelchaile90@gmail.com</p>
+        </li>
+        <li>
+          <i class="fa-solid fa-phone"></i>
+          <p>+54 11 6115-8649</p>
+        </li>
+        <li>
+          <i class="fa-regular fa-clock"></i>
+          <p>Lunes a Sábado: 08:00 a 19:00</p>
+        </li>
       </div>
-      <div id="mobile">
-        <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
-        <i id="bar" class="fas fa-outdent"></i>
-      </div>
-    </header>
+    </div>
 
-    <!-- PAGE HEADER -->
-    <section id="page-header" class="about-header">
-      <h2>#Hablanos</h2>
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3280.367042534181!2d-58.63528072106921!3d-34.69592114935809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1725229637589!5m2!1ses!2sar"
+        width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
 
-      <p>Deja un mensaje, nos encantaría saber de ti!</p>
-    </section>
+  <!-- FORM DETAIL -->
+  <section id="form-details">
+    <form action="https://formsubmit.co/chaileenzo195@gmail.com" method="POST">
+      <span>Deja un Mensaje</span>
+      <h2>Nos encantaría saber de ti</h2>
+      <input type="text" name="name" placeholder="Nombre" required />
+      <input type="email" name="email" placeholder="Correo" required />
+      <input type="text" name="_subject" value="" placeholder="Asunto" required>
+      <textarea cols="30" rows="10" placeholder="Escribe tu mensaje" required></textarea>
 
-    <!-- CONTACTO DETAILS -->
-    <section id="contact-details" class="section-p1">
-      <div class="details">
-        <span>PONTE EN CONTACTO</span>
-        <h2>
-          Como no contamos con un local físico, dejaremos uno de los puntos de encuentro.
-        </h2>
-        <h3>Rotonda de Texalar</h3>
-        <div>
-          <li>
-            <i class="fa-regular fa-map"></i>
-            <p>Av. Eva Perón 1423, Morón</p>
-          </li>
-          <li>
-            <i class="fa-regular fa-envelope"></i>
-            <p>angelchaile90@gmail.com</p>
-          </li>
-          <li>
-            <i class="fa-solid fa-phone"></i>
-            <p>1161158649</p>
-          </li>
-          <li>
-            <i class="fa-regular fa-clock"></i>
-            <p>Lun a Sab 08hs a 19hs</p>
-          </li>
-        </div>
-      </div>
+      <button class="normal">Enviar</button>
+    </form>
 
-      <div class="map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3280.367042534181!2d-58.63528072106921!3d-34.69592114935809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1725229637589!5m2!1ses!2sar"
-          width="600"
-          height="450"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
-    </section>
-
-    <!-- FORM DETAIL -->
-    <section id="form-details">
-      <form action="">
-        <span>Deja un Mensaje</span>
-        <h2>Nos encantaría saber de ti</h2>
-        <input type="text" name="" id="" placeholder="Nombre" />
-        <input type="text" name="" id="" placeholder="Correo" />
-        <input type="text" name="" id="" placeholder="Asunto" />
-        <textarea
-          name=""
-          id=""
-          cols="30"
-          rows="10"
-          placeholder="Escribir mensaje"
-        ></textarea>
-        <button class="normal">Enviar</button>
-      </form>
-
-      <div class="people">
-        <div>
-          <img src="img/people/1.png" alt="" />
-          <p>
-            <span>Jonatan Dep</span> Senior Marketing Manager <br />Tel: +54
-            1121345678 <br />Email: contact@example.com
-          </p>
-        </div>
-        <div>
-          <img src="img/people/2.png" alt="" />
-          <p>
-            <span>Juan Perez</span> Senior Marketing Manager <br />Tel: +54
-            1121345678 <br />Email: contact@example.com
-          </p>
-        </div>
-        <div>
-          <img src="img/people/3.png" alt="" />
-          <p>
-            <span>Ema Jackson</span> Senior Marketing Manager <br />Tel: +54
-            1121345678 <br />Email: contact@example.com
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- NEWSLETTER -->
-    <section id="newsletter" class="section-p1 section-m1">
-      <div class="newstext">
-        <h4>NEWSLETTER</h4>
+    <div class="people">
+      <div>
+        <img src="img/people/1.png" alt="" />
         <p>
-            Suscríbete y recibe las últimas novedades y <span>ofertas exclusivas</span>
+          <span>Jonatan Dep</span> Senior Marketing Manager <br />Tel: +54 11 2134-5678 <br />Email: contact@example.com
         </p>
       </div>
-      <div class="form">
-        <input type="email" name="" id="" placeholder="Ingrese su email" />
-        <button class="normal">Registrarse</button>
+      <div>
+        <img src="img/people/2.png" alt="" />
+        <p>
+          <span>Juan Perez</span> Senior Marketing Manager <br />Tel: +54 11 2134-5678 <br />Email: contact@example.com
+        </p>
       </div>
-    </section>
+      <div>
+        <img src="img/people/3.png" alt="" />
+        <p>
+          <span>Ema Jackson</span> Senior Marketing Manager <br />Tel: +54 11 2134-5678 <br />Email: contact@example.com
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="section-p1">
-      <div class="col">
-        <img class="logo" src="img/logo.png" alt="logo de empresa" />
-        <address>
-          <h4>Contacto</h4>
-          <p><strong>Dirección:</strong> Av Siempre Viva 123, Morón</p>
-          <p><strong>Telefono:</strong> 161158649</p>
-          <p><strong>Horario:</strong> 10:00 - 18:00hs Lunes a Sabados</p>
-        </address>
-        <div class="follow">
-          <h4>Siguenos</h4>
-          <div class="icon">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-youtube"></i>
-            <i class="fab fa-twitter"></i>
-          </div>
+  <!-- NEWSLETTER -->
+  <section id="newsletter" class="section-p1 section-m1">
+    <div class="newstext">
+      <h4>NEWSLETTER</h4>
+      <p>
+        Suscríbete y recibe las últimas novedades y <span>ofertas exclusivas</span>
+      </p>
+    </div>
+    <div class="form">
+      <input type="email" placeholder="Ingrese su email" />
+      <button class="normal">Registrarse</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="section-p1">
+    <div class="col">
+      <img class="logo" src="img/logo.png" alt="logo de empresa" />
+      <address>
+        <h4>Contacto</h4>
+        <p><strong>Dirección:</strong> Av. Siempre Viva 123, Morón</p>
+        <p><strong>Teléfono:</strong> +54 11 6115-8649</p>
+        <p><strong>Horario:</strong> 10:00 - 18:00 Lunes a Sábados</p>
+      </address>
+      <div class="follow">
+        <h4>Síguenos</h4>
+        <div class="icon">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-youtube"></i>
+          <i class="fab fa-twitter"></i>
         </div>
       </div>
-      <div class="col">
-        <h4>Acerca de</h4>
-        <a href="#">Acerca de nosotros</a>
-        <a href="#">Delivery Información</a>
-        <a href="#">Política de Privacidad</a>
-        <a href="#">Terms y Condiciones</a>
-        <a href="#">Contáctanos</a>
-      </div>
+    </div>
 
-      <div class="col">
-        <h4>Mi Cuenta</h4>
-        <a href="#">Iniciar Session</a>
-        <a href="https://angelchaile.github.io/Portafolio/">Ver Portafolio</a>
-        <a href="https://github.com/AngelChaile">Git Hub</a>
-        <a href="#">Terms y Condiciones</a>
-        <a href="#">Ayuda</a>
-      </div>
+    <div class="col">
+      <h4>Acerca de</h4>
+      <a href="#">Acerca de nosotros</a>
+      <a href="about.html">Información de Envío</a>
+      <a href="#">Política de Privacidad</a>
+      <a href="#">Términos y Condiciones</a>
+      <a href="#">Contáctanos</a>
+    </div>
 
-      <div class="col install">
-        <h4>Install App</h4>
-        <p>Para descargar la app de Google Play</p>
-        <div class="row">
-          <img src="img/pay/app.jpg" alt="" />
-          <img src="img/pay/play.jpg" alt="" />
-        </div>
-        <p>Pago Asegurado</p>
-        <img src="img/pay/pay.png" alt="" />
-      </div>
+    <div class="col">
+      <h4>Mi Cuenta</h4>
+      <a href="#">Iniciar Sesión</a>
+      <a href="https://angelchaile.github.io/Portafolio/">Ver Portafolio</a>
+      <a href="https://github.com/AngelChaile">GitHub</a>
+      <a href="#">Ayuda</a>
+    </div>
 
-      <div class="copyright">
-        <p>Desarrollado por Angel Chaile (2024) &#169;</p>
+    <div class="col install">
+      <h4>Instalar App</h4>
+      <p>Descarga nuestra app desde Google Play</p>
+      <div class="row">
+        <img src="img/pay/app.jpg" alt="app" />
+        <img src="img/pay/play.jpg" alt="play" />
       </div>
-    </footer>
+      <p>Pago Seguro</p>
+      <img src="img/pay/pay.png" alt="métodos de pago" />
+    </div>
 
-    <script
-      src="https://kit.fontawesome.com/b6c61db0c1.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="js/menu.js"></script>
-  </body>
+    <div class="copyright">
+      <p>Desarrollado por Angel Chaile (2024) &#169;</p>
+    </div>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/b6c61db0c1.js" crossorigin="anonymous"></script>
+  <script src="js/menu.js"></script>
+</body>
+
 </html>

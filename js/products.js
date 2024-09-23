@@ -239,7 +239,7 @@ NEGRO
 Talles 👇👇
 
 XS`,
-    stock: 1,
+    stock: 0,
     precio: 40000,
   },
   {

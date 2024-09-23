@@ -1,6 +1,6 @@
 // Función para obtener el stock disponible de un producto desde el array de productos
 function getProductStock(productId) {
-  const products = JSON.parse(localStorage.getItem('products')) || [];
+  const products = JSON.parse(localStorage.getItem('cart')) || [];
   const product = products.find(p => p.id === productId);
   return product ? product.stock : 0;
 }
@@ -9,7 +9,9 @@ function getProductStock(productId) {
 function updateQuantity(index, newQuantity) {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const productId = cart[index].id;
+  console.log(productId);
   const stockAvailable = getProductStock(productId); // Obtener el stock del producto
+  console.log(stockAvailable);
 
   if (newQuantity > stockAvailable) {
     Swal.fire({
@@ -42,7 +44,7 @@ function updateCartUI() {
 
   // Recorrer cada producto en el carrito
   cart.forEach((product, index) => {
-    const { id, img, nombre, precio, quantity } = product;
+    const {id, img, nombre, precio, quantity } = product;
     const productSubtotal = precio * quantity;
 
     // Crear una nueva fila para el producto
