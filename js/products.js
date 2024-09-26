@@ -587,6 +587,74 @@ Los Platos Playos Melamina Decorada Cuadrados Pzas Color Celeste de la marca THE
   },
   {
     id: 27,
+    nombre: "MOLDE SILICONA PARA CUPCAKES",
+    img: [
+      "img/productos/moldes/molde_muffins.webp",
+      "img/productos/moldes/molde_muffins1.webp",
+      "img/productos/moldes/molde_muffins2.webp",
+      "img/productos/moldes/molde_muffins3.webp",
+      "img/productos/moldes/molde_muffins4.webp",
+      "img/productos/moldes/molde_muffins5.webp",
+    ],
+    detalle: "The Kitchen Elements",
+    descripcion: `
+Molde siliconado para postres, cupcakes y más, resistente al calor y super flexible, antiadherente, fácil de lavar y almacenar, disponible en varios colores
+
+Características principales
+Marca:	The Kitchen Life
+Línea:	yo cocino
+Modelo:	Cupcake
+Cantidad de ranuras:	6
+Capacidad en volumen:	600 mL
+Material: Silicona
+Uso recomendado: hornear
+Es apto para lavavajillas: Sí
+Incluye tapa: No
+`,
+    stock: 20,
+    precio: 2000,
+  },
+  {
+    id: 28,
+    nombre: "MOLDE FLAN DONUTS X6",
+    img: [
+      "img/productos/moldes/flanera.webp",
+      "img/productos/moldes/flanera1.webp",
+      "img/productos/moldes/flanera2.webp",
+      "img/productos/moldes/flanera3.webp",
+      "img/productos/moldes/flanera4.webp",
+    ],
+    detalle: "The Kitchen Elements",
+    descripcion: `
+MOLDE IDEAL PARA FLAN O DONATS AL HORNO, X6 UNIDADES EN 1 MOLDE.
+
+El aroma de tus postres llena la casa con las mejores sensaciones. Para un mejor resultado de sus recetas, observe la calidad de las asaderas y moldes.
+
+El espesor del acero y las capas de antiadherente de esta linea permiten cocción uniforme, dejando sus creaciones más sabrosas.
+
+Con diferentes formatos, se pueden utilizar en hornos a gas y eléctricos y llevarse a lavavajillas. Se caracteriza por ser un teflón reforzado, de mayor durabilidad asegurando una cocción rápida y uniforme.
+
+CARACTERISTICAS
+Fácil de limpiar
+Acero con revestimiento antiadherente
+Apto para lavavajillas
+Material: Teflón
+Linea: Yo Cocino
+
+Otras características
+Forma: Rectangular
+Material: Acero
+Uso recomendado: Repostería
+Es apto para lavavajillas: Sí
+Incluye tapa: No
+Es antiadherente: Sí
+Es descartable: No
+`,
+    stock: 18,
+    precio: 4000,
+  },
+  {
+    id: 29,
     nombre: "ESPUMADERA NYLON C/ MANGO ACERO",
     img: [
       "img/productos/utensillos/espumaderaNegra.webp",
