@@ -77,10 +77,10 @@
     <form id="contact-form" action="https://formsubmit.co/chaileenzo195@gmail.com" method="POST">
       <span>Deja un Mensaje</span>
       <h2>Nos encantaría saber de ti</h2>
-      <input type="text" name="name" placeholder="Nombre" required />
-      <input type="email" name="email" placeholder="Correo" required />
-      <input type="text" name="_subject" value="" placeholder="Asunto" required>
-      <textarea name="message" cols="30" rows="10" placeholder="Escribe tu mensaje" required></textarea>
+      <input id="name" type="text" name="name" placeholder="Nombre" required />
+      <input id="email" type="email" name="email" placeholder="Correo" required />
+      <input id="subject" type="text" name="_subject" placeholder="Asunto" required>
+      <textarea id="message" name="message" cols="30" rows="10" placeholder="Escribe tu mensaje" required></textarea>
 
       <button type="submit" class="normal">Enviar</button>
     </form>
@@ -177,50 +177,7 @@
 
   <script src="https://kit.fontawesome.com/b6c61db0c1.js" crossorigin="anonymous"></script>
   <script src="js/menu.js"></script>
-
-  <script>
-    document.getElementById('contact-form').addEventListener('submit', function (event) {
-      event.preventDefault(); // Evita el comportamiento predeterminado de envío del formulario
-
-      // Datos del formulario
-      const formData = new FormData(this);
-      const jsonData = {};
-      formData.forEach((value, key) => {
-        jsonData[key] = value;
-      });
-
-      // Enviar la solicitud con Fetch
-      fetch('https://formsubmit.co/ajax/chaileenzo195@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(jsonData)
-      })
-        .then(response => response.json())
-        .then(data => {
-          Swal.fire({
-            title: "Mensaje enviado correctamente",
-            icon: "success",
-            showConfirmButton: false,
-            timer: 1500
-
-          });
-          document.getElementById('contact-form').reset(); // Resetea el formulario después del envío
-        })
-        .catch(error => {
-          Swal.fire({
-            title: "Hubo un error al enviar el mensaje, intenta nuevamente.",
-            icon: "error",
-            showConfirmButton: false,
-            timer: 1500
-
-          });
-          console.error('Error:', error);
-        });
-    });
-  </script>
+  <script src="js/contactForm.js"></script>
 </body>
 
 </html>
