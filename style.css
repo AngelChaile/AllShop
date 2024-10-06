@@ -360,7 +360,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   background-image: url("img/banner/b17.jpg");
-  min-width: 815px; /* este era de 580px */
+  min-width: 815px; /* tambien puede ser 580px */
   height: 50vh;
   background-size: cover;
   background-position: center;
@@ -726,9 +726,14 @@ pre {
   padding-bottom: 15px;
 }
 
-#contact-details .details li {
+#contact-details .details ul {
   list-style: none;
+  padding: 0;
+}
+
+#contact-details .details li {
   display: flex;
+  align-items: center;
   padding: 10px 0;
 }
 
@@ -739,7 +744,7 @@ pre {
 
 #contact-details .details p {
   margin: 0;
-  font-size: 14jpx;
+  font-size: 14px;
 }
 
 #contact-details .map {
@@ -774,14 +779,31 @@ pre {
   outline: none;
   margin-bottom: 20px;
   border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-
+#form-details form input:focus,
+#form-details form textarea:focus {
+  border-color: var(--verdeAzulado);
+  box-shadow: 0 0 5px var(--verdeAzulado);
+}
 
 #form-details form button {
   background-color: var(--verdeAzulado);
   color: var(--blanco);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#form-details form button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
 }
 
 #form-details .people div {
@@ -809,6 +831,33 @@ pre {
   font-weight: 600;
   color: var(--negro);
 }
+
+/* Estilos para campos con errores */
+.input-error {
+  border-color: var(--rojoSuave);
+  box-shadow: 0 0 5px var(--rojoSuave);
+}
+
+/* Estilos para las alertas de error */
+.alerta-error {
+  background-color: var(--rojoSuave);
+  color: white;
+  padding: 10px;
+  text-align: left;
+  border-radius: 4px;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  font-size: 15px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+
 
 /* Cart Page */
 
@@ -1053,20 +1102,6 @@ pre {
   }
 
   #hero {
-    /*  */
-
-    /*   background-image: url("img/hero//sale2.jpg");
-      height: 90vh;
-      width: 100%;
-      background-size: cover;
-      background-position: top 25% right 0;
-      padding: 0 80px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center; */
-
-    /*  */
     padding: 0 20px;
     background-position: 55%;
   }

@@ -2,30 +2,66 @@ const products = [
   {
     id: 1,
     nombre: "BANDEJA OVAL",
-    img: ["img/productos/platos/bandeja_oval_floreada.png"],
+    img: [
+      "img/productos/platos/bandeja_oval_floreada.png",
+      "img/productos/platos/bandeja_oval_verde_claro.png",
+      "img/productos/platos/bandeja_oval_verde.png",
+    ],
     detalle: "The Kitchen Elements",
     descripcion: `Bandeja oval 25cm x 18cm aprox. Melamina`,
     stock: 0,
     precio: 1500,
+  },
+
+  {
+    id: 17,
+    nombre: "TARTERA DE SILICONA",
+    img: [
+      "img/productos/moldes/tarteraSilicona.png",
+      "img/productos/moldes/tarteraSilicona1.png",
+      "img/productos/moldes/tarteraSilicona3.jpeg",
+    ],
+    detalle: "The Kitchen Elements",
+    descripcion: `Molde de Silicona Flexible
+
+- Ventajas y Características:
+- Apto para utilizar en hornos, microondas, heladera y lavavajillas
+- Total anti adherencia: no necesita enmantecar el molde.
+- Requiere menos tiempo de cocción.
+- No retiene olores ni sabores.
+- Irrompible, se puede plegar y ocupa poco espacio de almacenaje.
+- Directo al horno. Soporta temperaturas hasta 280 grados.
+
+`,
+    stock: 8,
+    precio: 3500,
   },
   {
-    id: 2,
-    nombre: "BANDEJA OVAL",
-    img: ["img/productos/platos/bandeja_oval_verde_claro.png"],
+    id: 18,
+    nombre: "BATIDOR MANUAL",
+    img: [
+      "img/productos/utensillos/batidor.webp",
+      "img/productos/utensillos/batidor1.webp",
+      "img/productos/utensillos/batidor2.webp",
+      "img/productos/utensillos/batidor3.webp",
+    ],
     detalle: "The Kitchen Elements",
-    descripcion: `Bandeja oval 25cm x 18cm aprox. Melamina`,
+    descripcion: `
+Fuerte y duradero: este batidor de cocina está hecho de acero inoxidable duradero de alta calidad y pera de silicona que no rayan los platos.
+
+Diseño ergonómico para un excelente equilibrio y control para una diferencia que realmente puedes sentir en la mano.
+
+Multifuncional: los batidores de globos hacen que cocinar sea mucho más fácil y agradable.
+Fácil de almacenar: los extremos del mango de acero inoxidable son fáciles de colgar en cualquier gancho de tu cocina, lo que permite un fácil almacenamiento. Imprescindible para cocineros caseros y chefs de restaurantes.
+
+Material del batidor: Silicona
+Material del mango: Acero inoxidable
+Largo total: 25 cm
+`,
     stock: 0,
-    precio: 1500,
+    precio: 2000,
   },
-  {
-    id: 3,
-    nombre: "BANDEJA OVAL",
-    img: ["img/productos/platos/bandeja_oval_verde.png"],
-    detalle: "The Kitchen Elements",
-    descripcion: `Bandeja oval 25cm x 18cm aprox. Melamina`,
-    stock: 0,
-    precio: 1500,
-  },
+
   {
     id: 4,
     nombre: "ASADERA MOLDE RECTANGULAR",
@@ -88,38 +124,43 @@ Medidas: 20 Diámetro x 3cm altura`,
     precio: 3800,
   },
   {
-    id: 6,
-    nombre: "NEBULIZADOR SAN-UP",
+    id: 28,
+    nombre: "MOLDE FLAN DONUTS X6",
     img: [
-      "img/productos/nebulizador/nebulizador0.webp",
-      "img/productos/nebulizador/nebulizador1.webp",
-      "img/productos/nebulizador/nebulizador2.png",
-      "img/productos/nebulizador/nebulizador3.png",
-      "img/productos/nebulizador/nebulizador4.png",
+      "img/productos/moldes/flanera.webp",
+      "img/productos/moldes/flanera1.webp",
+      "img/productos/moldes/flanera2.webp",
+      "img/productos/moldes/flanera3.webp",
+      "img/productos/moldes/flanera4.webp",
     ],
-    detalle: "San-Up",
+    detalle: "The Kitchen Elements",
     descripcion: `
-El nebulizador San-Up 3058 Micrón está indicado para diferentes afecciones respiratorias. Convierte el medicamento líquido en vapor para ser inhalado y hace que llegue directamente a las zonas afectadas provocando menores efectos secundarios y mayor eficacia.
+MOLDE IDEAL PARA FLAN O DONATS AL HORNO, X6 UNIDADES EN 1 MOLDE.
 
-La salud de tu familia en buenas manos
-Al ser ultrasónico, es ligero y su tamaño es reducido. Te permite realizar la nebulización de grandes cantidades de líquido de forma rápida y con menos ruido que aquellos que funcionan a pistón. Su uso resulta excelente para los niños que se inquietan fácilmente con este tipo de tratamientos. Es ideal para disminuir la inflamación de la garganta, facilitar el paso del aire por la laringe y normalizar la frecuencia respiratoria.
+El aroma de tus postres llena la casa con las mejores sensaciones. Para un mejor resultado de sus recetas, observe la calidad de las asaderas y moldes.
 
-Trae accesorios
-Además, para posibilitar su funcionamiento cuenta con boquilla.
+El espesor del acero y las capas de antiadherente de esta linea permiten cocción uniforme, dejando sus creaciones más sabrosas.
 
-Sistema monocámara
-Esta característica hace posible administrar directamente el fármaco o la solución fisiológica, sin necesidad de agregar agua.
+Con diferentes formatos, se pueden utilizar en hornos a gas y eléctricos y llevarse a lavavajillas. Se caracteriza por ser un teflón reforzado, de mayor durabilidad asegurando una cocción rápida y uniforme.
 
-Dimensiones: 1.2kg de ancho, 125mm de alto, 175mm de profundidad.
+CARACTERISTICAS
+Fácil de limpiar
+Acero con revestimiento antiadherente
+Apto para lavavajillas
+Material: Teflón
+Linea: Yo Cocino
 
-*********************************************************
-
-Este es un producto usado pero en excelente estado!
-
-La primer imagen es ilustrativa no es una foto real
+Otras características
+Forma: Rectangular
+Material: Acero
+Uso recomendado: Repostería
+Es apto para lavavajillas: Sí
+Incluye tapa: No
+Es antiadherente: Sí
+Es descartable: No
 `,
-    stock: 1,
-    precio: 40000,
+    stock: 18,
+    precio: 4000,
   },
   {
     id: 7,
@@ -132,22 +173,23 @@ La primer imagen es ilustrativa no es una foto real
     ],
     detalle: "The Kitchen Elements",
     descripcion: `
-Nuestro cortador de pizza grande tiene un borde afilado y corta con precisión rebanadas de pizza, panes planos, gofres o pasteles sin comprometer las fijaciones o la corteza, hace que cortar más ahorro de trabajo
-
-Diseño ergonómico: la rueda cortadora de pizza está diseñada para un corte cómodo con diseño de mango en ángulo. Se adapta naturalmente a los contornos de tu mano
-
-Limpieza sin problemas: nuestro cortador de ruedas de pizza son que es fácil de usar y mucho más fácil de almacenar con el agujero para colgar.
-
-Otras características
-Material del mango: Plástico
-Material de la rueda: Acero
-Cantidad de ruedas: 1
-Diámetro de la rueda: 7 cm
-Largo total: 19 cm
-Es apto para lavavajillas: No`,
-    stock: 4,
+  Nuestro cortador de pizza grande tiene un borde afilado y corta con precisión rebanadas de pizza, panes planos, gofres o pasteles sin comprometer las fijaciones o la corteza, hace que cortar más ahorro de trabajo
+  
+  Diseño ergonómico: la rueda cortadora de pizza está diseñada para un corte cómodo con diseño de mango en ángulo. Se adapta naturalmente a los contornos de tu mano
+  
+  Limpieza sin problemas: nuestro cortador de ruedas de pizza son que es fácil de usar y mucho más fácil de almacenar con el agujero para colgar.
+  
+  Otras características
+  Material del mango: Plástico
+  Material de la rueda: Acero
+  Cantidad de ruedas: 1
+  Diámetro de la rueda: 7 cm
+  Largo total: 19 cm
+  Es apto para lavavajillas: No`,
+    stock: 0,
     precio: 1500,
   },
+ 
   {
     id: 8,
     nombre: "GUANTES DE SILICONA PAR LAVAR",
@@ -266,7 +308,7 @@ Usos recomendados: Urbano
 
 TALLE XS`,
     stock: 1,
-    precio: 30000,
+    precio: 26000,
   },
   {
     id: 12,
@@ -306,8 +348,6 @@ Temporada: 23-Q4`,
       "img/productos/ropa/remeraAdidas.webp",
       "img/productos/ropa/remeraAdidas1.jpeg",
       "img/productos/ropa/remeraAdidas2.jpeg",
-      "img/productos/ropa/remeraAdidas3.jpeg",
-      "img/productos/ropa/remeraAdidas4.jpeg",
     ],
     detalle: "Adidas",
     descripcion: `
@@ -333,7 +373,7 @@ ESTE ES UN PRODUCTO USADO PERO EN EXCELENTE ESTADO!
 
 LA PRIMER FOTO NO ES REAL ES ILUSTRATIVA, LAS DEMAS FOTOS SI SON REALES
 `,
-    stock: 1,
+    stock: 0,
     precio: 18000,
   },
   {
@@ -360,6 +400,40 @@ es un conjunto marca Lotto Original!`,
     precio: 25000,
   },
   {
+    id: 6,
+    nombre: "NEBULIZADOR SAN-UP",
+    img: [
+      "img/productos/nebulizador/nebulizador0.webp",
+      "img/productos/nebulizador/nebulizador1.webp",
+      "img/productos/nebulizador/nebulizador2.png",
+      "img/productos/nebulizador/nebulizador3.png",
+      "img/productos/nebulizador/nebulizador4.png",
+    ],
+    detalle: "San-Up",
+    descripcion: `
+El nebulizador San-Up 3058 Micrón está indicado para diferentes afecciones respiratorias. Convierte el medicamento líquido en vapor para ser inhalado y hace que llegue directamente a las zonas afectadas provocando menores efectos secundarios y mayor eficacia.
+
+La salud de tu familia en buenas manos
+Al ser ultrasónico, es ligero y su tamaño es reducido. Te permite realizar la nebulización de grandes cantidades de líquido de forma rápida y con menos ruido que aquellos que funcionan a pistón. Su uso resulta excelente para los niños que se inquietan fácilmente con este tipo de tratamientos. Es ideal para disminuir la inflamación de la garganta, facilitar el paso del aire por la laringe y normalizar la frecuencia respiratoria.
+
+Trae accesorios
+Además, para posibilitar su funcionamiento cuenta con boquilla.
+
+Sistema monocámara
+Esta característica hace posible administrar directamente el fármaco o la solución fisiológica, sin necesidad de agregar agua.
+
+Dimensiones: 1.2kg de ancho, 125mm de alto, 175mm de profundidad.
+
+*********************************************************
+
+Este es un producto usado pero en excelente estado!
+
+La primer imagen es ilustrativa no es una foto real
+`,
+    stock: 1,
+    precio: 40000,
+  },
+  {
     id: 16,
     nombre: "MINI LINTERNA 9 LEDS",
     img: [
@@ -374,54 +448,7 @@ es un conjunto marca Lotto Original!`,
     stock: 2,
     precio: 6000,
   },
-  {
-    id: 17,
-    nombre: "TARTERA DE SILICONA",
-    img: [
-      "img/productos/moldes/tarteraSilicona.png",
-      "img/productos/moldes/tarteraSilicona1.png",
-      "img/productos/moldes/tarteraSilicona3.jpeg",
-    ],
-    detalle: "The Kitchen Elements",
-    descripcion: `Molde de Silicona Flexible
 
-- Ventajas y Características:
-- Apto para utilizar en hornos, microondas, heladera y lavavajillas
-- Total anti adherencia: no necesita enmantecar el molde.
-- Requiere menos tiempo de cocción.
-- No retiene olores ni sabores.
-- Irrompible, se puede plegar y ocupa poco espacio de almacenaje.
-- Directo al horno. Soporta temperaturas hasta 280 grados.
-
-`,
-    stock: 8,
-    precio: 3500,
-  },
-  {
-    id: 18,
-    nombre: "BATIDOR MANUAL",
-    img: [
-      "img/productos/utensillos/batidor.webp",
-      "img/productos/utensillos/batidor1.webp",
-      "img/productos/utensillos/batidor2.webp",
-      "img/productos/utensillos/batidor3.webp",
-    ],
-    detalle: "The Kitchen Elements",
-    descripcion: `
-Fuerte y duradero: este batidor de cocina está hecho de acero inoxidable duradero de alta calidad y pera de silicona que no rayan los platos.
-
-Diseño ergonómico para un excelente equilibrio y control para una diferencia que realmente puedes sentir en la mano.
-
-Multifuncional: los batidores de globos hacen que cocinar sea mucho más fácil y agradable.
-Fácil de almacenar: los extremos del mango de acero inoxidable son fáciles de colgar en cualquier gancho de tu cocina, lo que permite un fácil almacenamiento. Imprescindible para cocineros caseros y chefs de restaurantes.
-
-Material del batidor: Silicona
-Material del mango: Acero inoxidable
-Largo total: 25 cm
-`,
-    stock: 10,
-    precio: 2000,
-  },
   {
     id: 19,
     nombre: "BOMBILLAS",
@@ -481,7 +508,7 @@ Personaje: LISIBLE
 Largo x Ancho: 22 cm x 14 cm
 Edad mínima recomendada
 3 años`,
-    stock: 2,
+    stock: 0,
     precio: 6500,
   },
   {
@@ -504,7 +531,7 @@ Temporada: 24-Q3
 Talle S:     
 `,
     stock: 1,
-    precio: 31000,
+    precio: 26000,
   },
   {
     id: 24,
@@ -540,7 +567,7 @@ Edad: Adulto
 Color: Azul marino
 SKU: CHICHHV1015549369072   
 `,
-    stock: 1,
+    stock: 0,
     precio: 35000,
   },
   {
@@ -582,7 +609,7 @@ Color: Gris claro.
     descripcion: `
 Los Platos Playos Melamina Decorada Cuadrados Pzas Color Celeste de la marca THE KITCHEN son la elección perfecta para agregar estilo y elegancia a tu mesa. Con su diseño cuadrado y su color celeste, estos platos son ideales para cualquier ocasión, ya sea una comida casual o una cena formal. Están fabricados en melamina de alta calidad, lo que los hace resistentes y duraderos.  Añade un toque moderno a tu vajilla con estos platos playos de melamina decorada.    
 `,
-    stock: 20,
+    stock: 0,
     precio: 1800,
   },
   {
@@ -612,47 +639,9 @@ Es apto para lavavajillas: Sí
 Incluye tapa: No
 `,
     stock: 20,
-    precio: 2000,
-  },
-  {
-    id: 28,
-    nombre: "MOLDE FLAN DONUTS X6",
-    img: [
-      "img/productos/moldes/flanera.webp",
-      "img/productos/moldes/flanera1.webp",
-      "img/productos/moldes/flanera2.webp",
-      "img/productos/moldes/flanera3.webp",
-      "img/productos/moldes/flanera4.webp",
-    ],
-    detalle: "The Kitchen Elements",
-    descripcion: `
-MOLDE IDEAL PARA FLAN O DONATS AL HORNO, X6 UNIDADES EN 1 MOLDE.
-
-El aroma de tus postres llena la casa con las mejores sensaciones. Para un mejor resultado de sus recetas, observe la calidad de las asaderas y moldes.
-
-El espesor del acero y las capas de antiadherente de esta linea permiten cocción uniforme, dejando sus creaciones más sabrosas.
-
-Con diferentes formatos, se pueden utilizar en hornos a gas y eléctricos y llevarse a lavavajillas. Se caracteriza por ser un teflón reforzado, de mayor durabilidad asegurando una cocción rápida y uniforme.
-
-CARACTERISTICAS
-Fácil de limpiar
-Acero con revestimiento antiadherente
-Apto para lavavajillas
-Material: Teflón
-Linea: Yo Cocino
-
-Otras características
-Forma: Rectangular
-Material: Acero
-Uso recomendado: Repostería
-Es apto para lavavajillas: Sí
-Incluye tapa: No
-Es antiadherente: Sí
-Es descartable: No
-`,
-    stock: 18,
     precio: 4000,
   },
+  
   {
     id: 29,
     nombre: "ESPUMADERA NYLON C/ MANGO ACERO",

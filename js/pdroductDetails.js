@@ -62,8 +62,8 @@ smallImgs.forEach((img) => {
   });
 });
 
-// Cart //
 
+// Cart //
 const btnComprar = document.getElementById("comprar");
 
 btnComprar.addEventListener("click", addToCart);
