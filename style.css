@@ -657,6 +657,29 @@ pre {
 
 /* fin descripcion */
 
+
+
+/* Slider de productos destacados */
+.swiper {
+  width: 100%;
+  max-width: 100%;
+  padding: 20px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.pro {
+  text-align: center;
+  margin: 10px;
+}
+
+/* fin de slider */
+
+
 /* About Page */
 
 #page-header.about-header {
@@ -1172,33 +1195,9 @@ pre {
     padding: 20px 0;
   }
 
-  /* Slider de productos destacados */
-  .swiper-container {
-    width: 100%;
-    padding: 20px;
+  .swiper-slide{
+    margin-left: -2px;
   }
-
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-  }
-
-  .pro {
-    text-align: center;
-    margin: 10px;
-  }
-
-  .swiper-button-next,
-  .swiper-button-prev {
-    color: #000;
-  }
-
-  .swiper-pagination-bullet {
-    background-color: #000;
-  }
-
-  /* fin de slider */
-
 
   
   /* ABOUT PAGE */
