@@ -657,8 +657,6 @@ pre {
 
 /* fin descripcion */
 
-
-
 /* Slider de productos destacados */
 .swiper {
   width: 100%;
@@ -666,19 +664,14 @@ pre {
   padding: 20px;
 }
 
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  
-}
-
-.pro {
-  text-align: center;
-  margin: 10px;
+#product1 .swiper .swiper-wrapper .swiper-slide .pro {
+  width: 75%;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* fin de slider */
-
 
 /* About Page */
 
@@ -1075,6 +1068,22 @@ pre {
     margin: 15px;
   }
 
+  /* Slider de productos destacados */
+  .swiper {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  #product1 .swiper .swiper-wrapper .swiper-slide .pro {
+    width: 100%;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* fin de slider */
+
   #banner {
     height: 20vh;
   }
@@ -1195,11 +1204,13 @@ pre {
     padding: 20px 0;
   }
 
-  .swiper-slide{
-    margin-left: -2px;
+  /* Carrusel */
+
+  #product1 .swiper .swiper-wrapper .swiper-slide .pro {
+    width: 91%;
+    margin-bottom: 38px;
   }
 
-  
   /* ABOUT PAGE */
 
   #about-head {

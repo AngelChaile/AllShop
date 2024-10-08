@@ -37,11 +37,9 @@ featuredProducts.forEach((product) => {
 const swiper = new Swiper(".swiper", {
   slidesPerView: 4, // Número de productos visibles en pantallas grandes
   spaceBetween: 20, // Espacio entre productos
-
-  scrollbar: {
+  /* scrollbar: {
     el: ".swiper-scrollbar",
-  },
-
+  }, */
   loop: true,
   autoplay: {
     delay: 2500,
@@ -58,11 +56,11 @@ const swiper = new Swiper(".swiper", {
     },
     640: {
       // Pantallas medianas
-      slidesPerView: 3, // Muestra 3 productos en pantallas medianas
+      slidesPerView: 2, // Muestra 2 productos en pantallas medianas
     },
     768: {
       // Pantallas más grandes
-      slidesPerView: 4, // Muestra 4 productos en pantallas grandes
+      slidesPerView: 2, // Muestra 2 productos en pantallas grandes
     },
     1024: {
       slidesPerView: 4, // Se mantiene en 4 para pantallas muy grandes
