@@ -189,7 +189,7 @@ Es descartable: No
     stock: 0,
     precio: 1500,
   },
- 
+
   {
     id: 8,
     nombre: "GUANTES DE SILICONA PAR LAVAR",
@@ -225,6 +225,96 @@ CARACTERISTICAS:
     precio: 3500,
   },
 
+ 
+  {
+    id: 23,
+    nombre: "BUZO CHAMPION HOMBRE",
+    img: [
+      "img/productos/ropa/buzoChampionGrey.webp",
+      "img/productos/ropa/buzoChampionGrey1.webp",
+      "img/productos/ropa/buzoChampionGrey2.webp",
+    ],
+    detalle: "Champion",
+    descripcion: `
+Especificaciones generales
+
+Género: Hombre
+Edad: Adulto
+Color predominante: Gris
+Material Principal: Algodón
+Temporada: 24-Q3
+Talle XS:     
+`,
+    stock: 1,
+    precio: 28000,
+  },
+  {
+    id: 14,
+    nombre: "REMERA CHAMPIÓN",
+    img: [
+      "img/productos/ropa/remeraChampionNegra.webp",
+      "img/productos/ropa/remeraChampionNegra1.webp",
+    ],
+    detalle: "Champion",
+    descripcion: `
+Especificaciones generales
+
+Talle: XS
+Género: Hombre
+Edad: Adulto
+Color predominante: Negro
+Material Principal: Algodón
+Temporada: 24-Q2
+`,
+    stock: 1,
+    precio: 22000,
+  },
+  {
+    id: 10,
+    nombre: "BUZO CHAMPION",
+    img: [
+      "img/productos/ropa/buzoChampionNegro.jpg",
+      "img/productos/ropa/buzoChampionNegro1.jpg",
+    ],
+    detalle: "Champión",
+    descripcion: `
+SKU	CHHCOGF88H01-006
+Marca:	Champion
+Color:	Negro
+Diseño: Tela	Liso
+Género:	Hombre
+Material:	Algodón
+Modelo:	Cuello redondo
+Bolsillos	-
+Calce:	Regular Fit
+Temporada:	Atemporal
+Talle: M`,
+    stock: 1,
+    precio: 40000,
+  },
+
+  {
+    id: 11,
+    nombre: "BUZO CHAMPION",
+    img: [
+      "img/productos/ropa/buzoChampionLetras.webp",
+      "img/productos/ropa/buzoChampionLetras1.webp",
+      "img/productos/ropa/buzoChampionLetras2.webp",
+      "img/productos/ropa/buzoChampionLetras3.webp",
+    ],
+    detalle: "Champión",
+    descripcion: `
+Buzo Champion Con Capucha Estampado
+
+Estilo y comodidad
+
+El Buzo Champion Logo es la definición de estilo y comodidad. Este buzo destaca por su diseño moderno y el icónico logo de Champion estampado. Los puños con diseño a rayas de colores añaden un toque de estilo único y vibrante, haciendo que este buzo sea perfecto para cualquier ocasión. Confeccionado con materiales de alta calidad, proporciona una sensación suave y cómoda. Ya sea para relajarte en casa o para salir con amigos, el Buzo Champion Logo asegura un look casual pero elegante que nunca pasa de moda.
+
+Talle: M`,
+    stock: 1,
+    precio: 58000,
+  },
+
   {
     id: 9,
     nombre: "PANTALON CHAMPIÓN UNISEX",
@@ -245,6 +335,99 @@ Talle: L
 Pantalon Champion 100% Originial!`,
     stock: 1,
     precio: 45000,
+  },
+
+  /*   {
+    id: 12,
+    nombre: "REMERA CHAMPIÓN MUJER",
+    img: [
+      "img/productos/ropa/remeraChampionMujer.webp",
+      "img/productos/ropa/remeraChampionMujer1.webp",
+    ],
+    detalle: "Champión",
+    descripcion: `Características principales
+Talle: 
+Marca: Champion
+Modelo: Batik
+Género: Mujer
+Edad: Adultos
+Tipo de manga: Corta
+`,
+    stock: 1,
+    precio: 18000,
+  }, */
+
+  
+  {
+    id: 12,
+    nombre: "REMERA CHAMPIÓN",
+    img: [
+      "img/productos/ropa/remeraChampionGris.jpg",
+      "img/productos/ropa/remeraChampionGris1.jpg",
+    ],
+    detalle: "Champión",
+    descripcion: `Complementá tu look con CHAMPION.
+Logo CHAMPION estampado y aplicado.
+
+Especificaciones generales
+
+Talle: XS y S
+Género: Hombre
+Edad: Adulto
+Color predominante: Gris
+Material Principal: Algodón
+Temporada: 24-Q2`,
+    stock: 2,
+    precio: 22000,
+  },
+  {
+    id: 12,
+    nombre: "CAMPERA CHAMPIÓN",
+    img: [
+      "img/productos/ropa/camperaChampionGris.webp",
+      "img/productos/ropa/camperaChampionGris1.webp",
+      "img/productos/ropa/camperaChampionGris2.jpg",
+      "img/productos/ropa/camperaChampionGris3.jpg",
+    ],
+    detalle: "Champión",
+    descripcion: `Campera clásica con capucha.
+Posee cierre frontal, capucha ajuste con cordón, bolsillos laterales, mangas con puños, y estampa de marca.
+
+Talle M
+`,
+    stock: 1,
+    precio: 35000,
+  },
+
+
+
+
+  
+
+  {
+    id: 10,
+    nombre: "REMERA CHAMPION",
+    img: [
+      "img/productos/ropa/remeraChampionNaranja.webp",
+      "img/productos/ropa/remeraChampionNaranja1.webp",
+      "img/productos/ropa/remeraChampionNaranja2.webp",
+    ],
+    detalle: "Champión",
+    descripcion: `Remera Champion
+
+La remera Champion es una prenda básica y esencial, confeccionada con algodón de alta calidad que garantiza comodidad y suavidad durante todo el día. Su diseño clásico y versátil la convierte en una opción ideal para cualquier ocasión, ya sea para actividades casuales o deportivas. El tejido de algodón permite una excelente transpirabilidad, manteniéndote fresco y cómodo. Con un ajuste perfecto, esta remera es una elección confiable para quienes buscan una combinación de estilo y confort en su vestimenta diaria.
+
+Especificaciones
+
+talle:        M 
+material:     algodón rustico
+color:        naranja
+género:       hombre
+disciplina:   casual
+marca:        champion
+`,
+    stock: 1,
+    precio: 22000,
   },
 
   {
@@ -284,6 +467,40 @@ XS`,
     stock: 0,
     precio: 40000,
   },
+
+  {
+    id: 25,
+    nombre: "SHORT CHAMPION MODA 8",
+    img: [
+      "img/productos/ropa/shortChampionGris.webp",
+      "img/productos/ropa/shortChampionGris1.webp",
+    ],
+    detalle: "Champion",
+    descripcion: `
+TIPO DE PRODUCTO: INDUMENTARIA
+PRODUCTOS 100% ORIGINALES
+SEXO: HOMBRE
+NOMBRE: SHORT CHAMPION MODA 8 INCH POWERBLEND Hombre GR
+TALLE: M
+MODELO: 062330863293106
+
+Cálido y cómodo 9 oz. mezcla de forro polar de algodón y poliéster.
+Reducción de pelusas.
+Encogimiento reducido.
+Hecho con algodón cultivado en EE.UU.
+Detalles de puntadas adicionales para mayor durabilidad.
+Puños de canalé de 3 pulgadas y dobladillo plano.
+Etiqueta del cuello cosida en los 4 lados.
+Longitud del cuerpo de 28,5 pulgadas.
+Ajuste estándar para un look clásico.
+Parche icónico en forma de C en la manga izquierda.
+Color: Gris claro.    
+`,
+    stock: 1,
+    precio: 30000,
+  },
+
+
   {
     id: 11,
     nombre: "BUZO CHAMPION C/ CAPUCHA",
@@ -311,19 +528,6 @@ TALLE XS`,
     precio: 26000,
   },
   {
-    id: 12,
-    nombre: "REMERA CHAMPIÓN",
-    img: [
-      "img/productos/ropa/remeraChampionGris.jpg",
-      "img/productos/ropa/remeraChampionGris1.jpg",
-      "img/productos/ropa/remeraChampionGris2.jpg",
-    ],
-    detalle: "Champión",
-    descripcion: ``,
-    stock: 0,
-    precio: 25000,
-  },
-  {
     id: 13,
     nombre: "REMERA CHAMPIÓN",
     img: [
@@ -341,44 +545,10 @@ Temporada: 23-Q4`,
     stock: 0,
     precio: 15000,
   },
-  {
-    id: 14,
-    nombre: "REMERA ADIDAS CLASSICS",
-    img: [
-      "img/productos/ropa/remeraAdidas.webp",
-      "img/productos/ropa/remeraAdidas1.jpeg",
-      "img/productos/ropa/remeraAdidas2.jpeg",
-    ],
-    detalle: "Adidas",
-    descripcion: `
-UNA REMERA ADIDAS ORIGINAL DE ALGODÓN SUAVE QUE LE DA UNA ENERGÍA NUEVA A TUS ATUENDOS DIARIOS
 
-Esta remera adidas logra el equilibrio entre deporte y una vida con estilo. Podés usarla con un pantalón deportivo o unos shorts para pasar el rato o con unos jeans o unas calzas para conocer la ciudad. Un Trifolio extragrande llama la atención de inmediato, pero es el algodón suave con un toque de elasticidad lo que te envuelve con comodidad y abrigo en todo momento.
-
-Los productos de algodón adidas apoyan el cultivo de algodón sostenible.
-
-DETALLES
-
-Ajuste clásico.
-Cuello redondo acanalado.
-Tejido de punto jersey 93% algodón / 7% elastano.
-Producto hecho con Better Cotton.
-Color del artículo: Blanco.
-Género: Hombre
-Edad: Adulto
-Talle: L
-
-*************************************************************
-ESTE ES UN PRODUCTO USADO PERO EN EXCELENTE ESTADO!
-
-LA PRIMER FOTO NO ES REAL ES ILUSTRATIVA, LAS DEMAS FOTOS SI SON REALES
-`,
-    stock: 0,
-    precio: 18000,
-  },
   {
     id: 15,
-    nombre: "CONJUNTO DEPORTIVO LOTTO",
+    nombre: "CONJUNTO LOTTO",
     img: [
       "img/productos/ropa/conjuntoLotto.png",
       "img/productos/ropa/conjuntoLotto0.jpeg",
@@ -511,28 +681,7 @@ Edad mínima recomendada
     stock: 0,
     precio: 6500,
   },
-  {
-    id: 23,
-    nombre: "BUZO CHAMPION HOMBRE",
-    img: [
-      "img/productos/ropa/buzoChampionGrey.webp",
-      "img/productos/ropa/buzoChampionGrey1.webp",
-      "img/productos/ropa/buzoChampionGrey2.webp",
-    ],
-    detalle: "Champion",
-    descripcion: `
-Especificaciones generales
-
-Género: Hombre
-Edad: Adulto
-Color predominante: Gris
-Material Principal: Algodón
-Temporada: 24-Q3
-Talle S:     
-`,
-    stock: 1,
-    precio: 26000,
-  },
+ 
   {
     id: 24,
     nombre: "CAMPERA CHAMPION ROMPEVIENTO",
@@ -570,37 +719,7 @@ SKU: CHICHHV1015549369072
     stock: 0,
     precio: 35000,
   },
-  {
-    id: 25,
-    nombre: "SHORT CHAMPION MODA 8",
-    img: [
-      "img/productos/ropa/shortChampionGris.webp",
-      "img/productos/ropa/shortChampionGris1.webp",
-    ],
-    detalle: "Champion",
-    descripcion: `
-TIPO DE PRODUCTO: INDUMENTARIA
-PRODUCTOS 100% ORIGINALES
-SEXO: HOMBRE
-NOMBRE: SHORT CHAMPION MODA 8 INCH POWERBLEND Hombre GR
-TALLE: M
-MODELO: 062330863293106
-
-Cálido y cómodo 9 oz. mezcla de forro polar de algodón y poliéster.
-Reducción de pelusas.
-Encogimiento reducido.
-Hecho con algodón cultivado en EE.UU.
-Detalles de puntadas adicionales para mayor durabilidad.
-Puños de canalé de 3 pulgadas y dobladillo plano.
-Etiqueta del cuello cosida en los 4 lados.
-Longitud del cuerpo de 28,5 pulgadas.
-Ajuste estándar para un look clásico.
-Parche icónico en forma de C en la manga izquierda.
-Color: Gris claro.    
-`,
-    stock: 1,
-    precio: 30000,
-  },
+  
   {
     id: 26,
     nombre: "PLATO PLAYO MELAMINA",
@@ -641,7 +760,7 @@ Incluye tapa: No
     stock: 20,
     precio: 4000,
   },
-  
+
   {
     id: 29,
     nombre: "ESPUMADERA NYLON C/ MANGO ACERO",
