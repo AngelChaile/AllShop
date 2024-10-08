@@ -159,7 +159,7 @@ Incluye tapa: No
 Es antiadherente: Sí
 Es descartable: No
 `,
-    stock: 18,
+    stock: 0,
     precio: 4000,
   },
   {
@@ -225,7 +225,6 @@ CARACTERISTICAS:
     precio: 3500,
   },
 
- 
   {
     id: 23,
     nombre: "BUZO CHAMPION HOMBRE",
@@ -233,6 +232,8 @@ CARACTERISTICAS:
       "img/productos/ropa/buzoChampionGrey.webp",
       "img/productos/ropa/buzoChampionGrey1.webp",
       "img/productos/ropa/buzoChampionGrey2.webp",
+      "img/productos/ropa/buzoChampionGrey3.jpg",
+      "img/productos/ropa/buzoChampionGrey4.jpg",
     ],
     detalle: "Champion",
     descripcion: `
@@ -319,7 +320,7 @@ Talle: M`,
     id: 9,
     nombre: "PANTALON CHAMPIÓN UNISEX",
     img: [
-      "img/productos/ropa/pantalonChampionBordo.webp",
+      "img/productos/ropa/pantalonChampionBordo.jpeg",
       "img/productos/ropa/pantalonChampionBordo1.jpeg",
       "img/productos/ropa/pantalonChampionBordo2.jpeg",
       "img/productos/ropa/pantalonChampionBordo3.jpeg",
@@ -330,56 +331,46 @@ Género: Unisex
 Color: Rojo
 Disciplina: Moda
 Marca: CHAMPIÓN
-Talle: L
-
-Pantalon Champion 100% Originial!`,
+Talle: M
+`,
     stock: 1,
     precio: 45000,
   },
 
-  /*   {
-    id: 12,
-    nombre: "REMERA CHAMPIÓN MUJER",
+  {
+    id: 9,
+    nombre: "BUZO CHAMPIÓN DAMA",
     img: [
-      "img/productos/ropa/remeraChampionMujer.webp",
-      "img/productos/ropa/remeraChampionMujer1.webp",
+      "img/productos/ropa/buzoBeigeChampion.webp",
+      "img/productos/ropa/buzoBeigeChampion1.webp",
+      "img/productos/ropa/buzoBeigeChampion2.webp",
+      "img/productos/ropa/buzoBeigeChampion3.webp",
     ],
     detalle: "Champión",
-    descripcion: `Características principales
-Talle: 
+    descripcion: `
+BUZO CHAMPION DEPORTIVO DE MUJER
+ICHMWL9307 006
+
+Características del producto
+
+Talle: M
 Marca: Champion
-Modelo: Batik
+Material principal: Algodón
+Capucha: Sí
+Modelo: DEPORTIVO
 Género: Mujer
 Edad: Adultos
-Tipo de manga: Corta
+Tipo de prenda: Hoodie
+
+
+Usos recomendados: Urbano
+Material principal: Algodón
+Composición: 100% algodón
 `,
     stock: 1,
-    precio: 18000,
-  }, */
-
-  
-  {
-    id: 12,
-    nombre: "REMERA CHAMPIÓN",
-    img: [
-      "img/productos/ropa/remeraChampionGris.jpg",
-      "img/productos/ropa/remeraChampionGris1.jpg",
-    ],
-    detalle: "Champión",
-    descripcion: `Complementá tu look con CHAMPION.
-Logo CHAMPION estampado y aplicado.
-
-Especificaciones generales
-
-Talle: XS y S
-Género: Hombre
-Edad: Adulto
-Color predominante: Gris
-Material Principal: Algodón
-Temporada: 24-Q2`,
-    stock: 2,
-    precio: 22000,
+    precio: 50000,
   },
+
   {
     id: 12,
     nombre: "CAMPERA CHAMPIÓN",
@@ -398,11 +389,6 @@ Talle M
     stock: 1,
     precio: 35000,
   },
-
-
-
-
-  
 
   {
     id: 10,
@@ -427,6 +413,53 @@ disciplina:   casual
 marca:        champion
 `,
     stock: 1,
+    precio: 22000,
+  },
+
+  {
+    id: 12,
+    nombre: "REMERA CHAMPIÓN MUJER",
+    img: [
+      "img/productos/ropa/remeraMujerChampion.png",
+      "img/productos/ropa/remeraMujerChampion.webp",
+      "img/productos/ropa/remeraMujerChampion1.webp",
+      "img/productos/ropa/remeraMujerChampion2.webp",
+    ],
+    detalle: "Champión",
+    descripcion: `Características principales
+
+Talle: L
+Marca: Champion
+Modelo: Batik
+Género: Mujer
+Edad: Adultos
+Tipo de manga: Corta
+Material principal: Algodón
+`,
+    stock: 1,
+    precio: 20000,
+  },
+
+  {
+    id: 12,
+    nombre: "REMERA CHAMPIÓN",
+    img: [
+      "img/productos/ropa/remeraChampionGris.jpg",
+      "img/productos/ropa/remeraChampionGris1.jpg",
+    ],
+    detalle: "Champión",
+    descripcion: `Complementá tu look con CHAMPION.
+Logo CHAMPION estampado y aplicado.
+
+Especificaciones generales
+
+Talle: M y S
+Género: Hombre
+Edad: Adulto
+Color predominante: Gris
+Material Principal: Algodón
+Temporada: 24-Q2`,
+    stock: 2,
     precio: 22000,
   },
 
@@ -499,7 +532,6 @@ Color: Gris claro.
     stock: 1,
     precio: 30000,
   },
-
 
   {
     id: 11,
@@ -604,6 +636,73 @@ La primer imagen es ilustrativa no es una foto real
     precio: 40000,
   },
   {
+    id: 24,
+    nombre: "CAMPERA CHAMPION ROMPEVIENTO",
+    img: [
+      "img/productos/ropa/camperaChampionAzul.webp",
+      "img/productos/ropa/camperaChampionAzul1.webp",
+      "img/productos/ropa/camperaChampionAzul2.webp",
+      "img/productos/ropa/camperaChampionAzul3.webp",
+    ],
+    detalle: "Champion",
+    descripcion: `
+Características generales
+Género: Hombre
+Marca: Champion
+Modelo: Full Zip
+Talle: S
+
+Otras características
+Composición: 100% Poliéster
+Es impermeable: No
+Es térmica: No
+Usos recomendados: Urbano
+Cantidad de bolsillos externos: 2
+Material principal: Poliéster
+Es ultra liviana: Si
+Con bolsillos: Si
+Con capucha: Si
+
+Características principales
+Tipo de prenda: Campera Rompeviento
+Edad: Adulto
+Color: Azul marino
+SKU: CHICHHV1015549369072   
+`,
+    stock: 0,
+    precio: 35000,
+  },
+
+  {
+    id: 27,
+    nombre: "MOLDE SILICONA PARA CUPCAKES",
+    img: [
+      "img/productos/moldes/molde_muffins.webp",
+      "img/productos/moldes/molde_muffins1.webp",
+      "img/productos/moldes/molde_muffins2.webp",
+      "img/productos/moldes/molde_muffins3.webp",
+      "img/productos/moldes/molde_muffins4.webp",
+      "img/productos/moldes/molde_muffins5.webp",
+    ],
+    detalle: "The Kitchen Elements",
+    descripcion: `
+Molde siliconado para postres, cupcakes y más, resistente al calor y super flexible, antiadherente, fácil de lavar y almacenar, disponible en varios colores
+
+Características principales
+Marca:	The Kitchen Life
+Línea:	yo cocino
+Modelo:	Cupcake
+Cantidad de ranuras:	6
+Capacidad en volumen:	600 mL
+Material: Silicona
+Uso recomendado: hornear
+Es apto para lavavajillas: Sí
+Incluye tapa: No
+`,
+    stock: 20,
+    precio: 4000,
+  },
+  {
     id: 16,
     nombre: "MINI LINTERNA 9 LEDS",
     img: [
@@ -620,17 +719,6 @@ La primer imagen es ilustrativa no es una foto real
   },
 
   {
-    id: 19,
-    nombre: "BOMBILLAS",
-    img: ["img/productos/utensillos/bombillas.png"],
-    detalle: "Bombillas Varios Colores",
-    descripcion: `Bombillas de acero distintos tipos de colores!
-
-Elegi el que mas te guste!`,
-    stock: 20,
-    precio: 1000,
-  },
-  {
     id: 20,
     nombre: "PISA PAPAS DE ACERO ",
     img: [
@@ -642,6 +730,19 @@ Elegi el que mas te guste!`,
     stock: 5,
     precio: 3500,
   },
+
+  {
+    id: 19,
+    nombre: "BOMBILLAS",
+    img: ["img/productos/utensillos/bombillas.png"],
+    detalle: "Bombillas Varios Colores",
+    descripcion: `Bombillas de acero distintos tipos de colores!
+
+Elegi el que mas te guste!`,
+    stock: 20,
+    precio: 1000,
+  },
+
   {
     id: 21,
     nombre: "BUZO CHAMPION CON FRIZA",
@@ -680,85 +781,6 @@ Edad mínima recomendada
 3 años`,
     stock: 0,
     precio: 6500,
-  },
- 
-  {
-    id: 24,
-    nombre: "CAMPERA CHAMPION ROMPEVIENTO",
-    img: [
-      "img/productos/ropa/camperaChampionAzul.webp",
-      "img/productos/ropa/camperaChampionAzul1.webp",
-      "img/productos/ropa/camperaChampionAzul2.webp",
-      "img/productos/ropa/camperaChampionAzul3.webp",
-    ],
-    detalle: "Champion",
-    descripcion: `
-Características generales
-Género: Hombre
-Marca: Champion
-Modelo: Full Zip
-Talle: S
-
-Otras características
-Composición: 100% Poliéster
-Es impermeable: No
-Es térmica: No
-Usos recomendados: Urbano
-Cantidad de bolsillos externos: 2
-Material principal: Poliéster
-Es ultra liviana: Si
-Con bolsillos: Si
-Con capucha: Si
-
-Características principales
-Tipo de prenda: Campera Rompeviento
-Edad: Adulto
-Color: Azul marino
-SKU: CHICHHV1015549369072   
-`,
-    stock: 0,
-    precio: 35000,
-  },
-  
-  {
-    id: 26,
-    nombre: "PLATO PLAYO MELAMINA",
-    img: ["img/productos/platos/platoMelamina.webp"],
-    detalle: "The Kitchen Elements",
-    descripcion: `
-Los Platos Playos Melamina Decorada Cuadrados Pzas Color Celeste de la marca THE KITCHEN son la elección perfecta para agregar estilo y elegancia a tu mesa. Con su diseño cuadrado y su color celeste, estos platos son ideales para cualquier ocasión, ya sea una comida casual o una cena formal. Están fabricados en melamina de alta calidad, lo que los hace resistentes y duraderos.  Añade un toque moderno a tu vajilla con estos platos playos de melamina decorada.    
-`,
-    stock: 0,
-    precio: 1800,
-  },
-  {
-    id: 27,
-    nombre: "MOLDE SILICONA PARA CUPCAKES",
-    img: [
-      "img/productos/moldes/molde_muffins.webp",
-      "img/productos/moldes/molde_muffins1.webp",
-      "img/productos/moldes/molde_muffins2.webp",
-      "img/productos/moldes/molde_muffins3.webp",
-      "img/productos/moldes/molde_muffins4.webp",
-      "img/productos/moldes/molde_muffins5.webp",
-    ],
-    detalle: "The Kitchen Elements",
-    descripcion: `
-Molde siliconado para postres, cupcakes y más, resistente al calor y super flexible, antiadherente, fácil de lavar y almacenar, disponible en varios colores
-
-Características principales
-Marca:	The Kitchen Life
-Línea:	yo cocino
-Modelo:	Cupcake
-Cantidad de ranuras:	6
-Capacidad en volumen:	600 mL
-Material: Silicona
-Uso recomendado: hornear
-Es apto para lavavajillas: Sí
-Incluye tapa: No
-`,
-    stock: 20,
-    precio: 4000,
   },
 
   {
