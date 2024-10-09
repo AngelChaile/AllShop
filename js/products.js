@@ -418,32 +418,10 @@ marca:        champion
 
   {
     id: 12,
-    nombre: "REMERA CHAMPIÓN MUJER",
-    img: [
-      "img/productos/ropa/remeraMujerChampion.png",
-      "img/productos/ropa/remeraMujerChampion.webp",
-      "img/productos/ropa/remeraMujerChampion1.webp",
-      "img/productos/ropa/remeraMujerChampion2.webp",
-    ],
-    detalle: "Champión",
-    descripcion: `Características principales
-
-Talle: L
-Marca: Champion
-Modelo: Batik
-Género: Mujer
-Edad: Adultos
-Tipo de manga: Corta
-Material principal: Algodón
-`,
-    stock: 1,
-    precio: 20000,
-  },
-
-  {
-    id: 12,
     nombre: "REMERA CHAMPIÓN",
     img: [
+      "img/productos/ropa/remeraChampionGris.webp",
+      "img/productos/ropa/remeraChampionGris1.webp",
       "img/productos/ropa/remeraChampionGris.jpg",
       "img/productos/ropa/remeraChampionGris1.jpg",
     ],
