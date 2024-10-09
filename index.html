@@ -7,6 +7,8 @@
   <title>All Shop</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+  <!-- Libreria Swiper para el carrousel -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -105,13 +107,29 @@
   </section>
 
   <!-- PRODUCTO ESTRELLA -->
-  <section id="about-app" class="section-p1">
+  <!--  <section id="about-app" class="section-p1">
     <h1 id="sectionEstrella-h1">
       Producto Estrella
       <a id="a" href="productDetails.html">Descubre la Pizarra Mágica</a>
     </h1>
     <div class="video">
       <video controls autoplay loop src="img/productos/varios//PizarraMagica1.mp4" type="video/mp4"></video>
+  </section> -->
+
+
+  <!-- FEATURE PRODUCTS -->
+  <section id="product1" class="section-p1">
+    <h2>Productos Destacados</h2>
+    <p>Colección de verano nuevos diseños</p>
+
+    <!-- Contenedor Swiper -->
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <!-- Productos irán aca -->
+      </div>
+
+      <!-- Scrollbar -->
+      <div class="swiper-scrollbar"></div>
   </section>
 
   <!-- BANNER SM -->
@@ -219,7 +237,11 @@
   <script src="https://kit.fontawesome.com/b6c61db0c1.js" crossorigin="anonymous"></script>
   <script src="js/products.js"></script>
   <script src="js/menu.js"></script>
-  <script src="js/startProduct.js"></script>
+  <!-- <script src="js/startProduct.js"></script> -->
+  <!-- Libreria Swiper para el carrousel -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script src="js/featuredProducts.js"></script>
 </body>
 
 </html>

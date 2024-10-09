@@ -375,14 +375,19 @@ Composición: 100% algodón
     id: 12,
     nombre: "CAMPERA CHAMPIÓN",
     img: [
-      "img/productos/ropa/camperaChampionGris.webp",
-      "img/productos/ropa/camperaChampionGris1.webp",
+      "img/productos/ropa/camperaChampionGris.jpg",
+      "img/productos/ropa/camperaChampionGris1.jpg",
       "img/productos/ropa/camperaChampionGris2.jpg",
       "img/productos/ropa/camperaChampionGris3.jpg",
     ],
     detalle: "Champión",
-    descripcion: `Campera clásica con capucha.
-Posee cierre frontal, capucha ajuste con cordón, bolsillos laterales, mangas con puños, y estampa de marca.
+    descripcion: `Destacá tu estilo con CHAMPION.
+Capucha con cordón de ajuste.
+Cintura y puños elastizados.
+Posee cierre frontal.
+Bolsillos laterales.
+Logo CHAMPION aplicado y estampado.
+    Campera clásica con capucha.
 
 Talle M
 `,
