@@ -40,11 +40,13 @@ const swiper = new Swiper(".swiper", {
   /* scrollbar: {
     el: ".swiper-scrollbar",
   }, */
+
+  effect: "cards",
   loop: true,
-  autoplay: {
+  /* autoplay: {
     delay: 2500,
     disableOnInteraction: false,
-  },
+  }, */
   breakpoints: {
     320: {
       // Pantallas pequeñas
