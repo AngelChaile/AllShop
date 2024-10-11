@@ -13,7 +13,7 @@ const products = [
     precio: 1500,
   },
 
-  {
+  /* {
     id: 17,
     nombre: "TARTERA DE SILICONA",
     img: [
@@ -35,8 +35,8 @@ const products = [
 `,
     stock: 8,
     precio: 3500,
-  },
-  {
+  }, */
+  /*  {
     id: 18,
     nombre: "BATIDOR MANUAL",
     img: [
@@ -61,7 +61,7 @@ Largo total: 25 cm
     stock: 0,
     precio: 2000,
   },
-
+ */
   {
     id: 4,
     nombre: "ASADERA MOLDE RECTANGULAR",
@@ -123,7 +123,7 @@ Medidas: 20 Diámetro x 3cm altura`,
     stock: 0,
     precio: 3800,
   },
-  {
+  /* {
     id: 28,
     nombre: "MOLDE FLAN DONUTS X6",
     img: [
@@ -189,7 +189,7 @@ Es descartable: No
     stock: 0,
     precio: 1500,
   },
-
+ */
   {
     id: 8,
     nombre: "GUANTES DE SILICONA PAR LAVAR",
@@ -249,27 +249,7 @@ Talle XS:
     stock: 1,
     precio: 28000,
   },
-  {
-    id: 14,
-    nombre: "REMERA CHAMPIÓN",
-    img: [
-      "img/productos/ropa/remeraChampionNegra.webp",
-      "img/productos/ropa/remeraChampionNegra1.webp",
-    ],
-    detalle: "Champion",
-    descripcion: `
-Especificaciones generales
 
-Talle: XS
-Género: Hombre
-Edad: Adulto
-Color predominante: Negro
-Material Principal: Algodón
-Temporada: 24-Q2
-`,
-    stock: 1,
-    precio: 22000,
-  },
   {
     id: 10,
     nombre: "BUZO CHAMPION",
@@ -317,6 +297,28 @@ Talle: M`,
   },
 
   {
+    id: 14,
+    nombre: "REMERA CHAMPIÓN",
+    img: [
+      "img/productos/ropa/remeraChampionNegra.webp",
+      "img/productos/ropa/remeraChampionNegra1.webp",
+    ],
+    detalle: "Champion",
+    descripcion: `
+Especificaciones generales
+
+Talle: XS
+Género: Hombre
+Edad: Adulto
+Color predominante: Negro
+Material Principal: Algodón
+Temporada: 24-Q2
+`,
+    stock: 1,
+    precio: 22000,
+  },
+
+  {
     id: 9,
     nombre: "PANTALON CHAMPIÓN UNISEX",
     img: [
@@ -335,6 +337,107 @@ Talle: M
 `,
     stock: 1,
     precio: 45000,
+  },
+  {
+    id: 10,
+    nombre: "PANTALON JOGGER NEGRO",
+    img: [
+      "img/productos/ropa/pantalonChampionNegro.jpg",
+      "img/productos/ropa/pantalonChampionNegro1.jpg",
+      "img/productos/ropa/pantalonChampionNegro2.jpg",
+    ],
+    detalle: "Champión",
+    descripcion: `
+Pantalón Deportivo CH Hombre Logo estampado
+
+Cintura con elastico reforzado
+
+Detalle de puños al tobillo 
+
+Corte Jogger 
+
+con bolsillos laterales
+
+Detalle en pierna de firma champion engomado 
+
+Confeccionado en Algodón
+
+Temporada	Atemporal
+
+Colores 👇
+
+NEGRO
+
+
+Talles 👇👇
+
+XS`,
+    stock: 0,
+    precio: 40000,
+  },
+
+  {
+    id: 10,
+    nombre: "REMERA CHAMPION",
+    img: [
+      "img/productos/ropa/remeraChampionNaranja.webp",
+      "img/productos/ropa/remeraChampionNaranja1.webp",
+      "img/productos/ropa/remeraChampionNaranja2.webp",
+    ],
+    detalle: "Champión",
+    descripcion: `Remera Champion
+
+La remera Champion es una prenda básica y esencial, confeccionada con algodón de alta calidad que garantiza comodidad y suavidad durante todo el día. Su diseño clásico y versátil la convierte en una opción ideal para cualquier ocasión, ya sea para actividades casuales o deportivas. El tejido de algodón permite una excelente transpirabilidad, manteniéndote fresco y cómodo. Con un ajuste perfecto, esta remera es una elección confiable para quienes buscan una combinación de estilo y confort en su vestimenta diaria.
+
+Especificaciones
+
+talle:        M 
+material:     algodón rustico
+color:        naranja
+género:       hombre
+disciplina:   casual
+marca:        champion
+`,
+    stock: 1,
+    precio: 22000,
+  },
+
+  {
+    id: 24,
+    nombre: "CAMPERA CHAMPION ROMPEVIENTO",
+    img: [
+      "img/productos/ropa/camperaChampionAzul.webp",
+      "img/productos/ropa/camperaChampionAzul1.webp",
+      "img/productos/ropa/camperaChampionAzul2.webp",
+      "img/productos/ropa/camperaChampionAzul3.webp",
+    ],
+    detalle: "Champion",
+    descripcion: `
+Características generales
+Género: Hombre
+Marca: Champion
+Modelo: Full Zip
+Talle: S
+
+Otras características
+Composición: 100% Poliéster
+Es impermeable: No
+Es térmica: No
+Usos recomendados: Urbano
+Cantidad de bolsillos externos: 2
+Material principal: Poliéster
+Es ultra liviana: Si
+Con bolsillos: Si
+Con capucha: Si
+
+Características principales
+Tipo de prenda: Campera Rompeviento
+Edad: Adulto
+Color: Azul marino
+SKU: CHICHHV1015549369072   
+`,
+    stock: 0,
+    precio: 35000,
   },
 
   {
@@ -396,37 +499,9 @@ Talle M
   },
 
   {
-    id: 10,
-    nombre: "REMERA CHAMPION",
-    img: [
-      "img/productos/ropa/remeraChampionNaranja.webp",
-      "img/productos/ropa/remeraChampionNaranja1.webp",
-      "img/productos/ropa/remeraChampionNaranja2.webp",
-    ],
-    detalle: "Champión",
-    descripcion: `Remera Champion
-
-La remera Champion es una prenda básica y esencial, confeccionada con algodón de alta calidad que garantiza comodidad y suavidad durante todo el día. Su diseño clásico y versátil la convierte en una opción ideal para cualquier ocasión, ya sea para actividades casuales o deportivas. El tejido de algodón permite una excelente transpirabilidad, manteniéndote fresco y cómodo. Con un ajuste perfecto, esta remera es una elección confiable para quienes buscan una combinación de estilo y confort en su vestimenta diaria.
-
-Especificaciones
-
-talle:        M 
-material:     algodón rustico
-color:        naranja
-género:       hombre
-disciplina:   casual
-marca:        champion
-`,
-    stock: 1,
-    precio: 22000,
-  },
-
-  {
     id: 12,
     nombre: "REMERA CHAMPIÓN",
     img: [
-      "img/productos/ropa/remeraChampionGris.webp",
-      "img/productos/ropa/remeraChampionGris1.webp",
       "img/productos/ropa/remeraChampionGris.jpg",
       "img/productos/ropa/remeraChampionGris1.jpg",
     ],
@@ -447,41 +522,46 @@ Temporada: 24-Q2`,
   },
 
   {
-    id: 10,
-    nombre: "PANTALON JOGGER NEGRO",
+    id: 13,
+    nombre: "REMERA CHAMPIÓN",
     img: [
-      "img/productos/ropa/pantalonChampionNegro.jpg",
-      "img/productos/ropa/pantalonChampionNegro1.jpg",
-      "img/productos/ropa/pantalonChampionNegro2.jpg",
+      "img/productos/ropa/remeraChampion.webp",
+      "img/productos/ropa/remeraChampion1.webp",
     ],
     detalle: "Champión",
     descripcion: `
-Pantalón Deportivo CH Hombre Logo estampado
-
-Cintura con elastico reforzado
-
-Detalle de puños al tobillo 
-
-Corte Jogger 
-
-con bolsillos laterales
-
-Detalle en pierna de firma champion engomado 
-
-Confeccionado en Algodón
-
-Temporada	Atemporal
-
-Colores 👇
-
-NEGRO
-
-
-Talles 👇👇
-
-XS`,
+Género: Hombre
+Edad: Adulto
+Talle: M
+Color predominante: Anaranjado
+Material Principal: Algodón
+Temporada: 23-Q4`,
     stock: 0,
-    precio: 40000,
+    precio: 15000,
+  },
+
+  {
+    id: 15,
+    nombre: "CONJUNTO LOTTO",
+    img: [
+      "img/productos/ropa/conjuntoLotto.png",
+      "img/productos/ropa/conjuntoLotto0.jpeg",
+      "img/productos/ropa/conjuntoLotto1.jpeg",
+      "img/productos/ropa/conjuntoLotto2.jpeg",
+    ],
+    detalle: "Lotto",
+    descripcion: `
+Género: Mujer
+Edad: Adulto
+Talle: S
+Color predominante: Lila y Negro
+
+********************************
+
+Atencion! este es un producto usado pero en excelente estado
+es un conjunto marca Lotto Original!`,
+    stock: 1,
+    precio: 25000,
   },
 
   {
@@ -542,48 +622,7 @@ TALLE XS`,
     stock: 1,
     precio: 26000,
   },
-  {
-    id: 13,
-    nombre: "REMERA CHAMPIÓN",
-    img: [
-      "img/productos/ropa/remeraChampion.webp",
-      "img/productos/ropa/remeraChampion1.webp",
-    ],
-    detalle: "Champión",
-    descripcion: `
-Género: Hombre
-Edad: Adulto
-Talle: M
-Color predominante: Anaranjado
-Material Principal: Algodón
-Temporada: 23-Q4`,
-    stock: 0,
-    precio: 15000,
-  },
 
-  {
-    id: 15,
-    nombre: "CONJUNTO LOTTO",
-    img: [
-      "img/productos/ropa/conjuntoLotto.png",
-      "img/productos/ropa/conjuntoLotto0.jpeg",
-      "img/productos/ropa/conjuntoLotto1.jpeg",
-      "img/productos/ropa/conjuntoLotto2.jpeg",
-    ],
-    detalle: "Lotto",
-    descripcion: `
-Género: Mujer
-Edad: Adulto
-Talle: S
-Color predominante: Lila y Negro
-
-********************************
-
-Atencion! este es un producto usado pero en excelente estado
-es un conjunto marca Lotto Original!`,
-    stock: 1,
-    precio: 25000,
-  },
   {
     id: 6,
     nombre: "NEBULIZADOR SAN-UP",
@@ -617,43 +656,6 @@ La primer imagen es ilustrativa no es una foto real
 `,
     stock: 1,
     precio: 40000,
-  },
-  {
-    id: 24,
-    nombre: "CAMPERA CHAMPION ROMPEVIENTO",
-    img: [
-      "img/productos/ropa/camperaChampionAzul.webp",
-      "img/productos/ropa/camperaChampionAzul1.webp",
-      "img/productos/ropa/camperaChampionAzul2.webp",
-      "img/productos/ropa/camperaChampionAzul3.webp",
-    ],
-    detalle: "Champion",
-    descripcion: `
-Características generales
-Género: Hombre
-Marca: Champion
-Modelo: Full Zip
-Talle: S
-
-Otras características
-Composición: 100% Poliéster
-Es impermeable: No
-Es térmica: No
-Usos recomendados: Urbano
-Cantidad de bolsillos externos: 2
-Material principal: Poliéster
-Es ultra liviana: Si
-Con bolsillos: Si
-Con capucha: Si
-
-Características principales
-Tipo de prenda: Campera Rompeviento
-Edad: Adulto
-Color: Azul marino
-SKU: CHICHHV1015549369072   
-`,
-    stock: 0,
-    precio: 35000,
   },
 
   {
@@ -726,7 +728,7 @@ Elegi el que mas te guste!`,
     precio: 1000,
   },
 
-  {
+  /* {
     id: 21,
     nombre: "BUZO CHAMPION CON FRIZA",
     img: [
@@ -765,7 +767,7 @@ Edad mínima recomendada
     stock: 0,
     precio: 6500,
   },
-
+ */
   {
     id: 29,
     nombre: "ESPUMADERA NYLON C/ MANGO ACERO",
