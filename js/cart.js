@@ -9,9 +9,7 @@ function getProductStock(productId) {
 function updateQuantity(index, newQuantity) {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const productId = cart[index].id;
-  console.log(productId);
   const stockAvailable = getProductStock(productId); // Obtener el stock del producto
-  console.log(stockAvailable);
 
   if (newQuantity > stockAvailable) {
     Swal.fire({
@@ -78,8 +76,8 @@ function updateCartUI() {
 
   // Recorrer cada producto en el carrito
   cart.forEach((product, index) => {
-    const { id, img, nombre, precio, quantity } = product;
-    const productSubtotal = precio * quantity;
+    const { id, img, nombre, precio, precioOferta, quantity } = product;
+    const productSubtotal = precioOferta * quantity;
 
     // Crear una nueva fila para el producto
     const row = document.createElement("tr");
@@ -88,12 +86,11 @@ function updateCartUI() {
       <td><a href="#" onclick="removeFromCart(${index})"><i class="fa-regular fa-circle-xmark"></i></a></td>
       <td><img src="${img[0]}" alt="${nombre}"></td>
       <td>${nombre}</td>
-      <td>$${precio.toFixed(2)}</td>
+      <td>$${precioOferta}</td>
       <td><input type="number" value="${quantity}" min="1" onchange="updateQuantity(${index}, this.value)"></td>
       <td>$${productSubtotal.toFixed(2)}</td>
     `;
 
-    // Añadir la fila a la tabla
     cartTableBody.appendChild(row);
 
     subtotal += productSubtotal;
@@ -116,7 +113,7 @@ function updateCartUI() {
 const applyCouponButton = document.querySelector("#coupon button");
 applyCouponButton.addEventListener("click", applyCoupon);
 
-// Llamar a la función para actualizar el carrito al cargar la página
+//actualizar el carrito al cargar la página
 updateCartUI();
 
 // Función para eliminar un producto del carrito
@@ -127,5 +124,5 @@ function removeFromCart(index) {
   updateCartUI(); // Actualizar la interfaz del carrito
 }
 
-// Llamar a la función para actualizar el carrito al cargar la página
+// actualizar el carrito al cargar la página
 updateCartUI();

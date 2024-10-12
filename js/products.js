@@ -1,5 +1,455 @@
 const products = [
   {
+    id: 23,
+    nombre: "BUZO CHAMPION HOMBRE",
+    img: [
+      "img/productos/ropa/buzoChampionGrey.webp",
+      "img/productos/ropa/buzoChampionGrey1.webp",
+      "img/productos/ropa/buzoChampionGrey2.webp",
+      "img/productos/ropa/buzoChampionGrey3.jpg",
+      "img/productos/ropa/buzoChampionGrey4.jpg",
+    ],
+    detalle: "Champion",
+    descripcion: `
+Especificaciones generales
+
+Género: Hombre
+Edad: Adulto
+Color predominante: Gris
+Material Principal: Algodón
+Temporada: 24-Q3
+Talle XS:     
+`,
+    stock: 1,
+    precio: 45000,
+    precioOferta: 28000,
+  },
+
+  {
+    id: 10,
+    nombre: "BUZO CHAMPION",
+    img: [
+      "img/productos/ropa/buzoChampionNegro.webp",
+      "img/productos/ropa/buzoChampionNegro1.webp",
+      "img/productos/ropa/buzoChampionNegro2.webp",
+    ],
+    detalle: "Champión",
+    descripcion: `
+SKU	CHHCOGF88H01-006
+Marca:	Champion
+Color:	Negro
+Diseño: Tela	Liso
+Género:	Hombre
+Material:	Algodón
+Modelo:	Cuello redondo
+Bolsillos	-
+Calce:	Regular Fit
+Temporada:	Atemporal
+Talle: M`,
+    stock: 1,
+    precio: 48000,
+    precioOferta: 40000,
+  },
+
+  {
+    id: 11,
+    nombre: "BUZO CHAMPION",
+    img: [
+      "img/productos/ropa/buzoChampionLetras.webp",
+      "img/productos/ropa/buzoChampionLetras1.webp",
+      "img/productos/ropa/buzoChampionLetras2.webp",
+      "img/productos/ropa/buzoChampionLetras3.webp",
+    ],
+    detalle: "Champión",
+    descripcion: `
+Buzo Champion Con Capucha Estampado
+
+Estilo y comodidad
+
+El Buzo Champion Logo es la definición de estilo y comodidad. Este buzo destaca por su diseño moderno y el icónico logo de Champion estampado. Los puños con diseño a rayas de colores añaden un toque de estilo único y vibrante, haciendo que este buzo sea perfecto para cualquier ocasión. Confeccionado con materiales de alta calidad, proporciona una sensación suave y cómoda. Ya sea para relajarte en casa o para salir con amigos, el Buzo Champion Logo asegura un look casual pero elegante que nunca pasa de moda.
+
+Talle: M`,
+    stock: 1,
+    precio: 68799,
+    precioOferta: 55000,
+  },
+
+  {
+    id: 14,
+    nombre: "REMERA CHAMPIÓN",
+    img: [
+      "img/productos/ropa/remeraChampionNegra.webp",
+      "img/productos/ropa/remeraChampionNegra1.webp",
+    ],
+    detalle: "Champion",
+    descripcion: `
+Especificaciones generales
+
+Talle: XS
+Género: Hombre
+Edad: Adulto
+Color predominante: Negro
+Material Principal: Algodón
+Temporada: 24-Q2
+`,
+    stock: 1,
+    precio: 29099,
+    precioOferta: 22000,
+  },
+
+  {
+    id: 9,
+    nombre: "PANTALON CHAMPIÓN UNISEX",
+    img: [
+      "img/productos/ropa/pantalonChampionBordo.jpeg",
+      "img/productos/ropa/pantalonChampionBordo1.jpeg",
+      "img/productos/ropa/pantalonChampionBordo2.jpeg",
+      "img/productos/ropa/pantalonChampionBordo3.jpeg",
+    ],
+    detalle: "Champión",
+    descripcion: `
+Género: Unisex
+Color: Rojo
+Disciplina: Moda
+Marca: CHAMPIÓN
+Talle: M
+`,
+    stock: 1,
+    precio: 85700,
+    precioOferta: 40000,
+  },
+  {
+    id: 10,
+    nombre: "PANTALON JOGGER NEGRO",
+    img: [
+      "img/productos/ropa/pantalonChampionNegro.jpg",
+      "img/productos/ropa/pantalonChampionNegro1.jpg",
+      "img/productos/ropa/pantalonChampionNegro2.jpg",
+    ],
+    detalle: "Champión",
+    descripcion: `
+Pantalón Deportivo CH Hombre Logo estampado
+
+Cintura con elastico reforzado
+
+Detalle de puños al tobillo 
+
+Corte Jogger 
+
+con bolsillos laterales
+
+Detalle en pierna de firma champion engomado 
+
+Confeccionado en Algodón
+
+Temporada	Atemporal
+
+Colores 👇
+
+NEGRO
+
+
+Talles 👇👇
+
+XS`,
+    stock: 0,
+    precio: 45000,
+    precioOferta: 40000,
+  },
+
+  {
+    id: 10,
+    nombre: "REMERA CHAMPION",
+    img: [
+      "img/productos/ropa/remeraChampionNaranja.webp",
+      "img/productos/ropa/remeraChampionNaranja1.webp",
+      "img/productos/ropa/remeraChampionNaranja2.webp",
+    ],
+    detalle: "Champión",
+    descripcion: `Remera Champion
+
+La remera Champion es una prenda básica y esencial, confeccionada con algodón de alta calidad que garantiza comodidad y suavidad durante todo el día. Su diseño clásico y versátil la convierte en una opción ideal para cualquier ocasión, ya sea para actividades casuales o deportivas. El tejido de algodón permite una excelente transpirabilidad, manteniéndote fresco y cómodo. Con un ajuste perfecto, esta remera es una elección confiable para quienes buscan una combinación de estilo y confort en su vestimenta diaria.
+
+Especificaciones
+
+talle:        M 
+material:     algodón rustico
+color:        naranja
+género:       hombre
+disciplina:   casual
+marca:        champion
+`,
+    stock: 1,
+    precio: 29099,
+    precioOferta: 22000,
+  },
+
+  {
+    id: 24,
+    nombre: "CAMPERA CHAMPION ROMPEVIENTO",
+    img: [
+      "img/productos/ropa/camperaChampionAzul.webp",
+      "img/productos/ropa/camperaChampionAzul1.webp",
+      "img/productos/ropa/camperaChampionAzul2.webp",
+      "img/productos/ropa/camperaChampionAzul3.webp",
+    ],
+    detalle: "Champion",
+    descripcion: `
+Características generales
+Género: Hombre
+Marca: Champion
+Modelo: Full Zip
+Talle: S
+
+Otras características
+Composición: 100% Poliéster
+Es impermeable: No
+Es térmica: No
+Usos recomendados: Urbano
+Cantidad de bolsillos externos: 2
+Material principal: Poliéster
+Es ultra liviana: Si
+Con bolsillos: Si
+Con capucha: Si
+
+Características principales
+Tipo de prenda: Campera Rompeviento
+Edad: Adulto
+Color: Azul marino
+SKU: CHICHHV1015549369072   
+`,
+    stock: 0,
+    precio: 40000,
+    precioOferta: 35000,
+  },
+
+  {
+    id: 9,
+    nombre: "BUZO CHAMPIÓN DAMA",
+    img: [
+      "img/productos/ropa/buzoBeigeChampion.webp",
+      "img/productos/ropa/buzoBeigeChampion1.webp",
+      "img/productos/ropa/buzoBeigeChampion2.webp",
+      "img/productos/ropa/buzoBeigeChampion3.webp",
+    ],
+    detalle: "Champión",
+    descripcion: `
+BUZO CHAMPION DEPORTIVO DE MUJER
+ICHMWL9307 006
+
+Características del producto
+
+Talle: M
+Marca: Champion
+Material principal: Algodón
+Capucha: Sí
+Modelo: DEPORTIVO
+Género: Mujer
+Edad: Adultos
+Tipo de prenda: Hoodie
+
+
+Usos recomendados: Urbano
+Material principal: Algodón
+Composición: 100% algodón
+`,
+    stock: 1,
+    precio: 72000,
+    precioOferta: 50000,
+  },
+
+  {
+    id: 12,
+    nombre: "CAMPERA CHAMPIÓN",
+    img: [
+      "img/productos/ropa/camperaChampionGris.jpg",
+      "img/productos/ropa/camperaChampionGris1.jpg",
+      "img/productos/ropa/camperaChampionGris2.jpg",
+      "img/productos/ropa/camperaChampionGris3.jpg",
+    ],
+    detalle: "Champión",
+    descripcion: `Destacá tu estilo con CHAMPION.
+Capucha con cordón de ajuste.
+Cintura y puños elastizados.
+Posee cierre frontal.
+Bolsillos laterales.
+Logo CHAMPION aplicado y estampado.
+    Campera clásica con capucha.
+
+Talle M
+`,
+    stock: 1,
+    precio: 60699,
+    precioOferta: 35000,
+  },
+
+  {
+    id: 12,
+    nombre: "REMERA CHAMPIÓN",
+    img: [
+      "img/productos/ropa/remeraChampionGris.jpg",
+      "img/productos/ropa/remeraChampionGris1.jpg",
+    ],
+    detalle: "Champión",
+    descripcion: `Complementá tu look con CHAMPION.
+Logo CHAMPION estampado y aplicado.
+
+Especificaciones generales
+
+Talle: M y S
+Género: Hombre
+Edad: Adulto
+Color predominante: Gris
+Material Principal: Algodón
+Temporada: 24-Q2`,
+    stock: 2,
+    precio: 29099,
+    precioOferta: 22000,
+  },
+
+  {
+    id: 13,
+    nombre: "REMERA CHAMPIÓN",
+    img: [
+      "img/productos/ropa/remeraChampion.webp",
+      "img/productos/ropa/remeraChampion1.webp",
+    ],
+    detalle: "Champión",
+    descripcion: `
+Género: Hombre
+Edad: Adulto
+Talle: M
+Color predominante: Anaranjado
+Material Principal: Algodón
+Temporada: 23-Q4`,
+    stock: 0,
+    precio: 20000,
+    precioOferta: 15000,
+  },
+
+  {
+    id: 15,
+    nombre: "CONJUNTO LOTTO",
+    img: [
+      "img/productos/ropa/conjuntoLotto.png",
+      "img/productos/ropa/conjuntoLotto0.jpeg",
+      "img/productos/ropa/conjuntoLotto1.jpeg",
+      "img/productos/ropa/conjuntoLotto2.jpeg",
+    ],
+    detalle: "Lotto",
+    descripcion: `
+Género: Mujer
+Edad: Adulto
+Talle: S
+Color predominante: Lila y Negro
+
+********************************
+
+Atencion! este es un producto usado pero en excelente estado
+es un conjunto marca Lotto Original!`,
+    stock: 1,
+    precio: 30000,
+    precio: 25000,
+  },
+
+  {
+    id: 25,
+    nombre: "SHORT CHAMPION MODA 8",
+    img: [
+      "img/productos/ropa/shortChampionGris.webp",
+      "img/productos/ropa/shortChampionGris1.webp",
+    ],
+    detalle: "Champion",
+    descripcion: `
+TIPO DE PRODUCTO: INDUMENTARIA
+PRODUCTOS 100% ORIGINALES
+SEXO: HOMBRE
+NOMBRE: SHORT CHAMPION MODA 8 INCH POWERBLEND Hombre GR
+TALLE: M
+MODELO: 062330863293106
+
+Cálido y cómodo 9 oz. mezcla de forro polar de algodón y poliéster.
+Reducción de pelusas.
+Encogimiento reducido.
+Hecho con algodón cultivado en EE.UU.
+Detalles de puntadas adicionales para mayor durabilidad.
+Puños de canalé de 3 pulgadas y dobladillo plano.
+Etiqueta del cuello cosida en los 4 lados.
+Longitud del cuerpo de 28,5 pulgadas.
+Ajuste estándar para un look clásico.
+Parche icónico en forma de C en la manga izquierda.
+Color: Gris claro.    
+`,
+    stock: 1,
+    precio: 44300,
+    precioOferta: 30000,
+  },
+
+  {
+    id: 11,
+    nombre: "BUZO CHAMPION C/ CAPUCHA",
+    img: [
+      "img/productos/ropa/buzoChampionGris.webp",
+      "img/productos/ropa/buzoChampionGris1.webp",
+      "img/productos/ropa/buzoChampionGris2.webp",
+    ],
+    detalle: "Champión",
+    descripcion: `
+Productos 100% originales.
+Buzo Champion Logo Jersey Rustico C/ Capucha Casual Urbano.
+
+Edad: Adultos
+Tipo de prenda: Hoodie
+Material principal: Algodón
+Con capucha: Sí
+Es oversize: Sí
+Tipo de tela: Algodón
+Composición: 100% algodón
+Usos recomendados: Urbano
+
+TALLE XS`,
+    stock: 1,
+    precio: 42000,
+    precioOferta: 26000,
+  },
+
+  {
+    id: 6,
+    nombre: "NEBULIZADOR SAN-UP",
+    img: [
+      "img/productos/nebulizador/nebulizador0.webp",
+      "img/productos/nebulizador/nebulizador1.webp",
+      "img/productos/nebulizador/nebulizador2.png",
+      "img/productos/nebulizador/nebulizador3.png",
+      "img/productos/nebulizador/nebulizador4.png",
+    ],
+    detalle: "San-Up",
+    descripcion: `
+El nebulizador San-Up 3058 Micrón está indicado para diferentes afecciones respiratorias. Convierte el medicamento líquido en vapor para ser inhalado y hace que llegue directamente a las zonas afectadas provocando menores efectos secundarios y mayor eficacia.
+
+La salud de tu familia en buenas manos
+Al ser ultrasónico, es ligero y su tamaño es reducido. Te permite realizar la nebulización de grandes cantidades de líquido de forma rápida y con menos ruido que aquellos que funcionan a pistón. Su uso resulta excelente para los niños que se inquietan fácilmente con este tipo de tratamientos. Es ideal para disminuir la inflamación de la garganta, facilitar el paso del aire por la laringe y normalizar la frecuencia respiratoria.
+
+Trae accesorios
+Además, para posibilitar su funcionamiento cuenta con boquilla.
+
+Sistema monocámara
+Esta característica hace posible administrar directamente el fármaco o la solución fisiológica, sin necesidad de agregar agua.
+
+Dimensiones: 1.2kg de ancho, 125mm de alto, 175mm de profundidad.
+
+*********************************************************
+
+Este es un producto usado pero en excelente estado!
+
+La primer imagen es ilustrativa no es una foto real
+`,
+    stock: 1,
+    precio: 234000,
+    precioOferta: 40000,
+  },
+
+  {
     id: 1,
     nombre: "BANDEJA OVAL",
     img: [
@@ -10,7 +460,8 @@ const products = [
     detalle: "The Kitchen Elements",
     descripcion: `Bandeja oval 25cm x 18cm aprox. Melamina`,
     stock: 0,
-    precio: 1500,
+    precio: 3000,
+    precioOferta: 1500,
   },
 
   /* {
@@ -90,6 +541,7 @@ Linea: Yo Cocino
 Medidas: 32x22x4.5cm`,
     stock: 0,
     precio: 4000,
+    precioOferta: 6500,
   },
   {
     id: 5,
@@ -121,7 +573,8 @@ Material: Teflón
 Linea: Yo Cocino
 Medidas: 20 Diámetro x 3cm altura`,
     stock: 0,
-    precio: 3800,
+    precio: 6500,
+    precioOferta: 3800,
   },
   /* {
     id: 28,
@@ -222,440 +675,8 @@ CARACTERISTICAS:
 - Espesor: 2 cm
 - Se puede esterilizar en agua hervida, microondas o lavavajillas.`,
     stock: 6,
-    precio: 3500,
-  },
-
-  {
-    id: 23,
-    nombre: "BUZO CHAMPION HOMBRE",
-    img: [
-      "img/productos/ropa/buzoChampionGrey.webp",
-      "img/productos/ropa/buzoChampionGrey1.webp",
-      "img/productos/ropa/buzoChampionGrey2.webp",
-      "img/productos/ropa/buzoChampionGrey3.jpg",
-      "img/productos/ropa/buzoChampionGrey4.jpg",
-    ],
-    detalle: "Champion",
-    descripcion: `
-Especificaciones generales
-
-Género: Hombre
-Edad: Adulto
-Color predominante: Gris
-Material Principal: Algodón
-Temporada: 24-Q3
-Talle XS:     
-`,
-    stock: 1,
-    precio: 28000,
-  },
-
-  {
-    id: 10,
-    nombre: "BUZO CHAMPION",
-    img: [
-      "img/productos/ropa/buzoChampionNegro.jpg",
-      "img/productos/ropa/buzoChampionNegro1.jpg",
-    ],
-    detalle: "Champión",
-    descripcion: `
-SKU	CHHCOGF88H01-006
-Marca:	Champion
-Color:	Negro
-Diseño: Tela	Liso
-Género:	Hombre
-Material:	Algodón
-Modelo:	Cuello redondo
-Bolsillos	-
-Calce:	Regular Fit
-Temporada:	Atemporal
-Talle: M`,
-    stock: 1,
-    precio: 40000,
-  },
-
-  {
-    id: 11,
-    nombre: "BUZO CHAMPION",
-    img: [
-      "img/productos/ropa/buzoChampionLetras.webp",
-      "img/productos/ropa/buzoChampionLetras1.webp",
-      "img/productos/ropa/buzoChampionLetras2.webp",
-      "img/productos/ropa/buzoChampionLetras3.webp",
-    ],
-    detalle: "Champión",
-    descripcion: `
-Buzo Champion Con Capucha Estampado
-
-Estilo y comodidad
-
-El Buzo Champion Logo es la definición de estilo y comodidad. Este buzo destaca por su diseño moderno y el icónico logo de Champion estampado. Los puños con diseño a rayas de colores añaden un toque de estilo único y vibrante, haciendo que este buzo sea perfecto para cualquier ocasión. Confeccionado con materiales de alta calidad, proporciona una sensación suave y cómoda. Ya sea para relajarte en casa o para salir con amigos, el Buzo Champion Logo asegura un look casual pero elegante que nunca pasa de moda.
-
-Talle: M`,
-    stock: 1,
-    precio: 58000,
-  },
-
-  {
-    id: 14,
-    nombre: "REMERA CHAMPIÓN",
-    img: [
-      "img/productos/ropa/remeraChampionNegra.webp",
-      "img/productos/ropa/remeraChampionNegra1.webp",
-    ],
-    detalle: "Champion",
-    descripcion: `
-Especificaciones generales
-
-Talle: XS
-Género: Hombre
-Edad: Adulto
-Color predominante: Negro
-Material Principal: Algodón
-Temporada: 24-Q2
-`,
-    stock: 1,
-    precio: 22000,
-  },
-
-  {
-    id: 9,
-    nombre: "PANTALON CHAMPIÓN UNISEX",
-    img: [
-      "img/productos/ropa/pantalonChampionBordo.jpeg",
-      "img/productos/ropa/pantalonChampionBordo1.jpeg",
-      "img/productos/ropa/pantalonChampionBordo2.jpeg",
-      "img/productos/ropa/pantalonChampionBordo3.jpeg",
-    ],
-    detalle: "Champión",
-    descripcion: `
-Género: Unisex
-Color: Rojo
-Disciplina: Moda
-Marca: CHAMPIÓN
-Talle: M
-`,
-    stock: 1,
-    precio: 45000,
-  },
-  {
-    id: 10,
-    nombre: "PANTALON JOGGER NEGRO",
-    img: [
-      "img/productos/ropa/pantalonChampionNegro.jpg",
-      "img/productos/ropa/pantalonChampionNegro1.jpg",
-      "img/productos/ropa/pantalonChampionNegro2.jpg",
-    ],
-    detalle: "Champión",
-    descripcion: `
-Pantalón Deportivo CH Hombre Logo estampado
-
-Cintura con elastico reforzado
-
-Detalle de puños al tobillo 
-
-Corte Jogger 
-
-con bolsillos laterales
-
-Detalle en pierna de firma champion engomado 
-
-Confeccionado en Algodón
-
-Temporada	Atemporal
-
-Colores 👇
-
-NEGRO
-
-
-Talles 👇👇
-
-XS`,
-    stock: 0,
-    precio: 40000,
-  },
-
-  {
-    id: 10,
-    nombre: "REMERA CHAMPION",
-    img: [
-      "img/productos/ropa/remeraChampionNaranja.webp",
-      "img/productos/ropa/remeraChampionNaranja1.webp",
-      "img/productos/ropa/remeraChampionNaranja2.webp",
-    ],
-    detalle: "Champión",
-    descripcion: `Remera Champion
-
-La remera Champion es una prenda básica y esencial, confeccionada con algodón de alta calidad que garantiza comodidad y suavidad durante todo el día. Su diseño clásico y versátil la convierte en una opción ideal para cualquier ocasión, ya sea para actividades casuales o deportivas. El tejido de algodón permite una excelente transpirabilidad, manteniéndote fresco y cómodo. Con un ajuste perfecto, esta remera es una elección confiable para quienes buscan una combinación de estilo y confort en su vestimenta diaria.
-
-Especificaciones
-
-talle:        M 
-material:     algodón rustico
-color:        naranja
-género:       hombre
-disciplina:   casual
-marca:        champion
-`,
-    stock: 1,
-    precio: 22000,
-  },
-
-  {
-    id: 24,
-    nombre: "CAMPERA CHAMPION ROMPEVIENTO",
-    img: [
-      "img/productos/ropa/camperaChampionAzul.webp",
-      "img/productos/ropa/camperaChampionAzul1.webp",
-      "img/productos/ropa/camperaChampionAzul2.webp",
-      "img/productos/ropa/camperaChampionAzul3.webp",
-    ],
-    detalle: "Champion",
-    descripcion: `
-Características generales
-Género: Hombre
-Marca: Champion
-Modelo: Full Zip
-Talle: S
-
-Otras características
-Composición: 100% Poliéster
-Es impermeable: No
-Es térmica: No
-Usos recomendados: Urbano
-Cantidad de bolsillos externos: 2
-Material principal: Poliéster
-Es ultra liviana: Si
-Con bolsillos: Si
-Con capucha: Si
-
-Características principales
-Tipo de prenda: Campera Rompeviento
-Edad: Adulto
-Color: Azul marino
-SKU: CHICHHV1015549369072   
-`,
-    stock: 0,
-    precio: 35000,
-  },
-
-  {
-    id: 9,
-    nombre: "BUZO CHAMPIÓN DAMA",
-    img: [
-      "img/productos/ropa/buzoBeigeChampion.webp",
-      "img/productos/ropa/buzoBeigeChampion1.webp",
-      "img/productos/ropa/buzoBeigeChampion2.webp",
-      "img/productos/ropa/buzoBeigeChampion3.webp",
-    ],
-    detalle: "Champión",
-    descripcion: `
-BUZO CHAMPION DEPORTIVO DE MUJER
-ICHMWL9307 006
-
-Características del producto
-
-Talle: M
-Marca: Champion
-Material principal: Algodón
-Capucha: Sí
-Modelo: DEPORTIVO
-Género: Mujer
-Edad: Adultos
-Tipo de prenda: Hoodie
-
-
-Usos recomendados: Urbano
-Material principal: Algodón
-Composición: 100% algodón
-`,
-    stock: 1,
-    precio: 50000,
-  },
-
-  {
-    id: 12,
-    nombre: "CAMPERA CHAMPIÓN",
-    img: [
-      "img/productos/ropa/camperaChampionGris.jpg",
-      "img/productos/ropa/camperaChampionGris1.jpg",
-      "img/productos/ropa/camperaChampionGris2.jpg",
-      "img/productos/ropa/camperaChampionGris3.jpg",
-    ],
-    detalle: "Champión",
-    descripcion: `Destacá tu estilo con CHAMPION.
-Capucha con cordón de ajuste.
-Cintura y puños elastizados.
-Posee cierre frontal.
-Bolsillos laterales.
-Logo CHAMPION aplicado y estampado.
-    Campera clásica con capucha.
-
-Talle M
-`,
-    stock: 1,
-    precio: 35000,
-  },
-
-  {
-    id: 12,
-    nombre: "REMERA CHAMPIÓN",
-    img: [
-      "img/productos/ropa/remeraChampionGris.jpg",
-      "img/productos/ropa/remeraChampionGris1.jpg",
-    ],
-    detalle: "Champión",
-    descripcion: `Complementá tu look con CHAMPION.
-Logo CHAMPION estampado y aplicado.
-
-Especificaciones generales
-
-Talle: M y S
-Género: Hombre
-Edad: Adulto
-Color predominante: Gris
-Material Principal: Algodón
-Temporada: 24-Q2`,
-    stock: 2,
-    precio: 22000,
-  },
-
-  {
-    id: 13,
-    nombre: "REMERA CHAMPIÓN",
-    img: [
-      "img/productos/ropa/remeraChampion.webp",
-      "img/productos/ropa/remeraChampion1.webp",
-    ],
-    detalle: "Champión",
-    descripcion: `
-Género: Hombre
-Edad: Adulto
-Talle: M
-Color predominante: Anaranjado
-Material Principal: Algodón
-Temporada: 23-Q4`,
-    stock: 0,
-    precio: 15000,
-  },
-
-  {
-    id: 15,
-    nombre: "CONJUNTO LOTTO",
-    img: [
-      "img/productos/ropa/conjuntoLotto.png",
-      "img/productos/ropa/conjuntoLotto0.jpeg",
-      "img/productos/ropa/conjuntoLotto1.jpeg",
-      "img/productos/ropa/conjuntoLotto2.jpeg",
-    ],
-    detalle: "Lotto",
-    descripcion: `
-Género: Mujer
-Edad: Adulto
-Talle: S
-Color predominante: Lila y Negro
-
-********************************
-
-Atencion! este es un producto usado pero en excelente estado
-es un conjunto marca Lotto Original!`,
-    stock: 1,
-    precio: 25000,
-  },
-
-  {
-    id: 25,
-    nombre: "SHORT CHAMPION MODA 8",
-    img: [
-      "img/productos/ropa/shortChampionGris.webp",
-      "img/productos/ropa/shortChampionGris1.webp",
-    ],
-    detalle: "Champion",
-    descripcion: `
-TIPO DE PRODUCTO: INDUMENTARIA
-PRODUCTOS 100% ORIGINALES
-SEXO: HOMBRE
-NOMBRE: SHORT CHAMPION MODA 8 INCH POWERBLEND Hombre GR
-TALLE: M
-MODELO: 062330863293106
-
-Cálido y cómodo 9 oz. mezcla de forro polar de algodón y poliéster.
-Reducción de pelusas.
-Encogimiento reducido.
-Hecho con algodón cultivado en EE.UU.
-Detalles de puntadas adicionales para mayor durabilidad.
-Puños de canalé de 3 pulgadas y dobladillo plano.
-Etiqueta del cuello cosida en los 4 lados.
-Longitud del cuerpo de 28,5 pulgadas.
-Ajuste estándar para un look clásico.
-Parche icónico en forma de C en la manga izquierda.
-Color: Gris claro.    
-`,
-    stock: 1,
-    precio: 30000,
-  },
-
-  {
-    id: 11,
-    nombre: "BUZO CHAMPION C/ CAPUCHA",
-    img: [
-      "img/productos/ropa/buzoChampionGris.webp",
-      "img/productos/ropa/buzoChampionGris1.webp",
-      "img/productos/ropa/buzoChampionGris2.webp",
-    ],
-    detalle: "Champión",
-    descripcion: `
-Productos 100% originales.
-Buzo Champion Logo Jersey Rustico C/ Capucha Casual Urbano.
-
-Edad: Adultos
-Tipo de prenda: Hoodie
-Material principal: Algodón
-Con capucha: Sí
-Es oversize: Sí
-Tipo de tela: Algodón
-Composición: 100% algodón
-Usos recomendados: Urbano
-
-TALLE XS`,
-    stock: 1,
-    precio: 26000,
-  },
-
-  {
-    id: 6,
-    nombre: "NEBULIZADOR SAN-UP",
-    img: [
-      "img/productos/nebulizador/nebulizador0.webp",
-      "img/productos/nebulizador/nebulizador1.webp",
-      "img/productos/nebulizador/nebulizador2.png",
-      "img/productos/nebulizador/nebulizador3.png",
-      "img/productos/nebulizador/nebulizador4.png",
-    ],
-    detalle: "San-Up",
-    descripcion: `
-El nebulizador San-Up 3058 Micrón está indicado para diferentes afecciones respiratorias. Convierte el medicamento líquido en vapor para ser inhalado y hace que llegue directamente a las zonas afectadas provocando menores efectos secundarios y mayor eficacia.
-
-La salud de tu familia en buenas manos
-Al ser ultrasónico, es ligero y su tamaño es reducido. Te permite realizar la nebulización de grandes cantidades de líquido de forma rápida y con menos ruido que aquellos que funcionan a pistón. Su uso resulta excelente para los niños que se inquietan fácilmente con este tipo de tratamientos. Es ideal para disminuir la inflamación de la garganta, facilitar el paso del aire por la laringe y normalizar la frecuencia respiratoria.
-
-Trae accesorios
-Además, para posibilitar su funcionamiento cuenta con boquilla.
-
-Sistema monocámara
-Esta característica hace posible administrar directamente el fármaco o la solución fisiológica, sin necesidad de agregar agua.
-
-Dimensiones: 1.2kg de ancho, 125mm de alto, 175mm de profundidad.
-
-*********************************************************
-
-Este es un producto usado pero en excelente estado!
-
-La primer imagen es ilustrativa no es una foto real
-`,
-    stock: 1,
-    precio: 40000,
+    precio: 6034,
+    precioOferta: 3500,
   },
 
   {
@@ -685,7 +706,8 @@ Es apto para lavavajillas: Sí
 Incluye tapa: No
 `,
     stock: 20,
-    precio: 4000,
+    precio: 6500,
+    precioOferta: 4000,
   },
   {
     id: 16,
@@ -700,7 +722,8 @@ Incluye tapa: No
   Es liviana y su cuerpo de aluminio la hace resistente pero a la vez portable y de fácil manipulación, resistente al agua y antideslizante.
   Es bajo consumo y utiliza pilas triple AAA (No vienen incluidas)`,
     stock: 2,
-    precio: 6000,
+    precio: 9000,
+    precioOferta: 5000,
   },
 
   {
@@ -713,7 +736,8 @@ Incluye tapa: No
     detalle: "The Kitchen Elements",
     descripcion: ``,
     stock: 5,
-    precio: 3500,
+    precio: 7000,
+    precioOferta: 3500,
   },
 
   {
@@ -725,7 +749,8 @@ Incluye tapa: No
 
 Elegi el que mas te guste!`,
     stock: 20,
-    precio: 1000,
+    precio: 2000,
+    precioOferta: 1000,
   },
 
   /* {
@@ -789,6 +814,7 @@ UTENSILIO DE COCINA ESPUMADERA
 LINEA PREMIUM MANGO DE ACERO INOXIDABLE Y NYLON    
 `,
     stock: 2,
-    precio: 2000,
+    precio: 4300,
+    precioOferta: 2000,
   },
 ];

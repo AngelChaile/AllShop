@@ -22,6 +22,27 @@ let mostrarProductos = (page = 1) => {
     pro.className = "pro";
 
     pro.innerHTML = `
+  <img src="${product.img[0]}" alt="${product.nombre}">
+  <div class="des">
+      <span>${product.detalle}</span>
+      <h5>${product.nombre}</h5>
+      <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+      </div>
+      <div class="price-container">
+          <span class="original-price">$${product.precio}</span>
+         
+          <span class="offer-price">$${product.precioOferta}</span>
+      </div>
+  </div>
+  <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+`;
+
+    /* pro.innerHTML = `
       <img src="${product.img[0]}" alt="${product.nombre}">
       <div class="des">
           <span>${product.detalle}</span>
@@ -37,7 +58,7 @@ let mostrarProductos = (page = 1) => {
       </div>
       <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
     `;
-
+ */
     pro.addEventListener("click", () => {
       localStorage.setItem("selectedProduct", JSON.stringify(product));
       localStorage.setItem("origenProducto", "shop");

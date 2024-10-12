@@ -297,12 +297,36 @@ body {
   color: rgb(243, 181, 25);
 }
 
-#product1 .pro .des h4 {
+
+/***** MODIFICACIONES PARA PRECIO PROMO******7
+
+/* #product1 .pro .des h4 {
   padding-top: 7px;
   font-size: 15px;
   font-weight: 700;
   color: var(--verdeAzul);
 }
+ */
+
+/* Precio original tachado */
+#product1 .pro .des .price-container .original-price {
+  text-decoration: line-through;
+  color: #999; /* Color gris para el precio tachado */
+  margin-right: 10px;
+  font-size: 13px;
+  padding-top: 7px;
+}
+
+/* Precio de oferta */
+#product1 .pro .des .price-container .offer-price {
+  color: #e74c3c; /* Color rojo para la oferta */
+  font-size: 15px;
+  font-weight: 700;
+  margin-left: 22px;
+}
+
+/****************************/
+
 
 #product1 .pro .cart {
   width: 40px;
@@ -622,9 +646,28 @@ footer .copyright {
   padding: 40px 0 20px 0;
 }
 
-#prodetails .single-pro-details h2 {
+/**************** PRECIO OFERTA*********************/
+
+/* #prodetails .single-pro-details h2 {
   font-size: 26px;
+} */
+
+#prodetails .single-pro-details .price-container .original-price {
+  text-decoration: line-through;
+  color: #999; /* Color gris para el precio tachado */
+  margin-right: 10px;
+  font-size: 18px;
 }
+
+/* Precio de oferta */
+#prodetails .single-pro-details .price-container .offer-price {
+  /*color: #e74c3c;  Color rojo para la oferta */
+  font-size: 26px;
+  font-weight: bold;
+  margin-left: 22px;
+}
+
+/*********************/
 
 #product-stock {
   color: var(--verdeAzulado);

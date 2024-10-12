@@ -37,7 +37,11 @@ if (product) {
           <div class="single-pro-details">
             <h6>Inicio / Producto</h6>
             <h4 id="product-title">${nombre}</h4>
-            <h2 id="product-price">$ ${precio}</h2>
+      <div class="price-container">
+          <span class="original-price">$${product.precio}</span>
+         
+          <span class="offer-price">$${product.precioOferta}</span>
+      </div>
       
             <h4 id="product-stock">
               <span class="stock-label">Stock:</span>

@@ -1,6 +1,6 @@
 const featuredProductsContainer = document.querySelector(".swiper-wrapper");
 
-const featuredProducts = products.slice(4, 18); // Obtener solo 8 productos destacados
+const featuredProducts = products.slice(0, 14); // Obtener solo 8 productos destacados
 
 featuredProducts.forEach((product) => {
   const slide = document.createElement("div");
@@ -19,7 +19,11 @@ featuredProducts.forEach((product) => {
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
         </div>
-        <h4>$${product.precio}</h4>
+      <div class="price-container">
+          <span class="original-price">$${product.precio}</span>
+         
+          <span class="offer-price">$${product.precioOferta}</span>
+      </div>
       </div>
       <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
     </div>
