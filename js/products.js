@@ -382,7 +382,7 @@ Color: Gris claro.
 `,
     stock: 1,
     precio: 44300,
-    precioOferta: 30000,
+    precioOferta: 28000,
   },
 
   {
