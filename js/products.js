@@ -349,7 +349,7 @@ Atencion! este es un producto usado pero en excelente estado
 es un conjunto marca Lotto Original!`,
     stock: 1,
     precio: 30000,
-    precio: 25000,
+    precioOferta: 25000,
   },
 
   {
@@ -540,8 +540,8 @@ Material: Teflón
 Linea: Yo Cocino
 Medidas: 32x22x4.5cm`,
     stock: 0,
-    precio: 4000,
-    precioOferta: 6500,
+    precio: 6500,
+    precioOferta: 4000,
   },
   {
     id: 5,
