@@ -278,7 +278,7 @@ Logo CHAMPION aplicado y estampado.
 
 Talle M
 `,
-    stock: 1,
+    stock: 0,
     precio: 60699,
     precioOferta: 35000,
   },
@@ -328,6 +328,29 @@ Temporada: 23-Q4`,
   },
 
   {
+    id: 14,
+    nombre: "SHORT RUSTICO CHAMPION",
+    img: [
+      "img/productos/ropa/shortBlanco.webp",
+      "img/productos/ropa/shortBlanco1.webp",
+      "img/productos/ropa/shortBlanco2.webp",
+      "img/productos/ropa/shortBlanco3.webp",
+    ],
+    detalle: "Champion",
+    descripcion: `
+SHORT RUSTICO CHAMPION MUJER XL
+
+Cintura con elastico alto,Bolsillos laterales sin cierre,Diseño de short corto
+Material Algodon
+Color    Blanco
+Talle    L   
+`,
+    stock: 1,
+    precio: 33000,
+    precioOferta: 20000,
+  },
+
+  {
     id: 15,
     nombre: "CONJUNTO LOTTO",
     img: [
@@ -352,41 +375,10 @@ es un conjunto marca Lotto Original!`,
     precioOferta: 25000,
   },
 
-  {
-    id: 25,
-    nombre: "SHORT CHAMPION MODA 8",
-    img: [
-      "img/productos/ropa/shortChampionGris.webp",
-      "img/productos/ropa/shortChampionGris1.webp",
-    ],
-    detalle: "Champion",
-    descripcion: `
-TIPO DE PRODUCTO: INDUMENTARIA
-PRODUCTOS 100% ORIGINALES
-SEXO: HOMBRE
-NOMBRE: SHORT CHAMPION MODA 8 INCH POWERBLEND Hombre GR
-TALLE: M
-MODELO: 062330863293106
 
-Cálido y cómodo 9 oz. mezcla de forro polar de algodón y poliéster.
-Reducción de pelusas.
-Encogimiento reducido.
-Hecho con algodón cultivado en EE.UU.
-Detalles de puntadas adicionales para mayor durabilidad.
-Puños de canalé de 3 pulgadas y dobladillo plano.
-Etiqueta del cuello cosida en los 4 lados.
-Longitud del cuerpo de 28,5 pulgadas.
-Ajuste estándar para un look clásico.
-Parche icónico en forma de C en la manga izquierda.
-Color: Gris claro.    
-`,
-    stock: 1,
-    precio: 44300,
-    precioOferta: 28000,
-  },
 
   {
-    id: 11,
+    id: 16,
     nombre: "BUZO CHAMPION C/ CAPUCHA",
     img: [
       "img/productos/ropa/buzoChampionGris.webp",
@@ -414,7 +406,7 @@ TALLE XS`,
   },
 
   {
-    id: 6,
+    id: 17,
     nombre: "NEBULIZADOR SAN-UP",
     img: [
       "img/productos/nebulizador/nebulizador0.webp",
@@ -450,7 +442,7 @@ La primer imagen es ilustrativa no es una foto real
   },
 
   {
-    id: 1,
+    id: 18,
     nombre: "BANDEJA OVAL",
     img: [
       "img/productos/platos/bandeja_oval_floreada.png",

@@ -1,3 +1,5 @@
+import { updateCartBubble } from './storage.js';
+
 // BOTONES PARA ABRIR Y CERRAR MENU EN PANTALLAS PEQUEÑAS
 const bar = document.getElementById("bar");
 const close = document.getElementById("close");
@@ -15,20 +17,6 @@ if (close) {
   });
 }
 
-// NEWSLETTER
-document.addEventListener("DOMContentLoaded", () => {
-  const subscribeBtn = document.querySelector(".form button");
-  const emailInput = document.querySelector('.form input[type="email"]');
+// Actualizar la burbuja del carrito al cargar la página
+document.addEventListener('DOMContentLoaded', updateCartBubble);
 
-  subscribeBtn.addEventListener("click", () => {
-    Swal.fire({
-      title: "Oops...!",
-      text: "Lo sentimos momentaneamente no disponible",
-      imageUrl: "img/emojiTriste.png",
-      imageWidth: 150,
-      imageHeight: 150,
-      imageAlt: "Emoticon triste",
-    });
-    emailInput.value = "";
-  });
-});

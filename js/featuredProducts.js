@@ -1,6 +1,9 @@
+import { addToCart } from './cart.js';
+
 const featuredProductsContainer = document.querySelector(".swiper-wrapper");
 
-const featuredProducts = products.slice(0, 14); // Obtener solo 8 productos destacados
+// Obtener solo 14 productos destacados
+const featuredProducts = products.slice(0, 14); 
 
 featuredProducts.forEach((product) => {
   const slide = document.createElement("div");
@@ -19,56 +22,58 @@ featuredProducts.forEach((product) => {
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
         </div>
-      <div class="price-container">
+        <div class="price-container">
           <span class="original-price">$${product.precio}</span>
-         
           <span class="offer-price">$${product.precioOferta}</span>
+        </div>
       </div>
-      </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+      <a href="#" class="add-to-cart" data-product-id="${product.id}" data-product-name="${product.nombre}" data-product-price="${product.precioOferta}" data-product-stock="${product.stock}">
+        <i class="fa-solid fa-cart-shopping cart"></i> Agregar al carrito
+      </a>
     </div>
   `;
 
+  // Cuando el usuario haga clic en la tarjeta, ir a la página de detalles del producto
   slide.addEventListener("click", () => {
     localStorage.setItem("selectedProduct", JSON.stringify(product));
     window.location.href = "productDetails.html";
   });
 
+  // Agregar la tarjeta de producto al contenedor Swiper
   featuredProductsContainer.appendChild(slide);
 });
 
-// Inicializar Swiper **después** de que los productos han sido añadidos al DOM
+// Inicializar Swiper después de que los productos han sido añadidos al DOM
 const swiper = new Swiper(".swiper", {
-  slidesPerView: 4, // Número de productos visibles en pantallas grandes
-  spaceBetween: 20, // Espacio entre productos
-  /* scrollbar: {
-    el: ".swiper-scrollbar",
-  }, */
-
+  slidesPerView: 4,
+  spaceBetween: 20,
   loop: true,
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
   },
   breakpoints: {
-    320: {
-      // Pantallas pequeñas
-      slidesPerView: 1, // Muestra 1 producto en pantallas muy pequeñas
-    },
-    480: {
-      // Pantallas pequeñas
-      slidesPerView: 2, // Muestra 2 productos en pantallas pequeñas
-    },
-    640: {
-      // Pantallas medianas
-      slidesPerView: 2, // Muestra 2 productos en pantallas medianas
-    },
-    768: {
-      // Pantallas más grandes
-      slidesPerView: 2, // Muestra 2 productos en pantallas grandes
-    },
-    1024: {
-      slidesPerView: 4, // Se mantiene en 4 para pantallas muy grandes
-    },
+    320: { slidesPerView: 1 }, // Pantallas pequeñas
+    480: { slidesPerView: 2 },
+    640: { slidesPerView: 2 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 4 }, // Pantallas grandes
   },
+});
+
+// Funcionalidad para agregar productos al carrito
+document.addEventListener('click', (event) => {
+  if (event.target.closest('.add-to-cart')) {
+    event.preventDefault(); // Evita que el enlace haga scroll hacia arriba
+    
+    const button = event.target.closest('.add-to-cart');
+    const product = {
+      id: button.dataset.productId,
+      name: button.dataset.productName,
+      price: button.dataset.productPrice,
+      stock: button.dataset.productStock,
+    };
+
+    addToCart(product);
+  }
 });

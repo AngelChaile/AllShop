@@ -25,12 +25,14 @@
         <li><a href="contact.html">Contacto</a></li>
         <li id="lg-bag">
           <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+          <span id="cart-count" class="cart-bubble">0</span> <!-- Burbuja del carrito -->
         </li>
         <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
       </nav>
     </div>
     <div id="mobile">
       <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+      <span id="cart-count" class="cart-bubble">0</span> <!-- Burbuja del carrito -->
       <i id="bar" class="fas fa-outdent"></i>
     </div>
   </header>
@@ -167,6 +169,7 @@
     </div>
   </section>
 
+  <!-- NEWSLETTER -->
   <section id="newsletter" class="section-p1 section-m1">
     <div class="newstext">
       <h4>NEWSLETTER</h4>
@@ -238,13 +241,15 @@
 
   <script src="https://kit.fontawesome.com/b6c61db0c1.js" crossorigin="anonymous"></script>
   <script src="js/products.js"></script>
-  <script src="js/menu.js"></script>
+  <script src="js/index.js" type="module"></script>
+
+  <script src="js/menu.js" type="module"></script>
   <!-- <script src="js/startProduct.js"></script> -->
 
   <!-- Libreria Swiper para el carrousel -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <script src="js/featuredProducts.js"></script>
+  <script src="js/featuredProducts.js" type="module"></script>
 
 </body>
 
