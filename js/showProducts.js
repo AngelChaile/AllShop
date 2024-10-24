@@ -39,7 +39,9 @@ let mostrarProductos = (page = 1) => {
           <span class="offer-price">$${product.precioOferta}</span>
       </div>
   </div>
-  <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+  <a href="#" class="add-to-cart" data-product-id="${product.id}" data-product-name="${product.nombre}" data-product-price="${product.precioOferta}" data-product-stock="${product.stock}">
+    <i class="fa-solid fa-cart-shopping cart"></i>
+  </a>
 `;
 
     /* pro.innerHTML = `

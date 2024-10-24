@@ -28,7 +28,7 @@ featuredProducts.forEach((product) => {
         </div>
       </div>
       <a href="#" class="add-to-cart" data-product-id="${product.id}" data-product-name="${product.nombre}" data-product-price="${product.precioOferta}" data-product-stock="${product.stock}">
-        <i class="fa-solid fa-cart-shopping cart"></i> Agregar al carrito
+        <i class="fa-solid fa-cart-shopping cart"></i>
       </a>
     </div>
   `;
