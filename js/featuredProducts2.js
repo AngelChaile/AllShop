@@ -25,7 +25,9 @@ featuredProducts.forEach((product) => {
           <span class="offer-price">$${product.precioOferta}</span>
       </div>
       </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a> /* este es el boton para agregar productos al carrito directamente desde la tarjeta sin necesidad de ir a la descripcion del producto primero */
+      <a href="#">
+        <i class="fa-solid fa-cart-shopping cart"></i>
+      </a> 
     </div>
   `;
 

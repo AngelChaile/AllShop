@@ -1,6 +1,6 @@
 const products = [
   {
-    id: 23,
+    id: 1,
     nombre: "BUZO CHAMPION HOMBRE",
     img: [
       "img/productos/ropa/buzoChampionGrey.webp",
@@ -26,7 +26,7 @@ Talle XS:
   },
 
   {
-    id: 10,
+    id: 2,
     nombre: "BUZO CHAMPION",
     img: [
       "img/productos/ropa/buzoChampionNegro.webp",
@@ -52,7 +52,7 @@ Talle: M`,
   },
 
   {
-    id: 11,
+    id: 3,
     nombre: "BUZO CHAMPION",
     img: [
       "img/productos/ropa/buzoChampionLetras.webp",
@@ -75,7 +75,7 @@ Talle: M`,
   },
 
   {
-    id: 14,
+    id: 4,
     nombre: "REMERA CHAMPIÓN",
     img: [
       "img/productos/ropa/remeraChampionNegra.webp",
@@ -98,7 +98,7 @@ Temporada: 24-Q2
   },
 
   {
-    id: 9,
+    id: 5,
     nombre: "PANTALON CHAMPIÓN UNISEX",
     img: [
       "img/productos/ropa/pantalonChampionBordo.jpeg",
@@ -158,7 +158,7 @@ XS`,
   },
 
   {
-    id: 10,
+    id: 6,
     nombre: "REMERA CHAMPION",
     img: [
       "img/productos/ropa/remeraChampionNaranja.webp",
@@ -185,7 +185,7 @@ marca:        champion
   },
 
   {
-    id: 24,
+    id: 7,
     nombre: "CAMPERA CHAMPION ROMPEVIENTO",
     img: [
       "img/productos/ropa/camperaChampionAzul.webp",
@@ -224,7 +224,7 @@ SKU: CHICHHV1015549369072
   },
 
   {
-    id: 9,
+    id: 8,
     nombre: "BUZO CHAMPIÓN DAMA",
     img: [
       "img/productos/ropa/buzoBeigeChampion.webp",
@@ -259,7 +259,7 @@ Composición: 100% algodón
   },
 
   {
-    id: 12,
+    id: 9,
     nombre: "CAMPERA CHAMPIÓN",
     img: [
       "img/productos/ropa/camperaChampionGris.jpg",
@@ -284,7 +284,7 @@ Talle M
   },
 
   {
-    id: 12,
+    id: 10,
     nombre: "REMERA CHAMPIÓN",
     img: [
       "img/productos/ropa/remeraChampionGris.jpg",
@@ -308,7 +308,7 @@ Temporada: 24-Q2`,
   },
 
   {
-    id: 13,
+    id: 11,
     nombre: "REMERA CHAMPIÓN",
     img: [
       "img/productos/ropa/remeraChampion.webp",
@@ -328,7 +328,7 @@ Temporada: 23-Q4`,
   },
 
   {
-    id: 14,
+    id: 12,
     nombre: "SHORT RUSTICO CHAMPION",
     img: [
       "img/productos/ropa/shortBlanco.webp",
@@ -351,7 +351,7 @@ Talle    L
   },
 
   {
-    id: 15,
+    id: 13,
     nombre: "CONJUNTO LOTTO",
     img: [
       "img/productos/ropa/conjuntoLotto.png",
@@ -378,7 +378,7 @@ es un conjunto marca Lotto Original!`,
 
 
   {
-    id: 16,
+    id: 14,
     nombre: "BUZO CHAMPION C/ CAPUCHA",
     img: [
       "img/productos/ropa/buzoChampionGris.webp",
@@ -406,7 +406,7 @@ TALLE XS`,
   },
 
   {
-    id: 17,
+    id: 15,
     nombre: "NEBULIZADOR SAN-UP",
     img: [
       "img/productos/nebulizador/nebulizador0.webp",
@@ -442,7 +442,7 @@ La primer imagen es ilustrativa no es una foto real
   },
 
   {
-    id: 18,
+    id: 16,
     nombre: "BANDEJA OVAL",
     img: [
       "img/productos/platos/bandeja_oval_floreada.png",
@@ -506,7 +506,7 @@ Largo total: 25 cm
   },
  */
   {
-    id: 4,
+    id: 17,
     nombre: "ASADERA MOLDE RECTANGULAR",
     img: [
       "img/productos/moldes/molde_acero.png",
@@ -536,7 +536,7 @@ Medidas: 32x22x4.5cm`,
     precioOferta: 4000,
   },
   {
-    id: 5,
+    id: 18,
     nombre: "TARTERA DESMONTABLE ANTIADHERENTE",
     img: [
       "img/productos/moldes/tarteraDesmontableN20.webp",
@@ -636,7 +636,7 @@ Es descartable: No
   },
  */
   {
-    id: 8,
+    id: 19,
     nombre: "GUANTES DE SILICONA PAR LAVAR",
     img: [
       "img/productos/varios/guantes.webp",
@@ -672,7 +672,7 @@ CARACTERISTICAS:
   },
 
   {
-    id: 27,
+    id: 20,
     nombre: "MOLDE SILICONA PARA CUPCAKES",
     img: [
       "img/productos/moldes/molde_muffins.webp",
@@ -702,7 +702,7 @@ Incluye tapa: No
     precioOferta: 4000,
   },
   {
-    id: 16,
+    id: 21,
     nombre: "MINI LINTERNA 9 LEDS",
     img: [
       "img/productos/varios/linterna.png",
@@ -719,7 +719,7 @@ Incluye tapa: No
   },
 
   {
-    id: 20,
+    id: 22,
     nombre: "PISA PAPAS DE ACERO ",
     img: [
       "img/productos/utensillos/pisaPapas.png",
@@ -733,7 +733,7 @@ Incluye tapa: No
   },
 
   {
-    id: 19,
+    id: 23,
     nombre: "BOMBILLAS",
     img: ["img/productos/utensillos/bombillas.png"],
     detalle: "Bombillas Varios Colores",
@@ -745,48 +745,9 @@ Elegi el que mas te guste!`,
     precioOferta: 1000,
   },
 
-  /* {
-    id: 21,
-    nombre: "BUZO CHAMPION CON FRIZA",
-    img: [
-      "img/productos/ropa/buzoChampion.jpeg",
-      "img/productos/ropa/buzoChampion1.jpeg",
-    ],
-    detalle: "Champión",
-    descripcion: `
-Género: Unisex
-Edad: Adulto
-Talle: S
-Color predominante: Amarillo
-Material Principal: Algodón con frizza`,
-    stock: 0,
-    precio: 15000,
-  },
-
+  
   {
-    id: 22,
-    nombre: "PIZARRA MÁGICA 8,5",
-    img: [
-      "img/productos/varios/pizarraMagica.webp",
-      "img/productos/varios/pizarraMagica1.webp",
-    ],
-    detalle: "Magic Pad Tablet LCD",
-    descripcion: `
-Pizarra Infantil Magic Pad Tablet LCD 8,5".
-Estas pizarras estimulan la imaginación de los niños, las pizarras magnéticas les producen fascinación a los niños y les puede servir para estimular su capacidad creativa y potenciar la imaginación.
-Las pizarras magicas favorecen el proceso de aprendizaje en los niños, y estimulan la memoria , Una pizarra mágica ofrece una oportunidad para compartir tiempo con el niño.
-Incluye lápiz: Sí
-Materiales: Lapiz
-Personaje: LISIBLE
-Largo x Ancho: 22 cm x 14 cm
-Edad mínima recomendada
-3 años`,
-    stock: 0,
-    precio: 6500,
-  },
- */
-  {
-    id: 29,
+    id: 24,
     nombre: "ESPUMADERA NYLON C/ MANGO ACERO",
     img: [
       "img/productos/utensillos/espumaderaNegra.webp",

@@ -1,5 +1,3 @@
-import { addToCart } from './cart.js';
-
 const featuredProductsContainer = document.querySelector(".swiper-wrapper");
 
 // Obtener solo 14 productos destacados
@@ -27,7 +25,7 @@ featuredProducts.forEach((product) => {
           <span class="offer-price">$${product.precioOferta}</span>
         </div>
       </div>
-      <a href="#" class="add-to-cart" data-product-id="${product.id}" data-product-name="${product.nombre}" data-product-price="${product.precioOferta}" data-product-stock="${product.stock}">
+      <a href="#">
         <i class="fa-solid fa-cart-shopping cart"></i>
       </a>
     </div>
@@ -61,19 +59,3 @@ const swiper = new Swiper(".swiper", {
   },
 });
 
-// Funcionalidad para agregar productos al carrito
-document.addEventListener('click', (event) => {
-  if (event.target.closest('.add-to-cart')) {
-    event.preventDefault(); // Evita que el enlace haga scroll hacia arriba
-    
-    const button = event.target.closest('.add-to-cart');
-    const product = {
-      id: button.dataset.productId,
-      name: button.dataset.productName,
-      price: button.dataset.productPrice,
-      stock: button.dataset.productStock,
-    };
-
-    addToCart(product);
-  }
-});
