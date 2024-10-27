@@ -1,7 +1,7 @@
 // productDetails.js
 
 import { showAlert } from "./alerts.js";
-import { saveCart, getCart } from "./storage.js";
+import { saveCart, getCart, updateCartBubble } from "./storage.js";
 
 // Mostrar detalles del producto en productDetails.html
 const productDetailsContainer = document.getElementById("prodetails");
@@ -64,6 +64,8 @@ if (product) {
 
   // Función para agregar un producto al carrito
   function addToCart() {
+    
+
     // Obtener el carrito del localStorage
     const cart = getCart();
 
@@ -91,6 +93,7 @@ if (product) {
       localStorage.setItem("selectedProduct", JSON.stringify(product));
 
       showAlert("Producto agregado al carrito", "success");
+      updateCartBubble()
     }
   }
 } else {

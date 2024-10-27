@@ -8,11 +8,21 @@ export function saveCart(cart) {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Actualizar la burbuja del carrito
+// Actualizar la burbuja del carrito en todas las vistas
 export function updateCartBubble() {
   const cart = getCart();
-  document.querySelector('#cart-count').textContent = cart.reduce((acc, item) => acc + item.quantity, 0);
+  
+  // Seleccionar todos los elementos con la clase 'cart-count'
+  const cartCountElements = document.querySelectorAll('.cart-count');
+  
+  const totalQuantity = cart.reduce((acc, item) => acc + item.quantity, 0);
+  
+  // Actualizar el contenido en cada elemento encontrado
+  cartCountElements.forEach(element => {
+    element.textContent = totalQuantity;
+  });
 }
+
 
 // Guardar el stock actualizado del producto
 export function saveProductStock(productId, stock) {
