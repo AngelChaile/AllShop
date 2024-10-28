@@ -1,6 +1,7 @@
 // Mostrar productos con paginación
 const proContainer = document.getElementById("pro-container");
 
+
 const productsPerPage = 8; // Número de productos por página
 let currentPage = 1; // Página actual
 
@@ -95,3 +96,4 @@ let mostrarPaginacion = (page) => {
 
 // Inicializar productos en la página actual
 mostrarProductos(currentPage);
+

@@ -8,20 +8,23 @@ export function saveCart(cart) {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Actualizar la burbuja del carrito en todas las vistas
+// Actualizar la burbuja del carrito
 export function updateCartBubble() {
   const cart = getCart();
-  
-  // Seleccionar todos los elementos con la clase 'cart-count'
-  const cartCountElements = document.querySelectorAll('.cart-count');
-  
   const totalQuantity = cart.reduce((acc, item) => acc + item.quantity, 0);
-  
+  const cartCountElements = document.querySelectorAll('.cart-bubble');
+
   // Actualizar el contenido en cada elemento encontrado
-  cartCountElements.forEach(element => {
-    element.textContent = totalQuantity;
+  cartCountElements.forEach((element) => {
+    if (totalQuantity > 0) {
+      element.textContent = totalQuantity;
+      element.style.display = "inline-block"; // Muestra la burbuja
+    } else {
+      element.style.display = "none"; // Oculta la burbuja si el carrito está vacío
+    }
   });
 }
+
 
 
 // Guardar el stock actualizado del producto

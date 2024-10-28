@@ -1,150 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Shop - Carrito</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-  </head>
-  <body>
-    <!-- HEADER START -->
-    <header id="header">
-      <a href="index.html"><img src="img/logo.png" class="logo" alt="logo" /></a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Shop - Carrito</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+</head>
+
+<body>
+  <!-- HEADER START -->
+  <header id="header">
+    <a href="index.html"><img src="img/logo.png" class="logo" alt="logo" /></a>
+    <div>
+      <nav id="navbar">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="shop.html">Tienda</a></li>
+        <li><a href="about.html">Nosotros</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+        <li id="lg-bag">
+          <a class="active" href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+          <span class="cart-bubble cart-count">0</span>
+        </li>
+        <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+      </nav>
+    </div>
+    <div id="mobile">
+      <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+      <span class="cart-bubble cart-count">0</span>
+      <i id="bar" class="fas fa-outdent"></i>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section id="page-header" class="about-header">
+    <h2>#Hablanos</h2>
+    <p>Si tienes alguna duda o consulta, no dudes en dejarnos un mensaje.</p>
+  </section>
+
+  <!-- CART -->
+  <section id="cart" class="section-p1">
+    <table width="100%">
+      <thead>
+        <tr>
+          <td>Imagen</td>
+          <td>Producto</td>
+          <td>Precio</td>
+          <td>Cantidad</td>
+          <td>Subtotal</td>
+          <td>Eliminar</td>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Aca se llenarán los productos dinámicamente -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- CART PAY -->
+  <section id="cart-add" class="section-p1">
+    <div id="coupon">
+      <h3>Aplicar Cupón</h3>
       <div>
-        <nav id="navbar">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="shop.html">Tienda</a></li>
-          <li><a href="about.html">Nosotros</a></li>
-          <li><a href="contact.html">Contacto</a></li>
-          <li id="lg-bag">
-            <a class="active" href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
-            <span class="cart-bubble cart-count">0</span>
-          </li>
-          <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
-        </nav>
+        <input type="text" placeholder="Ingresa tu cupón aquí">
+        <button class="normal">Aplicar</button>
       </div>
-      <div id="mobile">
-        <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
-        <span class="cart-bubble cart-count">0</span>
-        <i id="bar" class="fas fa-outdent"></i>
-      </div>
-    </header>
+    </div>
 
-    <!-- PAGE HEADER -->
-    <section id="page-header" class="about-header">
-      <h2>#Hablanos</h2>
-      <p>Si tienes alguna duda o consulta, no dudes en dejarnos un mensaje.</p>
-    </section>
-
-    <!-- CART -->
-    <section id="cart" class="section-p1">
-      <table width="100%">
-        <thead>
-          <tr>
-            <td>Acción</td>
-            <td>Imagen</td>
-            <td>Producto</td>
-            <td>Precio</td>
-            <td>Cantidad</td>
-            <td>Subtotal</td>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Aca se llenarán los productos dinámicamente -->
-        </tbody>
+    <div id="subtotal">
+      <h3>Total de la Compra</h3>
+      <table>
+        <tr>
+          <td>Subtotal</td>
+          <td>$0.00</td>
+        </tr>
+        <tr>
+          <td>Envío</td>
+          <td>Gratis</td>
+        </tr>
+        <tr>
+          <td><strong>Total</strong></td>
+          <td><strong>$0.00</strong></td>
+        </tr>
       </table>
-    </section>
+      <button class="normal">Finalizar compra</button>
+    </div>
+  </section>
 
-    <!-- CART PAY -->
-    <section id="cart-add" class="section-p1">
-      <div id="coupon">
-        <h3>Aplicar Cupón</h3>
-        <div>
-          <input type="text" placeholder="Ingresa tu cupón aquí">
-          <button class="normal">Aplicar</button>
+  <!-- NEWSLETTER -->
+  <section id="newsletter" class="section-p1 section-m1">
+    <div class="newstext">
+      <h4>NEWSLETTER</h4>
+      <p>
+        Suscríbete y recibe las últimas novedades y
+        <span>ofertas exclusivas</span>
+      </p>
+    </div>
+    <div class="form">
+      <input type="email" name="" id="" placeholder="Ingrese su email" />
+      <button id="btn-registrar" class="normal">Registrarse</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="section-p1">
+    <div class="col">
+      <img class="logo" src="img/logo.png" alt="logo de empresa" />
+      <address>
+        <h4>Contacto</h4>
+        <p><strong>Dirección:</strong> Av Siempre Viva 123, Morón</p>
+        <p><strong>Teléfono:</strong> 1161158649</p>
+        <p><strong>Horario:</strong> 10:00 - 18:00hs Lunes a Sábados</p>
+      </address>
+      <div class="follow">
+        <h4>Síguenos</h4>
+        <div class="icon">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-youtube"></i>
+          <i class="fab fa-twitter"></i>
         </div>
       </div>
+    </div>
+    <div class="col">
+      <h4>Acerca de</h4>
+      <a href="#">Acerca de nosotros</a>
+      <a href="about.html">Información de Envío</a>
+      <a href="#">Política de Privacidad</a>
+      <a href="#">Términos y Condiciones</a>
+      <a href="contact.html">Contáctanos</a>
+    </div>
 
-      <div id="subtotal">
-        <h3>Total de la Compra</h3>
-        <table>
-          <tr>
-            <td>Subtotal</td>
-            <td>$0.00</td>
-          </tr>
-          <tr>
-            <td>Envío</td>
-            <td>Gratis</td>
-          </tr>
-          <tr>
-            <td><strong>Total</strong></td>
-            <td><strong>$0.00</strong></td>
-          </tr>
-        </table>
-        <button class="normal">Finalizar compra</button>
-      </div>
-    </section>
+    <div class="col">
+      <h4>Mi Cuenta</h4>
+      <a href="#">Iniciar Sesión</a>
+      <a href="https://angelchaile.github.io/Portafolio/">Ver Portafolio</a>
+      <a href="https://github.com/AngelChaile">GitHub</a>
+      <a href="#">Ayuda</a>
+    </div>
 
-    <!-- Footer -->
-    <footer class="section-p1">
-      <div class="col">
-        <img class="logo" src="img/logo.png" alt="logo de empresa" />
-        <address>
-          <h4>Contacto</h4>
-          <p><strong>Dirección:</strong> Av Siempre Viva 123, Morón</p>
-          <p><strong>Teléfono:</strong> 1161158649</p>
-          <p><strong>Horario:</strong> 10:00 - 18:00hs Lunes a Sábados</p>
-        </address>
-        <div class="follow">
-          <h4>Síguenos</h4>
-          <div class="icon">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-youtube"></i>
-            <i class="fab fa-twitter"></i>
-          </div>
-        </div>
+    <div class="col install">
+      <h4>Descargar App</h4>
+      <p>Disponible en Google Play</p>
+      <div class="row">
+        <img src="img/pay/app.jpg" alt="App Store" />
+        <img src="img/pay/play.jpg" alt="Google Play" />
       </div>
-      <div class="col">
-        <h4>Acerca de</h4>
-        <a href="#">Acerca de nosotros</a>
-        <a href="about.html">Información de Envío</a>
-        <a href="#">Política de Privacidad</a>
-        <a href="#">Términos y Condiciones</a>
-        <a href="contact.html">Contáctanos</a>
-      </div>
+      <p>Pago Seguro</p>
+      <img src="img/pay/pay.png" alt="Métodos de Pago" />
+    </div>
 
-      <div class="col">
-        <h4>Mi Cuenta</h4>
-        <a href="#">Iniciar Sesión</a>
-        <a href="https://angelchaile.github.io/Portafolio/">Ver Portafolio</a>
-        <a href="https://github.com/AngelChaile">GitHub</a>
-        <a href="#">Ayuda</a>
-      </div>
+    <div class="copyright">
+      <p>Desarrollado por Angel Chaile (2024) &#169;</p>
+    </div>
+  </footer>
 
-      <div class="col install">
-        <h4>Descargar App</h4>
-        <p>Disponible en Google Play</p>
-        <div class="row">
-          <img src="img/pay/app.jpg" alt="App Store" />
-          <img src="img/pay/play.jpg" alt="Google Play" />
-        </div>
-        <p>Pago Seguro</p>
-        <img src="img/pay/pay.png" alt="Métodos de Pago" />
-      </div>
+  <script src="https://kit.fontawesome.com/b6c61db0c1.js" crossorigin="anonymous"></script>
+  <script src="js/menu.js" type="module"></script>
+  <script src="js/cart.js" type="module"></script>
+</body>
 
-      <div class="copyright">
-        <p>Desarrollado por Angel Chaile (2024) &#169;</p>
-      </div>
-    </footer>
-
-    <script
-      src="https://kit.fontawesome.com/b6c61db0c1.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="js/menu.js" type="module"></script>
-    <script src="js/cart.js" type="module"></script>
-  </body>
 </html>

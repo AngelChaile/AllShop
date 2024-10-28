@@ -51,11 +51,14 @@ const swiper = new Swiper(".swiper", {
     disableOnInteraction: false,
   },
   breakpoints: {
-    320: { slidesPerView: 1 }, // Pantallas pequeñas
+    320: { slidesPerView: 1 },
     480: { slidesPerView: 2 },
     640: { slidesPerView: 2 },
     768: { slidesPerView: 2 },
-    1024: { slidesPerView: 4 }, // Pantallas grandes
+    1024: { slidesPerView: 4 },
   },
 });
+
+
+
 

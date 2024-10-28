@@ -150,18 +150,6 @@ body {
 }
 
 /* BURBUJA EN CARRITO DE COMPRA */
-/* .cart-bubble {
-  background-color: var(--verdeAzulado);
-  color: white;
-  border-radius: 50%;
-  padding: 2px 4px 1px 4px;
-  font-size: 12px;
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  display: inline-block;
-} */
-
 .cart-bubble {
   background-color: var(--verdeAzulado);
   color: white;
@@ -1018,6 +1006,54 @@ pre {
   font-size: 13px;
 }
 
+/* Estilos generales para el botón de eliminar */
+.remove-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.3s ease;
+  font-size: 1.2rem; 
+  color: #888; 
+}
+
+.remove-btn:hover {
+  color: #ff6347;
+  transform: scale(1.2); /* Aumenta el tamaño ligeramente en hover */
+}
+
+/* Estilos específicos para el icono */
+.remove-btn i {
+  pointer-events: none; /* Asegura que solo el botón detecte el hover */
+}
+
+/* Estilos para el input de cantidad */
+.quantity-input {
+  width: 60px;
+  padding: 5px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+  appearance: textfield; /* For cross-browser consistency */
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.quantity-input:hover {
+  border-color: #4CAF50;
+}
+
+.quantity-input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.quantity-input::-webkit-inner-spin-button,
+.quantity-input::-webkit-outer-spin-button {
+  -webkit-appearance: auto;
+  margin: 0;
+}
+
 #cart-add {
   display: flex;
   flex-wrap: wrap;
@@ -1068,6 +1104,7 @@ pre {
   padding: 10px;
   font-size: 13px;
 }
+
 
 /* Start Media Query 799px */
 @media (max-width: 799px) {

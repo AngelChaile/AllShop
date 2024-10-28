@@ -1,4 +1,7 @@
 import { updateCartBubble } from './storage.js';
+import { showAlert } from './alerts.js';
+
+const btnRegistrarse = document.querySelector("#btn-registrar");
 
 // BOTONES PARA ABRIR Y CERRAR MENU EN PANTALLAS PEQUEÑAS
 const bar = document.getElementById("bar");
@@ -19,4 +22,6 @@ if (close) {
 
 // Actualizar la burbuja del carrito al cargar la página
 document.addEventListener('DOMContentLoaded', updateCartBubble);
+
+btnRegistrarse.addEventListener("click", () => showAlert("Lo sentimos, aún no está disponible", "info"));
 
