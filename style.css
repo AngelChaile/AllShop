@@ -154,13 +154,13 @@ body {
   background-color: var(--verdeAzulado);
   color: white;
   border-radius: 50%;
-  padding: 2px 4px 0px 4px;
-  font-size: 12px;
+  padding: 4px 6px 1px 6px;
+  font-size: 11px;
   position: absolute;
   top: -7px;
   right: 6px;
   display: inline-block;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 
@@ -707,7 +707,7 @@ footer .copyright {
   color: var(--blanco);
 }
 
-/* estilo para la descripcion del producto */
+/* Estilo para la descripcion del producto */
 
 pre {
   white-space: pre-wrap;
@@ -720,7 +720,6 @@ pre {
   width: 100%;
 }
 
-/* fin descripcion */
 
 /* Slider de productos destacados */
 .swiper {
@@ -736,7 +735,7 @@ pre {
   margin-right: auto;
 }
 
-/* fin de slider */
+
 
 /* About Page */
 
@@ -1147,6 +1146,12 @@ pre {
     padding-left: 20px;
   }
 
+  .cart-bubble {
+    padding: 4px 6px 0px 6px;
+    top: 34px;
+    right: 111px;
+}
+
   #close {
     display: initial;
     position: absolute;
@@ -1384,11 +1389,9 @@ pre {
   }
 
   .cart-bubble {
-    border-radius: 50%;
-    padding: 4px 5px 1px;
+    padding: 4px 6px 0 6px;
     font-size: 12px;
     top: 25px;
     right: 58px;
-    font-weight: 500;
 }
 }
