@@ -4,6 +4,7 @@ import { getCart, saveCart, updateCartBubble } from "./storage.js";
 import { showAlert } from "./alerts.js";
 
 let couponApplied = false; // Controla si el cupón ya fue aplicado
+let totalWithDiscount = 0; // Variable global para almacenar el total con descuento
 
 // Función para aplicar el cupón de descuento
 function applyCoupon() {
@@ -19,7 +20,7 @@ function applyCoupon() {
     const cart = getCart();
     const subtotal = cart.reduce((sum, product) => sum + product.precioOferta * product.quantity, 0);
     const discount = subtotal * 0.10;
-    const totalWithDiscount = subtotal - discount;
+    totalWithDiscount = subtotal - discount;
 
     totalElement.textContent = `$${totalWithDiscount.toFixed(2)}`;
     showAlert("Se ha aplicado un cupón de descuento", "success");
@@ -62,7 +63,7 @@ export function updateCartUI() {
   });
 
   subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
-  totalElement.textContent = `$${subtotal.toFixed(2)}`;
+  totalElement.textContent = `$${couponApplied ? totalWithDiscount.toFixed(2) : subtotal.toFixed(2)}`;
 
   // Añadir eventos a los botones de eliminar producto
   const removeButtons = document.querySelectorAll(".remove-btn");
@@ -112,6 +113,38 @@ export function removeFromCart(index) {
   updateCartUI(); // Refrescar UI del carrito
 }
 
+// Función para enviar el pedido a WhatsApp
+function enviarPedidoWhatsApp() {
+  const cart = getCart();
+  if (cart.length === 0) {
+    showAlert("El carrito está vacío. Agrega productos antes de finalizar la compra.");
+    return;
+  }
+
+  // Construir el mensaje
+  let mensaje = "Hola, quiero realizar el siguiente pedido:\n";
+  let total = couponApplied ? totalWithDiscount : cart.reduce((sum, product) => sum + product.precioOferta * product.quantity, 0);
+
+  cart.forEach((producto, index) => {
+    mensaje += `${index + 1}. ${producto.nombre} - Cantidad: ${producto.quantity} - Precio: $${producto.precioOferta}\n`;
+    mensaje += `Imagen: ${producto.img[0]}\n`; // Agrega el enlace de la imagen
+  });
+
+  if (couponApplied) {
+    mensaje += "\n*Se aplicó un cupón de descuento del 10%.*";
+  }
+
+  mensaje += `\nTotal: $${total.toFixed(2)}`;
+  
+  // Codificar el mensaje para la URL de WhatsApp
+  const mensajeCodificado = encodeURIComponent(mensaje);
+  const numeroWhatsApp = "541161158649"; 
+  const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`;
+
+  // Redirigir a WhatsApp
+  window.open(urlWhatsApp, "_blank");
+}
+
 // Evento para cargar la interfaz del carrito al abrir la página
 document.addEventListener("DOMContentLoaded", () => {
   updateCartBubble();
@@ -123,5 +156,11 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
       applyCoupon();
     });
+  }
+
+  // Evento para el botón de "Finalizar compra"
+  const finalizarCompraButton = document.querySelector("#btnFinalizarCompra");
+  if (finalizarCompraButton) {
+    finalizarCompraButton.addEventListener("click", enviarPedidoWhatsApp);
   }
 });
