@@ -127,7 +127,7 @@ function enviarPedidoWhatsApp() {
 
   cart.forEach((producto, index) => {
     mensaje += `${index + 1}. ${producto.nombre} - Cantidad: ${producto.quantity} - Precio: $${producto.precioOferta}\n`;
-    mensaje += `Imagen: ${producto.img[0]}\n`; // Agrega el enlace de la imagen
+    /* mensaje += `Imagen: ${producto.img[0]}\n`; */
   });
 
   if (couponApplied) {
