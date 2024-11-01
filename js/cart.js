@@ -113,6 +113,13 @@ export function removeFromCart(index) {
   updateCartUI(); // Refrescar UI del carrito
 }
 
+// Función para vaciar el carrito
+function clearCart() {
+  saveCart([]); // Guardar el carrito vacío
+  updateCartBubble(); // Actualizar la burbuja del carrito a 0
+  updateCartUI(); // Refrescar la UI para mostrar el carrito vacío
+}
+
 // Función para enviar el pedido a WhatsApp
 function enviarPedidoWhatsApp() {
   const cart = getCart();
@@ -121,7 +128,6 @@ function enviarPedidoWhatsApp() {
     return;
   }
 
-  // Construir el mensaje
   let mensaje = "Hola, quiero realizar el siguiente pedido:\n";
   let total = couponApplied ? totalWithDiscount : cart.reduce((sum, product) => sum + product.precioOferta * product.quantity, 0);
 
@@ -143,6 +149,9 @@ function enviarPedidoWhatsApp() {
 
   // Redirigir a WhatsApp
   window.open(urlWhatsApp, "_blank");
+
+  // Vaciar el carrito y actualizar la interfaz después de enviar el pedido
+  clearCart();
 }
 
 // Evento para cargar la interfaz del carrito al abrir la página

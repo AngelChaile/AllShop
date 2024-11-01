@@ -20,8 +20,20 @@ if (close) {
   });
 }
 
+
 // Actualizar la burbuja del carrito al cargar la página
 document.addEventListener('DOMContentLoaded', updateCartBubble);
 
 btnRegistrarse.addEventListener("click", () => showAlert("Lo sentimos, aún no está disponible", "info"));
+
+
+// Seleccionar el botón "All Shop del Index"
+const allShopButton = document.querySelector('#shopButton');
+
+if (allShopButton) {
+  // Si el botón existe, agregar el evento de click
+  allShopButton.addEventListener('click', () => {
+    window.location.href = 'shop.html';
+  });
+}
 
