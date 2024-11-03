@@ -1,5 +1,3 @@
-// cart.js
-
 import { getCart, saveCart, updateCartBubble } from "./storage.js";
 import { showAlert } from "./alerts.js";
 
