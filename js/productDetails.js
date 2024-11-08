@@ -1,5 +1,4 @@
-import { showAlert } from "./alerts.js";
-import { saveCart, getCart, updateCartBubble } from "./storage.js";
+import { addToCart } from "./cart.js";
 
 // Mostrar detalles del producto en productDetails.html
 const productDetailsContainer = document.getElementById("prodetails");
@@ -55,45 +54,13 @@ if (product) {
     });
   });
 
-  // Cart //
+ 
   const btnComprar = document.getElementById("comprar");
 
-  btnComprar.addEventListener("click", addToCart);
-
-  // Función para agregar un producto al carrito
-  function addToCart() {
-    
-
-    // Obtener el carrito del localStorage
-    const cart = getCart();
-
-    // Buscar si el producto ya existe en el carrito
-    const existingItem = cart.find((item) => item.id === product.id);
-
-    if (product.stock === 0) {
-      showAlert("Producto Agotado", "error");
-    } else {
-      if (existingItem) {
-        existingItem.quantity += 1; // Si el producto ya está en el carrito, incrementar la cantidad
-        product.stock--;
-      } else {
-        cart.push({ ...product, quantity: 1 }); // Si no está, agregarlo con cantidad 1
-        product.stock--;
-      }
-
-      // Actualizar stock en la interfaz
-      document.getElementById("stockValue").textContent = product.stock;
-
-      // Guardar el carrito actualizado en localStorage
-      saveCart(cart);
-
-      // Actualizar el producto en localStorage con el nuevo stock
-      localStorage.setItem("selectedProduct", JSON.stringify(product));
-
-      showAlert("Producto agregado al carrito", "success");
-      updateCartBubble()
-    }
-  }
+  btnComprar.addEventListener("click", () => {
+    // Función para agregar un producto al carrito
+    addToCart(product);
+  });
 } else {
   productDetailsContainer.innerHTML = `<p>No se ha seleccionado ningún producto.</p>`;
 }

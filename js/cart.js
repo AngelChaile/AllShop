@@ -7,7 +7,9 @@ let totalWithDiscount = 0; // Variable global para almacenar el total con descue
 // Función para aplicar el cupón de descuento
 function applyCoupon() {
   const couponInput = document.querySelector("#coupon input");
-  const totalElement = document.querySelector("#subtotal table tr:nth-child(3) td:nth-child(2)");
+  const totalElement = document.querySelector(
+    "#subtotal table tr:nth-child(3) td:nth-child(2)"
+  );
 
   if (!couponInput || !totalElement) return;
 
@@ -16,8 +18,11 @@ function applyCoupon() {
   if (couponCode === "FAMILIA" && !couponApplied) {
     couponApplied = true; // Marcar el cupón como aplicado
     const cart = getCart();
-    const subtotal = cart.reduce((sum, product) => sum + product.precioOferta * product.quantity, 0);
-    const discount = subtotal * 0.10;
+    const subtotal = cart.reduce(
+      (sum, product) => sum + product.precioOferta * product.quantity,
+      0
+    );
+    const discount = subtotal * 0.1;
     totalWithDiscount = subtotal - discount;
 
     totalElement.textContent = `$${totalWithDiscount.toFixed(2)}`;
@@ -32,8 +37,12 @@ function applyCoupon() {
 // Función para actualizar la UI del carrito
 export function updateCartUI() {
   const cartTableBody = document.querySelector("#cart tbody");
-  const subtotalElement = document.querySelector("#subtotal table tr:nth-child(1) td:nth-child(2)");
-  const totalElement = document.querySelector("#subtotal table tr:nth-child(3) td:nth-child(2)");
+  const subtotalElement = document.querySelector(
+    "#subtotal table tr:nth-child(1) td:nth-child(2)"
+  );
+  const totalElement = document.querySelector(
+    "#subtotal table tr:nth-child(3) td:nth-child(2)"
+  );
 
   if (!cartTableBody || !subtotalElement || !totalElement) return;
 
@@ -61,7 +70,9 @@ export function updateCartUI() {
   });
 
   subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
-  totalElement.textContent = `$${couponApplied ? totalWithDiscount.toFixed(2) : subtotal.toFixed(2)}`;
+  totalElement.textContent = `$${
+    couponApplied ? totalWithDiscount.toFixed(2) : subtotal.toFixed(2)
+  }`;
 
   // Añadir eventos a los botones de eliminar producto
   const removeButtons = document.querySelectorAll(".remove-btn");
@@ -118,19 +129,61 @@ function clearCart() {
   updateCartUI(); // Refrescar la UI para mostrar el carrito vacío
 }
 
+// Función para agregar un producto al carrito
+export function addToCart(product) {
+  // Obtener el carrito del localStorage
+  const cart = getCart();
+
+  // Buscar si el producto ya existe en el carrito
+  const existingItem = cart.find((item) => item.id === product.id);
+
+  if (product.stock === 0) {
+    showAlert("Producto Agotado", "error");
+  } else {
+    if (existingItem) {
+      existingItem.quantity += 1; // Si el producto ya está en el carrito, incrementar la cantidad
+      product.stock--;
+    } else {
+      cart.push({ ...product, quantity: 1 }); // Si no está, agregarlo con cantidad 1
+      product.stock--;
+    }
+
+    // Actualizar stock en la interfaz
+    document.getElementById("stockValue").textContent = product.stock;
+
+    // Guardar el carrito actualizado en localStorage
+    saveCart(cart);
+
+    // Actualizar el producto en localStorage con el nuevo stock
+    localStorage.setItem("selectedProduct", JSON.stringify(product));
+
+    showAlert("Producto agregado al carrito", "success");
+    updateCartBubble();
+  }
+}
+
 // Función para enviar el pedido a WhatsApp
 function enviarPedidoWhatsApp() {
   const cart = getCart();
   if (cart.length === 0) {
-    showAlert("El carrito está vacío. Agrega productos antes de finalizar la compra.");
+    showAlert(
+      "El carrito está vacío. Agrega productos antes de finalizar la compra."
+    );
     return;
   }
 
   let mensaje = "Hola, quiero realizar el siguiente pedido:\n";
-  let total = couponApplied ? totalWithDiscount : cart.reduce((sum, product) => sum + product.precioOferta * product.quantity, 0);
+  let total = couponApplied
+    ? totalWithDiscount
+    : cart.reduce(
+        (sum, product) => sum + product.precioOferta * product.quantity,
+        0
+      );
 
   cart.forEach((producto, index) => {
-    mensaje += `${index + 1}. ${producto.nombre} - Cantidad: ${producto.quantity} - Precio: $${producto.precioOferta}\n`;
+    mensaje += `${index + 1}. ${producto.nombre} - Cantidad: ${
+      producto.quantity
+    } - Precio: $${producto.precioOferta}\n`;
     /* mensaje += `Imagen: ${producto.img[0]}\n`; */
   });
 
@@ -139,10 +192,10 @@ function enviarPedidoWhatsApp() {
   }
 
   mensaje += `\nTotal: $${total.toFixed(2)}`;
-  
+
   // Codificar el mensaje para la URL de WhatsApp
   const mensajeCodificado = encodeURIComponent(mensaje);
-  const numeroWhatsApp = "541161158649"; 
+  const numeroWhatsApp = "541161158649";
   const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`;
 
   // Redirigir a WhatsApp
