@@ -71,7 +71,7 @@ export function updateCartUI() {
 
   subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
   totalElement.textContent = `$${
-    couponApplied ? totalWithDiscount.toFixed(2) : subtotal.toFixed(2)
+    couponApplied ? (subtotal * 0.9).toFixed(2) : subtotal.toFixed(2)
   }`;
 
   // Añadir eventos a los botones de eliminar producto
@@ -131,36 +131,30 @@ function clearCart() {
 
 // Función para agregar un producto al carrito
 export function addToCart(product) {
-  // Obtener el carrito del localStorage
   const cart = getCart();
 
-  // Buscar si el producto ya existe en el carrito
   const existingItem = cart.find((item) => item.id === product.id);
 
   if (product.stock === 0) {
     showAlert("Producto Agotado", "error");
   } else {
     if (existingItem) {
-      existingItem.quantity += 1; // Si el producto ya está en el carrito, incrementar la cantidad
+      existingItem.quantity += 1;
       product.stock--;
     } else {
-      cart.push({ ...product, quantity: 1 }); // Si no está, agregarlo con cantidad 1
+      cart.push({ ...product, quantity: 1 });
       product.stock--;
     }
 
-    // Actualizar stock en la interfaz
     document.getElementById("stockValue").textContent = product.stock;
-
-    // Guardar el carrito actualizado en localStorage
     saveCart(cart);
-
-    // Actualizar el producto en localStorage con el nuevo stock
     localStorage.setItem("selectedProduct", JSON.stringify(product));
 
     showAlert("Producto agregado al carrito", "success");
     updateCartBubble();
   }
 }
+
 
 // Función para enviar el pedido a WhatsApp
 function enviarPedidoWhatsApp() {
@@ -173,18 +167,16 @@ function enviarPedidoWhatsApp() {
   }
 
   let mensaje = "Hola, quiero realizar el siguiente pedido:\n";
-  let total = couponApplied
-    ? totalWithDiscount
-    : cart.reduce(
-        (sum, product) => sum + product.precioOferta * product.quantity,
-        0
-      );
+  let subtotal = cart.reduce(
+    (sum, product) => sum + product.precioOferta * product.quantity,
+    0
+  );
+  let total = couponApplied ? subtotal * 0.9 : subtotal;
 
   cart.forEach((producto, index) => {
     mensaje += `${index + 1}. ${producto.nombre} - Cantidad: ${
       producto.quantity
     } - Precio: $${producto.precioOferta}\n`;
-    /* mensaje += `Imagen: ${producto.img[0]}\n`; */
   });
 
   if (couponApplied) {
@@ -193,17 +185,15 @@ function enviarPedidoWhatsApp() {
 
   mensaje += `\nTotal: $${total.toFixed(2)}`;
 
-  // Codificar el mensaje para la URL de WhatsApp
   const mensajeCodificado = encodeURIComponent(mensaje);
   const numeroWhatsApp = "541161158649";
   const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`;
 
-  // Redirigir a WhatsApp
   window.open(urlWhatsApp, "_blank");
 
-  // Vaciar el carrito y actualizar la interfaz después de enviar el pedido
   clearCart();
 }
+
 
 // Evento para cargar la interfaz del carrito al abrir la página
 document.addEventListener("DOMContentLoaded", () => {
@@ -218,7 +208,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Evento para el botón de "Finalizar compra"
   const finalizarCompraButton = document.querySelector("#btnFinalizarCompra");
   if (finalizarCompraButton) {
     finalizarCompraButton.addEventListener("click", enviarPedidoWhatsApp);
