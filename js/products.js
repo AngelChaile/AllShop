@@ -156,6 +156,51 @@ XS`,
     precio: 45000,
     precioOferta: 40000,
   },
+  {
+    id: 25,
+    nombre: "PANTALON JOGGER AZUL",
+    img: [
+      "img/productos/ropa/pantalonAzulChampion.jpg",
+      "img/productos/ropa/pantalonAzulChampion1.webp",
+      "img/productos/ropa/pantalonAzulChampion2.webp",
+    ],
+    detalle: "Champión",
+    descripcion: `
+Características técnicas
+Detalles:
+Actividad: Moda
+Características Técnicas:
+Adecuado para: Todo el día.
+Material: Algodón.
+Cintura: Con Elástico y Cordón.
+Bolsillo: Con Bolsillo.
+Estilo de indumentaria: Liso.
+Composición: 100% Algodón.
+Color: Negro.
+Talle: M`,
+    stock: 1,
+    precio: 40000,
+    precioOferta: 28000,
+  },
+  {
+    id: 26,
+    nombre: "PANTALON JOGGER NEGRO",
+    img: [
+      "img/productos/ropa/pantalonMujerChampion.webp",
+      "img/productos/ropa/pantalonMujerChampion1.webp",
+      "img/productos/ropa/pantalonMujerChampion2.webp",
+    ],
+    detalle: "Champión",
+    descripcion: `
+Género:     Mujer
+Color:      Negro
+Disciplina: Moda
+Marca:      CHAMPION
+Talle:      XS`,
+    stock: 1,
+    precio: 38000,
+    precioOferta: 20000,
+  },
 
   {
     id: 6,
