@@ -228,7 +228,53 @@ marca:        champion
     precio: 29099,
     precioOferta: 22000,
   },
+  {
+    id: 27,
+    nombre: "REMERA CHAMPION S/MANGA",
+    img: [
+      "img/productos/ropa/musculosaChampion.jpg",
+      "img/productos/ropa/musculosaChampion1.jpg",
+      "img/productos/ropa/musculosaChampion2.jpg",
+    ],
+    detalle: "Champión",
+    descripcion: `
+Especificaciones
 
+Marca	Champion
+Color	Gris 
+Género	Hombre
+Diseño Tela	Liso
+Bolsillos	1
+Largo manga	Sin manga
+Modelo	Con capucha
+Calce	Regular Fit
+Material	Algodón
+Temporada	Atemporal
+Talle: XS
+`,
+    stock: 1,
+    precio: 20000,
+    precioOferta: 16000,
+  },
+  {
+    id: 11,
+    nombre: "REMERA CHAMPIÓN",
+    img: [
+      "img/productos/ropa/remeraChampion.webp",
+      "img/productos/ropa/remeraChampion1.webp",
+    ],
+    detalle: "Champión",
+    descripcion: `
+Género: Hombre
+Edad: Adulto
+Talle: M
+Color predominante: Anaranjado
+Material Principal: Algodón
+Temporada: 23-Q4`,
+    stock: 0,
+    precio: 20000,
+    precioOferta: 15000,
+  },
   {
     id: 7,
     nombre: "CAMPERA CHAMPION ROMPEVIENTO",
@@ -269,6 +315,34 @@ SKU: CHICHHV1015549369072
   },
 
   {
+    id: 10,
+    nombre: "REMERA CHAMPIÓN",
+    img: [
+      "img/productos/ropa/remeraChampionGris.jpg",
+      "img/productos/ropa/remeraChampionGris1.jpg",
+    ],
+    detalle: "Champión",
+    descripcion: `Complementá tu look con CHAMPION.
+Logo CHAMPION estampado y aplicado.
+
+Especificaciones generales
+
+Talle: M y S
+Género: Hombre
+Edad: Adulto
+Color predominante: Gris
+Material Principal: Algodón
+Temporada: 24-Q2`,
+    stock: 2,
+    precio: 29099,
+    precioOferta: 22000,
+  },
+
+ 
+
+
+
+  {
     id: 8,
     nombre: "BUZO CHAMPIÓN DAMA",
     img: [
@@ -304,6 +378,29 @@ Composición: 100% algodón
   },
 
   {
+    id: 12,
+    nombre: "SHORT RUSTICO CHAMPION",
+    img: [
+      "img/productos/ropa/shortBlanco.webp",
+      "img/productos/ropa/shortBlanco1.webp",
+      "img/productos/ropa/shortBlanco2.webp",
+      "img/productos/ropa/shortBlanco3.webp",
+    ],
+    detalle: "Champion",
+    descripcion: `
+SHORT RUSTICO CHAMPION MUJER XL
+
+Cintura con elastico alto,Bolsillos laterales sin cierre,Diseño de short corto
+Material Algodon
+Color    Blanco
+Talle    L   
+`,
+    stock: 1,
+    precio: 33000,
+    precioOferta: 20000,
+  },
+
+  {
     id: 9,
     nombre: "CAMPERA CHAMPIÓN",
     img: [
@@ -328,72 +425,9 @@ Talle M
     precioOferta: 35000,
   },
 
-  {
-    id: 10,
-    nombre: "REMERA CHAMPIÓN",
-    img: [
-      "img/productos/ropa/remeraChampionGris.jpg",
-      "img/productos/ropa/remeraChampionGris1.jpg",
-    ],
-    detalle: "Champión",
-    descripcion: `Complementá tu look con CHAMPION.
-Logo CHAMPION estampado y aplicado.
+ 
 
-Especificaciones generales
 
-Talle: M y S
-Género: Hombre
-Edad: Adulto
-Color predominante: Gris
-Material Principal: Algodón
-Temporada: 24-Q2`,
-    stock: 2,
-    precio: 29099,
-    precioOferta: 22000,
-  },
-
-  {
-    id: 11,
-    nombre: "REMERA CHAMPIÓN",
-    img: [
-      "img/productos/ropa/remeraChampion.webp",
-      "img/productos/ropa/remeraChampion1.webp",
-    ],
-    detalle: "Champión",
-    descripcion: `
-Género: Hombre
-Edad: Adulto
-Talle: M
-Color predominante: Anaranjado
-Material Principal: Algodón
-Temporada: 23-Q4`,
-    stock: 0,
-    precio: 20000,
-    precioOferta: 15000,
-  },
-
-  {
-    id: 12,
-    nombre: "SHORT RUSTICO CHAMPION",
-    img: [
-      "img/productos/ropa/shortBlanco.webp",
-      "img/productos/ropa/shortBlanco1.webp",
-      "img/productos/ropa/shortBlanco2.webp",
-      "img/productos/ropa/shortBlanco3.webp",
-    ],
-    detalle: "Champion",
-    descripcion: `
-SHORT RUSTICO CHAMPION MUJER XL
-
-Cintura con elastico alto,Bolsillos laterales sin cierre,Diseño de short corto
-Material Algodon
-Color    Blanco
-Talle    L   
-`,
-    stock: 1,
-    precio: 33000,
-    precioOferta: 20000,
-  },
 
   {
     id: 13,
@@ -419,8 +453,6 @@ es un conjunto marca Lotto Original!`,
     precio: 30000,
     precioOferta: 25000,
   },
-
-
 
   {
     id: 14,
@@ -613,15 +645,15 @@ Medidas: 20 Diámetro x 3cm altura`,
     precio: 6500,
     precioOferta: 3800,
   },
-  /* {
+  {
     id: 28,
     nombre: "MOLDE FLAN DONUTS X6",
     img: [
-      "img/productos/moldes/flanera.webp",
       "img/productos/moldes/flanera1.webp",
-      "img/productos/moldes/flanera2.webp",
-      "img/productos/moldes/flanera3.webp",
       "img/productos/moldes/flanera4.webp",
+      "img/productos/moldes/flanera3.webp",
+      "img/productos/moldes/flanera.webp",
+      "img/productos/moldes/flanera2.webp",
     ],
     detalle: "The Kitchen Elements",
     descripcion: `
@@ -649,9 +681,10 @@ Incluye tapa: No
 Es antiadherente: Sí
 Es descartable: No
 `,
-    stock: 0,
-    precio: 4000,
-  },
+    stock: 6,
+    precio: 10000,
+    precioOferta: 5000,
+  } /*
   {
     id: 7,
     nombre: "CORTA PIZZA",
@@ -679,7 +712,7 @@ Es descartable: No
     stock: 0,
     precio: 1500,
   },
- */
+ */,
   {
     id: 19,
     nombre: "GUANTES DE SILICONA PAR LAVAR",
@@ -790,7 +823,6 @@ Elegi el que mas te guste!`,
     precioOferta: 1000,
   },
 
-  
   {
     id: 24,
     nombre: "ESPUMADERA NYLON C/ MANGO ACERO",
@@ -815,4 +847,27 @@ LINEA PREMIUM MANGO DE ACERO INOXIDABLE Y NYLON
     precio: 4300,
     precioOferta: 2000,
   },
+/*   {
+    id: 29,
+    nombre: "LUCES NAVIDEÑAS LED 100",
+    img: [
+      "img/productos/varios/lucesNavideñas.webp",
+      "img/productos/varios/lucesNavideñas1.webp",
+      "img/productos/varios/lucesNavideñas2.webp",
+    ],
+    detalle: "The Kitchen Elements",
+    descripcion: `
+100 Luces Led Multicolor en caja x unidad.
+
+• Medidas: Largo 10 mts.
+• Color: Cable Verde.
+• Bajo consumo.
+• Larga duración.
+• Luz fría, no generan calor.
+• Con 8 funciones, utilice el botón para elegir una especifica.    
+`,
+    stock: 2,
+    precio: 4300,
+    precioOferta: 2000,
+  }, */
 ];

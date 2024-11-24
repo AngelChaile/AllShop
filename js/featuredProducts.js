@@ -1,7 +1,7 @@
 const featuredProductsContainer = document.querySelector(".swiper-wrapper");
 
 // Obtener solo 14 productos destacados
-const featuredProducts = products.slice(0, 14); 
+const featuredProducts = products.slice(0, 17); 
 
 featuredProducts.forEach((product) => {
   const slide = document.createElement("div");
