@@ -22,7 +22,7 @@ Talle XS:
 `,
     stock: 1,
     precio: 45000,
-    precioOferta: 28000,
+    precioOferta: 26000,
   },
 
   {
@@ -48,7 +48,7 @@ Temporada:	Atemporal
 Talle: M`,
     stock: 1,
     precio: 48000,
-    precioOferta: 40000,
+    precioOferta: 38000,
   },
 
   {
@@ -94,7 +94,7 @@ Temporada: 24-Q2
 `,
     stock: 1,
     precio: 29099,
-    precioOferta: 22000,
+    precioOferta: 20000,
   },
 
   {
@@ -116,7 +116,7 @@ Talle: M
 `,
     stock: 1,
     precio: 85700,
-    precioOferta: 40000,
+    precioOferta: 35000,
   },
   {
     id: 10,
@@ -180,7 +180,7 @@ Color: Negro.
 Talle: M`,
     stock: 1,
     precio: 40000,
-    precioOferta: 28000,
+    precioOferta: 22000,
   },
   {
     id: 26,
@@ -226,7 +226,7 @@ marca:        champion
 `,
     stock: 1,
     precio: 29099,
-    precioOferta: 22000,
+    precioOferta: 20000,
   },
   {
     id: 27,
@@ -335,7 +335,7 @@ Material Principal: Algodón
 Temporada: 24-Q2`,
     stock: 2,
     precio: 29099,
-    precioOferta: 22000,
+    precioOferta: 20000,
   },
 
  
@@ -451,7 +451,7 @@ Atencion! este es un producto usado pero en excelente estado
 es un conjunto marca Lotto Original!`,
     stock: 1,
     precio: 30000,
-    precioOferta: 25000,
+    precioOferta: 22000,
   },
 
   {
@@ -746,7 +746,7 @@ CARACTERISTICAS:
 - Se puede esterilizar en agua hervida, microondas o lavavajillas.`,
     stock: 6,
     precio: 6034,
-    precioOferta: 3500,
+    precioOferta: 4000,
   },
 
   {
@@ -823,7 +823,7 @@ Elegi el que mas te guste!`,
     precioOferta: 1000,
   },
 
-  {
+ /*  {
     id: 24,
     nombre: "ESPUMADERA NYLON C/ MANGO ACERO",
     img: [
@@ -846,7 +846,7 @@ LINEA PREMIUM MANGO DE ACERO INOXIDABLE Y NYLON
     stock: 2,
     precio: 4300,
     precioOferta: 2000,
-  },
+  }, */
 /*   {
     id: 29,
     nombre: "LUCES NAVIDEÑAS LED 100",
