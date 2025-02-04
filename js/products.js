@@ -338,10 +338,6 @@ Temporada: 24-Q2`,
     precioOferta: 20000,
   },
 
- 
-
-
-
   {
     id: 8,
     nombre: "BUZO CHAMPIÓN DAMA",
@@ -424,10 +420,6 @@ Talle M
     precio: 60699,
     precioOferta: 35000,
   },
-
- 
-
-
 
   {
     id: 13,
@@ -822,8 +814,27 @@ Elegi el que mas te guste!`,
     precio: 2000,
     precioOferta: 1000,
   },
+  {
+    id: 24,
+    nombre: "TIJERA DE COCINA",
+    img: [
+      "img/productos/utensillos/tijera.webp",
+      "img/productos/utensillos/tijera1.webp",
+      "img/productos/utensillos/tijera2.webp",
+      "img/productos/utensillos/tijera3.webp",
+      "img/productos/utensillos/tijera4.webp",
+      "img/productos/utensillos/tijera5.webp",
+    ],
+    detalle: "The Kitchen Elements",
+    descripcion: `Medidas: Alto:21cm - Ancho - 8.5cm aprox.
 
- /*  {
+(Tijera de cocina. Ideada para separar o cortar los tejidos de los alimentos, huesos, superficie, etc. Disponible en colores pasteles como celeste, rosa, verde y gris.)`,
+    stock: 10,
+    precio: 4100,
+    precioOferta: 3000,
+  },
+
+  /*  {
     id: 24,
     nombre: "ESPUMADERA NYLON C/ MANGO ACERO",
     img: [
@@ -847,7 +858,7 @@ LINEA PREMIUM MANGO DE ACERO INOXIDABLE Y NYLON
     precio: 4300,
     precioOferta: 2000,
   }, */
-/*   {
+  /*   {
     id: 29,
     nombre: "LUCES NAVIDEÑAS LED 100",
     img: [
