@@ -1,4 +1,4 @@
-const products = [
+/* const products = [
   {
     id: 1,
     nombre: "BUZO CHAMPION HOMBRE",
@@ -627,35 +627,7 @@ Es descartable: No
     stock: 6,
     precio: 10000,
     precioOferta: 5000,
-  } /*
-  {
-    id: 7,
-    nombre: "CORTA PIZZA",
-    img: [
-      "img/productos/utensillos/cortaPizza.webp",
-      "img/productos/utensillos/cortaPizza1.webp",
-      "img/productos/utensillos/cortaPizza2.webp",
-      "img/productos/utensillos/cortaPizza3.webp",
-    ],
-    detalle: "The Kitchen Elements",
-    descripcion: `
-  Nuestro cortador de pizza grande tiene un borde afilado y corta con precisión rebanadas de pizza, panes planos, gofres o pasteles sin comprometer las fijaciones o la corteza, hace que cortar más ahorro de trabajo
-  
-  Diseño ergonómico: la rueda cortadora de pizza está diseñada para un corte cómodo con diseño de mango en ángulo. Se adapta naturalmente a los contornos de tu mano
-  
-  Limpieza sin problemas: nuestro cortador de ruedas de pizza son que es fácil de usar y mucho más fácil de almacenar con el agujero para colgar.
-  
-  Otras características
-  Material del mango: Plástico
-  Material de la rueda: Acero
-  Cantidad de ruedas: 1
-  Diámetro de la rueda: 7 cm
-  Largo total: 19 cm
-  Es apto para lavavajillas: No`,
-    stock: 0,
-    precio: 1500,
   },
- */,
   {
     id: 19,
     nombre: "GUANTES DE SILICONA PAR LAVAR",
@@ -787,3 +759,4 @@ Elegi el que mas te guste!`,
 
 
 ];
+ */
