@@ -41,8 +41,9 @@ export async function getProductById(id) {
     if (error) throw error;
     return producto;
   } catch (error) {
-    console.warn('Error cargando producto, usando local');
+    console.warn('Error cargando producto desde Supabase:', error.message);
+    // Buscar en productos locales como respaldo
     const module = await import('./products.js');
-    return module.products.find(p => p.id === id);
+    return module.products.find(p => p.id === id) || null;
   }
 }

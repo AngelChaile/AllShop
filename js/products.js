@@ -28,11 +28,7 @@ Talle XS:
   {
     id: 2,
     nombre: "BUZO CHAMPION",
-    img: [
-      "img/productos/ropa/buzoChampionNegro.webp",
-      "img/productos/ropa/buzoChampionNegro1.webp",
-      "img/productos/ropa/buzoChampionNegro2.webp",
-    ],
+    img: ["img/productos/ropa/buzoChampionNegro.webp", "img/productos/ropa/buzoChampionNegro1.webp", "img/productos/ropa/buzoChampionNegro2.webp"],
     detalle: "Champión",
     descripcion: `
 SKU	CHHCOGF88H01-006
