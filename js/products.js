@@ -525,55 +525,6 @@ La primer imagen es ilustrativa no es una foto real
     precioOferta: 1500,
   },
 
-  /* {
-    id: 17,
-    nombre: "TARTERA DE SILICONA",
-    img: [
-      "img/productos/moldes/tarteraSilicona.png",
-      "img/productos/moldes/tarteraSilicona1.png",
-      "img/productos/moldes/tarteraSilicona3.jpeg",
-    ],
-    detalle: "The Kitchen Elements",
-    descripcion: `Molde de Silicona Flexible
-
-- Ventajas y Características:
-- Apto para utilizar en hornos, microondas, heladera y lavavajillas
-- Total anti adherencia: no necesita enmantecar el molde.
-- Requiere menos tiempo de cocción.
-- No retiene olores ni sabores.
-- Irrompible, se puede plegar y ocupa poco espacio de almacenaje.
-- Directo al horno. Soporta temperaturas hasta 280 grados.
-
-`,
-    stock: 8,
-    precio: 3500,
-  }, */
-  /*  {
-    id: 18,
-    nombre: "BATIDOR MANUAL",
-    img: [
-      "img/productos/utensillos/batidor.webp",
-      "img/productos/utensillos/batidor1.webp",
-      "img/productos/utensillos/batidor2.webp",
-      "img/productos/utensillos/batidor3.webp",
-    ],
-    detalle: "The Kitchen Elements",
-    descripcion: `
-Fuerte y duradero: este batidor de cocina está hecho de acero inoxidable duradero de alta calidad y pera de silicona que no rayan los platos.
-
-Diseño ergonómico para un excelente equilibrio y control para una diferencia que realmente puedes sentir en la mano.
-
-Multifuncional: los batidores de globos hacen que cocinar sea mucho más fácil y agradable.
-Fácil de almacenar: los extremos del mango de acero inoxidable son fáciles de colgar en cualquier gancho de tu cocina, lo que permite un fácil almacenamiento. Imprescindible para cocineros caseros y chefs de restaurantes.
-
-Material del batidor: Silicona
-Material del mango: Acero inoxidable
-Largo total: 25 cm
-`,
-    stock: 0,
-    precio: 2000,
-  },
- */
   {
     id: 17,
     nombre: "ASADERA MOLDE RECTANGULAR",
@@ -834,51 +785,5 @@ Elegi el que mas te guste!`,
     precioOferta: 3000,
   },
 
-  /*  {
-    id: 24,
-    nombre: "ESPUMADERA NYLON C/ MANGO ACERO",
-    img: [
-      "img/productos/utensillos/espumaderaNegra.webp",
-      "img/productos/utensillos/espumaderaNegra1.webp",
-      "img/productos/utensillos/espumaderaNegra2.webp",
-      "img/productos/utensillos/espumaderaNegra3.webp",
-    ],
-    detalle: "The Kitchen Elements",
-    descripcion: `
-Largo total: 35 cm
-Material del mango: Acero
-Material de la espumadera: Nylon
-Es apto para lavavajillas: Sí
 
-UTENSILIO DE COCINA ESPUMADERA
-
-LINEA PREMIUM MANGO DE ACERO INOXIDABLE Y NYLON    
-`,
-    stock: 2,
-    precio: 4300,
-    precioOferta: 2000,
-  }, */
-  /*   {
-    id: 29,
-    nombre: "LUCES NAVIDEÑAS LED 100",
-    img: [
-      "img/productos/varios/lucesNavideñas.webp",
-      "img/productos/varios/lucesNavideñas1.webp",
-      "img/productos/varios/lucesNavideñas2.webp",
-    ],
-    detalle: "The Kitchen Elements",
-    descripcion: `
-100 Luces Led Multicolor en caja x unidad.
-
-• Medidas: Largo 10 mts.
-• Color: Cable Verde.
-• Bajo consumo.
-• Larga duración.
-• Luz fría, no generan calor.
-• Con 8 funciones, utilice el botón para elegir una especifica.    
-`,
-    stock: 2,
-    precio: 4300,
-    precioOferta: 2000,
-  }, */
 ];
