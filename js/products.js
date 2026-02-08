@@ -1,4 +1,4 @@
-/* const products = [
+const products = [
   {
     id: 1,
     nombre: "BUZO CHAMPION HOMBRE",
@@ -73,11 +73,8 @@ Talle: M`,
   {
     id: 4,
     nombre: "REMERA CHAMPIÓN",
-    img: [
-      "img/productos/ropa/remeraChampionNegra.webp",
-      "img/productos/ropa/remeraChampionNegra1.webp",
-    ],
-    detalle: "Champion",
+    img: ["img/productos/ropa/remeraChampionNegra.webp","img/productos/ropa/remeraChampionNegra1.webp"],
+    detalle: "Champión",
     descripcion: `
 Especificaciones generales
 
@@ -89,7 +86,7 @@ Material Principal: Algodón
 Temporada: 24-Q2
 `,
     stock: 1,
-    precio: 29099,
+    precio: 29999,
     precioOferta: 20000,
   },
 
@@ -181,11 +178,7 @@ Talle: M`,
   {
     id: 26,
     nombre: "PANTALON JOGGER NEGRO",
-    img: [
-      "img/productos/ropa/pantalonMujerChampion.webp",
-      "img/productos/ropa/pantalonMujerChampion1.webp",
-      "img/productos/ropa/pantalonMujerChampion2.webp",
-    ],
+    img: ["img/productos/ropa/pantalonMujerChampion.webp","img/productos/ropa/pantalonMujerChampion1.webp","img/productos/ropa/pantalonMujerChampion2.webp",],
     detalle: "Champión",
     descripcion: `
 Género:     Mujer
@@ -755,4 +748,3 @@ Elegi el que mas te guste!`,
 
 
 ];
- */

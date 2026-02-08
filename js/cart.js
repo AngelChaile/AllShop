@@ -1,8 +1,10 @@
+// js/cart.js - VERSIÓN COMPLETA CORREGIDA
 import { getCart, saveCart, updateCartBubble } from "./storage.js";
 import { showAlert } from "./alerts.js";
+import { stockManager } from "./stock-manager.js";
 
-let couponApplied = false; // Controla si el cupón ya fue aplicado
-let totalWithDiscount = 0; // Variable global para almacenar el total con descuento
+let couponApplied = false;
+let totalWithDiscount = 0;
 
 // Función para aplicar el cupón de descuento
 function applyCoupon() {
@@ -16,7 +18,7 @@ function applyCoupon() {
   const couponCode = couponInput.value.trim().toUpperCase();
 
   if (couponCode === "FAMILIA" && !couponApplied) {
-    couponApplied = true; // Marcar el cupón como aplicado
+    couponApplied = true;
     const cart = getCart();
     const subtotal = cart.reduce(
       (sum, product) => sum + product.precioOferta * product.quantity,
@@ -98,16 +100,29 @@ export function updateCartUI() {
 export function updateQuantity(index, newQuantity) {
   const cart = getCart();
   const product = cart[index];
+  const oldQuantity = product.quantity || 1;
 
   if (newQuantity < 1) {
     newQuantity = 1;
     showAlert("La cantidad mínima es 1");
-  } else if (newQuantity > product.stock) {
-    newQuantity = product.stock;
-    showAlert("Stock insuficiente");
   }
 
-  product.quantity = Number(newQuantity); // Asegurarse de que sea un número
+  // Verificar stock disponible considerando reservas
+  const stockDisponible = stockManager.getAvailableStock(product.id, product.stock);
+  if (parseInt(newQuantity) > stockDisponible) {
+    newQuantity = stockDisponible;
+    showAlert(`Solo quedan ${stockDisponible} unidades disponibles`);
+  }
+
+  // Ajustar reservas
+  const diferencia = parseInt(newQuantity) - oldQuantity;
+  if (diferencia > 0) {
+    stockManager.reserveStock(product.id, diferencia);
+  } else if (diferencia < 0) {
+    stockManager.releaseStock(product.id, Math.abs(diferencia));
+  }
+
+  product.quantity = Number(newQuantity);
   saveCart(cart);
   updateCartUI();
   updateCartBubble();
@@ -116,53 +131,70 @@ export function updateQuantity(index, newQuantity) {
 // Función para eliminar un producto del carrito
 export function removeFromCart(index) {
   const cart = getCart();
-  cart.splice(index, 1); // Eliminar el producto del array
-  saveCart(cart); // Guardar el carrito actualizado
-  updateCartBubble(); // Actualizar burbuja del carrito
-  updateCartUI(); // Refrescar UI del carrito
+  const productoEliminado = cart[index];
+  
+  if (productoEliminado) {
+    // Liberar el stock reservado
+    stockManager.releaseStock(productoEliminado.id, productoEliminado.quantity);
+  }
+  
+  cart.splice(index, 1);
+  saveCart(cart);
+  updateCartBubble();
+  updateCartUI();
 }
 
 // Función para vaciar el carrito
 function clearCart() {
-  saveCart([]); // Guardar el carrito vacío
-  updateCartBubble(); // Actualizar la burbuja del carrito a 0
-  updateCartUI(); // Refrescar la UI para mostrar el carrito vacío
+  const cart = getCart();
+  
+  // Liberar todas las reservas
+  cart.forEach(product => {
+    stockManager.clearReservation(product.id);
+  });
+  
+  saveCart([]);
+  updateCartBubble();
+  updateCartUI();
+  couponApplied = false; // Resetear cupón
 }
 
-// Función para agregar un producto al carrito
+// Función para agregar un producto al carrito (CORREGIDA)
 export function addToCart(product) {
   const cart = getCart();
-
   const existingItem = cart.find((item) => item.id === product.id);
+  const nuevaCantidad = existingItem ? existingItem.quantity + 1 : 1;
 
-  if (product.stock === 0) {
-    showAlert("Producto Agotado", "error");
-  } else {
-    if (existingItem) {
-      existingItem.quantity += 1;
-      product.stock--;
-    } else {
-      cart.push({ ...product, quantity: 1 });
-      product.stock--;
-    }
-
-    document.getElementById("stockValue").textContent = product.stock;
-    saveCart(cart);
-    localStorage.setItem("selectedProduct", JSON.stringify(product));
-
-    showAlert("Producto agregado al carrito", "success");
-    updateCartBubble();
+  // Verificar stock disponible (considerando reservas)
+  const stockDisponible = stockManager.getAvailableStock(product.id, product.stock);
+  
+  if (nuevaCantidad > stockDisponible) {
+    showAlert(`Solo quedan ${stockDisponible} unidades disponibles`, "error");
+    return false;
   }
+
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({ 
+      ...product, 
+      quantity: 1 
+    });
+  }
+
+  // Reservar stock
+  stockManager.reserveStock(product.id, 1);
+  
+  saveCart(cart);
+  showAlert("Producto agregado al carrito", "success");
+  updateCartBubble();
+  return true;
 }
 
-
-// Función para enviar el pedido a WhatsApp
-function enviarPedidoWhatsApp() {
-  const cart = getCart();
+// Función para enviar el pedido a WhatsApp (método antiguo)
+function enviarPedidoWhatsApp(cart) {
   if (cart.length === 0) {
-    showAlert(
-      "El carrito está vacío. Agrega productos antes de finalizar la compra."
-    );
+    showAlert("El carrito está vacío", "error");
     return;
   }
 
@@ -191,12 +223,56 @@ function enviarPedidoWhatsApp() {
 
   window.open(urlWhatsApp, "_blank");
 
+  // Limpiar carrito y reservas después de enviar
   clearCart();
 }
 
+// Nueva función para procesar checkout (con MercadoPago y WhatsApp)
+async function procesarCheckout() {
+  const cart = getCart();
+  if (cart.length === 0) {
+    showAlert("El carrito está vacío", "error");
+    return;
+  }
+
+  // Verificar stock antes de proceder
+  for (const item of cart) {
+    const availableStock = stockManager.getAvailableStock(item.id, item.stock);
+    if (item.quantity > availableStock) {
+      showAlert(`Stock insuficiente para ${item.nombre}. Solo quedan ${availableStock} unidades.`, "error");
+      return;
+    }
+  }
+
+  // Preguntar método de pago
+  const { value: paymentMethod } = await Swal.fire({
+    title: 'Método de pago',
+    text: '¿Cómo quieres proceder con tu compra?',
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonText: '💳 Pagar con MercadoPago',
+    cancelButtonText: '📱 Enviar por WhatsApp',
+    showDenyButton: true,
+    denyButtonText: 'Continuar comprando'
+  });
+
+  if (paymentMethod === 'deny') return;
+
+  if (paymentMethod) {
+    // MercadoPago - para implementar después
+    showAlert("MercadoPago estará disponible pronto", "info");
+    // await procesarConMercadoPago(cart);
+  } else {
+    // WhatsApp (método actual)
+    enviarPedidoWhatsApp(cart);
+  }
+}
 
 // Evento para cargar la interfaz del carrito al abrir la página
 document.addEventListener("DOMContentLoaded", () => {
+  // Limpiar reservas expiradas
+  stockManager.cleanupExpiredReservations();
+  
   updateCartBubble();
   updateCartUI();
 
@@ -210,6 +286,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const finalizarCompraButton = document.querySelector("#btnFinalizarCompra");
   if (finalizarCompraButton) {
-    finalizarCompraButton.addEventListener("click", enviarPedidoWhatsApp);
+    finalizarCompraButton.addEventListener("click", procesarCheckout);
   }
 });

@@ -1,6 +1,7 @@
-// productDetails.js - VERSIÓN MODIFICADA PARA SUPABASE
+// js/productDetails.js - VERSIÓN CORREGIDA
 import { addToCart } from "./cart.js";
 import { getProductById } from "./supabase-client.js";
+import { stockManager } from "./stock-manager.js";
 
 const productDetailsContainer = document.getElementById("prodetails");
 let currentProduct = null;
@@ -8,7 +9,6 @@ let currentProduct = null;
 // Función para cargar detalles del producto
 async function cargarDetallesProducto() {
   try {
-    // Obtener producto desde localStorage
     const productData = JSON.parse(localStorage.getItem("selectedProduct"));
     
     if (!productData || !productData.id) {
@@ -16,14 +16,7 @@ async function cargarDetallesProducto() {
       return;
     }
     
-    // Si ya tenemos datos completos en localStorage, usarlos
-    if (productData.descripcion && productData.precio && productData.img) {
-      renderizarProducto(productData);
-      currentProduct = productData;
-      return;
-    }
-    
-    // Si no, cargar desde Supabase usando el ID
+    // Cargar desde Supabase para tener datos actualizados
     const producto = await getProductById(productData.id);
     
     if (!producto) {
@@ -45,7 +38,16 @@ async function cargarDetallesProducto() {
         : ['img/placeholder.jpg']
     };
     
-    // Guardar en localStorage para futuras visitas
+    // Calcular stock visual disponible (considerando reservas)
+    const stockDisponible = stockManager.getAvailableStock(
+      productAdaptado.id, 
+      productAdaptado.stock
+    );
+    
+    // Guardar stock disponible en el objeto
+    productAdaptado.stockDisponible = stockDisponible;
+    
+    // Guardar en localStorage
     localStorage.setItem("selectedProduct", JSON.stringify(productAdaptado));
     
     renderizarProducto(productAdaptado);
@@ -57,6 +59,13 @@ async function cargarDetallesProducto() {
     // Intentar usar datos de localStorage como respaldo
     const productData = JSON.parse(localStorage.getItem("selectedProduct"));
     if (productData) {
+      // Calcular stock disponible para datos locales
+      const stockDisponible = stockManager.getAvailableStock(
+        productData.id, 
+        productData.stock
+      );
+      productData.stockDisponible = stockDisponible;
+      
       renderizarProducto(productData);
       currentProduct = productData;
     } else {
@@ -67,7 +76,10 @@ async function cargarDetallesProducto() {
 
 // Función para renderizar el producto
 function renderizarProducto(product) {
-  const { id, nombre, precio, precioOferta, descripcion, img, stock } = product;
+  const { id, nombre, precio, precioOferta, descripcion, img, stock, stockDisponible } = product;
+  
+  // Usar stockDisponible si existe, sino usar stock original
+  const stockParaMostrar = stockDisponible !== undefined ? stockDisponible : stock;
   
   // Crear las imágenes pequeñas dinámicamente
   const smallImgDivs = img
@@ -97,10 +109,10 @@ function renderizarProducto(product) {
       </div>
       <h4 id="product-stock">
         <span class="stock-label">Stock disponible:</span>
-        <span class="stock-value" id="stockValue">${stock}</span>
+        <span class="stock-value" id="stockValue">${stockParaMostrar}</span>
       </h4>
-      <button id="comprar" class="normal ${stock === 0 ? 'disabled' : ''}">
-        ${stock === 0 ? 'AGOTADO' : 'Agregar al Carrito'}
+      <button id="comprar" class="normal ${stockParaMostrar === 0 ? 'disabled' : ''}">
+        ${stockParaMostrar === 0 ? 'AGOTADO' : 'Agregar al Carrito'}
       </button>
       <h4>Detalles del Producto</h4>
       <div class="product-description">
@@ -127,19 +139,25 @@ function renderizarProducto(product) {
     smallImgs[0].parentElement.classList.add('active');
   }
   
-  // Configurar botón de compra
+  // Configurar botón de compra (CORREGIDO - sin duplicar descuento)
   const btnComprar = document.getElementById("comprar");
   if (btnComprar && !btnComprar.classList.contains('disabled')) {
     btnComprar.addEventListener("click", () => {
-      addToCart(product);
-      // Actualizar stock visualmente
-      if (product.stock > 0) {
-        product.stock--;
-        document.getElementById('stockValue').textContent = product.stock;
-        
-        if (product.stock === 0) {
-          btnComprar.textContent = 'AGOTADO';
-          btnComprar.classList.add('disabled');
+      const agregado = addToCart(product);
+      
+      if (agregado) {
+        // Actualizar solo el display visual
+        const stockElement = document.getElementById('stockValue');
+        if (stockElement) {
+          const currentDisplay = parseInt(stockElement.textContent);
+          const nuevoDisplay = Math.max(0, currentDisplay - 1);
+          stockElement.textContent = nuevoDisplay;
+          
+          if (nuevoDisplay === 0) {
+            btnComprar.textContent = 'AGOTADO';
+            btnComprar.classList.add('disabled');
+            btnComprar.disabled = true;
+          }
         }
       }
     });
@@ -185,8 +203,11 @@ style.textContent = `
     opacity: 0.7;
   }
   .stock-value {
-    color: ${currentProduct && currentProduct.stock > 0 ? '#088178' : '#ff4444'};
+    color: #088178;
     font-weight: bold;
+  }
+  .stock-value.agotado {
+    color: #ff4444;
   }
   .stock-label {
     color: #666;
