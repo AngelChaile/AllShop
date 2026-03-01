@@ -1,4 +1,4 @@
-// js/cart.js - VERSIÓN COMPLETA CORREGIDA
+// js/cart.js - VERSIÓN COMPLETA CON MERCADO PAGO
 import { getCart, saveCart, updateCartBubble } from "./storage.js";
 import { showAlert } from "./alerts.js";
 import { stockManager } from "./stock-manager.js";
@@ -227,6 +227,149 @@ function enviarPedidoWhatsApp(cart) {
   clearCart();
 }
 
+// ========== FUNCIÓN NUEVA: Procesar con MercadoPago ==========
+async function procesarConMercadoPago(cart) {
+  try {
+    // 1. Pedir datos del cliente
+    const { value: customerData } = await Swal.fire({
+      title: 'Información para el envío',
+      html: `
+        <div style="text-align: left; margin-bottom: 15px; color: #666;">
+          Completa tus datos para procesar el pedido
+        </div>
+        <input id="customer-name" class="swal2-input" placeholder="Nombre completo *" required>
+        <input id="customer-email" class="swal2-input" placeholder="Email *" type="email" required>
+        <input id="customer-phone" class="swal2-input" placeholder="Teléfono *" type="tel" required>
+        <input id="customer-address" class="swal2-input" placeholder="Dirección completa *" required>
+        <textarea id="customer-notes" class="swal2-textarea" placeholder="Notas adicionales (opcional)" style="height: 80px;"></textarea>
+      `,
+      focusConfirm: false,
+      showCancelButton: true,
+      confirmButtonText: 'Continuar al pago',
+      cancelButtonText: 'Cancelar',
+      preConfirm: () => {
+        const name = document.getElementById('customer-name').value.trim();
+        const email = document.getElementById('customer-email').value.trim();
+        const phone = document.getElementById('customer-phone').value.trim();
+        const address = document.getElementById('customer-address').value.trim();
+        const notes = document.getElementById('customer-notes').value.trim();
+
+        // Validaciones básicas
+        if (!name) {
+          Swal.showValidationMessage('El nombre es obligatorio');
+          return false;
+        }
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          Swal.showValidationMessage('Ingresa un email válido');
+          return false;
+        }
+        if (!phone || phone.length < 8) {
+          Swal.showValidationMessage('Ingresa un teléfono válido');
+          return false;
+        }
+        if (!address) {
+          Swal.showValidationMessage('La dirección es obligatoria');
+          return false;
+        }
+
+        return {
+          name: name,
+          email: email,
+          phone: phone,
+          address: address,
+          notes: notes
+        };
+      }
+    });
+
+    if (!customerData) return;
+
+    // 2. Mostrar resumen del pedido
+    let resumenHTML = '<div style="text-align: left; max-height: 300px; overflow-y: auto;">';
+    let total = 0;
+    
+    cart.forEach((producto, index) => {
+      const subtotal = producto.precioOferta * producto.quantity;
+      total += subtotal;
+      resumenHTML += `
+        <div style="margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #eee;">
+          <strong>${producto.nombre}</strong><br>
+          Cantidad: ${producto.quantity} × $${producto.precioOferta} = $${subtotal.toFixed(2)}
+        </div>
+      `;
+    });
+
+    if (couponApplied) {
+      total = total * 0.9;
+      resumenHTML += `<div style="color: #4CAF50; margin: 10px 0;">Cupón aplicado: 10% de descuento</div>`;
+    }
+
+    resumenHTML += `<div style="margin-top: 15px; font-size: 1.2em; font-weight: bold; color: #088178;">Total: $${total.toFixed(2)}</div>`;
+    resumenHTML += '</div>';
+
+    // 3. Confirmar pedido
+    const { value: confirmar } = await Swal.fire({
+      title: 'Resumen del pedido',
+      html: resumenHTML,
+      icon: 'info',
+      showCancelButton: true,
+      confirmButtonText: 'Pagar con MercadoPago',
+      cancelButtonText: 'Revisar datos',
+      confirmButtonColor: '#009ee3'
+    });
+
+    if (!confirmar) {
+      // Volver a pedir datos
+      await procesarConMercadoPago(cart);
+      return;
+    }
+
+    // 4. Mostrar loading
+    Swal.fire({
+      title: 'Procesando tu pago...',
+      text: 'Estamos preparando todo para que completes tu compra',
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading();
+      }
+    });
+
+    // 5. Importar servicio MercadoPago dinámicamente (para no cargarlo si no se usa)
+    const { mercadoPagoService } = await import('./mercado-pago-frontend.js');
+    
+    // 6. Redirigir a checkout
+    await mercadoPagoService.redirectToCheckout(cart, customerData);
+    
+  } catch (error) {
+    console.error('Error en MercadoPago:', error);
+    
+    Swal.fire({
+      title: 'Error',
+      html: `
+        <div style="color: #d32f2f; margin-bottom: 15px;">
+          <strong>No se pudo procesar el pago</strong>
+        </div>
+        <div style="text-align: left; background: #fff8f8; padding: 10px; border-radius: 5px; margin: 10px 0;">
+          ${error.message || 'Ocurrió un error inesperado'}
+        </div>
+        <div style="margin-top: 20px; color: #666; font-size: 0.9em;">
+          Puedes intentar nuevamente o usar el método de WhatsApp.
+        </div>
+      `,
+      icon: 'error',
+      showCancelButton: true,
+      confirmButtonText: 'Reintentar',
+      cancelButtonText: 'Usar WhatsApp'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        procesarConMercadoPago(cart);
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        enviarPedidoWhatsApp(cart);
+      }
+    });
+  }
+}
+
 // Nueva función para procesar checkout (con MercadoPago y WhatsApp)
 async function procesarCheckout() {
   const cart = getCart();
@@ -246,22 +389,33 @@ async function procesarCheckout() {
 
   // Preguntar método de pago
   const { value: paymentMethod } = await Swal.fire({
-    title: 'Método de pago',
-    text: '¿Cómo quieres proceder con tu compra?',
+    title: '¿Cómo quieres pagar?',
+    html: `
+      <div style="text-align: left; margin: 15px 0; color: #666;">
+        <div style="margin-bottom: 10px;">
+          <strong>💳 MercadoPago:</strong> Pago seguro con tarjeta, efectivo o transferencia
+        </div>
+        <div>
+          <strong>📱 WhatsApp:</strong> Envía tu pedido y coordina el pago
+        </div>
+      </div>
+    `,
     icon: 'question',
     showCancelButton: true,
-    confirmButtonText: '💳 Pagar con MercadoPago',
-    cancelButtonText: '📱 Enviar por WhatsApp',
+    confirmButtonText: '💳 MercadoPago',
+    cancelButtonText: '📱 WhatsApp',
     showDenyButton: true,
-    denyButtonText: 'Continuar comprando'
+    denyButtonText: 'Seguir comprando',
+    confirmButtonColor: '#009ee3',
+    cancelButtonColor: '#25D366',
+    denyButtonColor: '#088178'
   });
 
   if (paymentMethod === 'deny') return;
 
   if (paymentMethod) {
-    // MercadoPago - para implementar después
-    showAlert("MercadoPago estará disponible pronto", "info");
-    // await procesarConMercadoPago(cart);
+    // MercadoPago
+    await procesarConMercadoPago(cart);
   } else {
     // WhatsApp (método actual)
     enviarPedidoWhatsApp(cart);
@@ -289,3 +443,15 @@ document.addEventListener("DOMContentLoaded", () => {
     finalizarCompraButton.addEventListener("click", procesarCheckout);
   }
 });
+
+// Exportar funciones necesarias para otros archivos
+export { 
+  updateCartUI, 
+  updateQuantity, 
+  removeFromCart, 
+  addToCart,
+  clearCart,
+  getCart,
+  couponApplied,
+  totalWithDiscount
+};

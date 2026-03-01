@@ -1,0 +1,58 @@
+<!-- pago-exitoso.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pago Exitoso - AllShop</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+</head>
+<body>
+  <header id="header">
+    <a href="index.html"><img src="img/logo.png" class="logo" alt="logo" /></a>
+  </header>
+
+  <section class="payment-result success">
+    <div class="result-icon">✅</div>
+    <h1>¡Pago Exitoso!</h1>
+    <p>Tu pedido ha sido procesado correctamente.</p>
+    <p>Recibirás un email con los detalles de tu compra.</p>
+    <div class="result-actions">
+      <a href="index.html" class="normal">Volver al Inicio</a>
+      <a href="shop.html" class="normal outline">Seguir Comprando</a>
+    </div>
+  </section>
+
+  <style>
+    .payment-result {
+      max-width: 600px;
+      margin: 100px auto;
+      text-align: center;
+      padding: 40px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .result-icon {
+      font-size: 80px;
+      margin-bottom: 20px;
+    }
+    .success .result-icon { color: #4CAF50; }
+    .payment-result h1 {
+      color: #088178;
+      margin-bottom: 20px;
+    }
+    .payment-result p {
+      color: #666;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    .result-actions {
+      margin-top: 30px;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+  </style>
+</body>
+</html>
