@@ -446,9 +446,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Exportar funciones necesarias para otros archivos
 export { 
-  updateCartUI, 
-  updateQuantity, 
-  removeFromCart, 
   clearCart,
   getCart,
   couponApplied,
