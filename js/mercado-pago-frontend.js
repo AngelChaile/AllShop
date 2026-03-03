@@ -8,13 +8,13 @@ export class MercadoPagoService {
 
   async initialize() {
     if (this.mp) return this.mp;
-    
+
     await this.loadSDK();
-    
+
     this.mp = new window.MercadoPago(MP_PUBLIC_KEY, {
       locale: 'es-AR'
     });
-    
+
     return this.mp;
   }
 
@@ -33,35 +33,40 @@ export class MercadoPagoService {
     });
   }
 
-async createPayment(cart, customerData) {
-  try {
-    const response = await fetch('/.netlify/functions/mercado-pago', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
+  async createPayment(cart, customerData) {
+    try {
+      // En createPayment, antes del fetch:
+      console.log('Enviando a función:', {
         items: cart,
-        customer: customerData,
-        returnUrls: {
-          success: window.location.origin + '/pago-exitoso.html',
-          failure: window.location.origin + '/pago-fallido.html',
-          pending: window.location.origin + '/pago-pendiente.html'
-        }
-      })
-    });
-    
-    if (!response.ok) {
-      const error = await response.json();
-      throw new Error(error.details || 'Error creando pago');
+        customer: customerData
+      });
+      const response = await fetch('/.netlify/functions/mercado-pago', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          items: cart,
+          customer: customerData,
+          returnUrls: {
+            success: window.location.origin + '/pago-exitoso.html',
+            failure: window.location.origin + '/pago-fallido.html',
+            pending: window.location.origin + '/pago-pendiente.html'
+          }
+        })
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.details || 'Error creando pago');
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error('Error:', error);
+      throw error;
     }
-    
-    return await response.json();
-  } catch (error) {
-    console.error('Error:', error);
-    throw error;
   }
-}
 
   async redirectToCheckout(cart, customerData) {
     try {

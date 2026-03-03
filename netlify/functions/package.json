@@ -1,0 +1,7 @@
+{
+  "name": "allshop-functions",
+  "version": "1.0.0",
+  "dependencies": {
+    "mercadopago": "^2.12.0"
+  }
+}
