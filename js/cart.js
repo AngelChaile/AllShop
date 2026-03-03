@@ -449,7 +449,6 @@ export {
   updateCartUI, 
   updateQuantity, 
   removeFromCart, 
-  addToCart,
   clearCart,
   getCart,
   couponApplied,
