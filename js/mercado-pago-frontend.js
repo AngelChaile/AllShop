@@ -33,30 +33,35 @@ export class MercadoPagoService {
     });
   }
 
-  async createPayment(cart, customerData) {
-    try {
-      const response = await fetch('/.netlify/functions/mercado-pago', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          items: cart,
-          customer: customerData
-        })
-      });
-      
-      if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.details || 'Error creando pago');
-      }
-      
-      return await response.json();
-    } catch (error) {
-      console.error('Error:', error);
-      throw error;
+async createPayment(cart, customerData) {
+  try {
+    const response = await fetch('/.netlify/functions/mercado-pago', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        items: cart,
+        customer: customerData,
+        returnUrls: {
+          success: window.location.origin + '/pago-exitoso.html',
+          failure: window.location.origin + '/pago-fallido.html',
+          pending: window.location.origin + '/pago-pendiente.html'
+        }
+      })
+    });
+    
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.details || 'Error creando pago');
     }
+    
+    return await response.json();
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
   }
+}
 
   async redirectToCheckout(cart, customerData) {
     try {
