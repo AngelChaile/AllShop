@@ -1,5 +1,6 @@
 // showProducts.js - VERSIÓN MODIFICADA PARA SUPABASE
 import { getProducts } from './supabase-client.js';
+import { log, error } from './config.js';
 
 const proContainer = document.getElementById("pro-container");
 const productsPerPage = 8;
@@ -26,7 +27,7 @@ async function cargarProductos() {
         : ['img/placeholder.jpg']
     }));
     
-    console.log('Productos cargados:', allProducts.length);
+    log('Productos cargados:', allProducts.length);
     mostrarProductos(currentPage);
   } catch (error) {
     console.error('Error cargando productos:', error);

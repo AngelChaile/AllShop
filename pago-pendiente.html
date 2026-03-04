@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pago Pendiente - AllShop</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+</head>
+<body>
+  <header id="header">
+    <a href="index.html"><img src="img/logo.png" class="logo" alt="logo" /></a>
+  </header>
+
+  <section class="payment-result pending">
+    <div class="result-icon">⏳</div>
+    <h1>¡Pago pendiente!</h1>
+    <p>Estamos esperando la confirmación de tu pago.</p>
+    <p>Si pagaste en efectivo (Rapipago/Pago Fácil), puede tardar hasta 48hs en acreditarse.</p>
+    <p>Te enviaremos un email cuando se confirme la operación.</p>
+    <div class="result-actions">
+      <a href="index.html" class="normal">Volver al Inicio</a>
+      <a href="mis-pedidos.html" class="normal outline">Ver mis pedidos</a>
+    </div>
+  </section>
+
+  <style>
+    .payment-result {
+      max-width: 600px;
+      margin: 100px auto;
+      text-align: center;
+      padding: 40px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .result-icon { font-size: 80px; margin-bottom: 20px; }
+    .pending .result-icon { color: #ffbb33; }
+    .payment-result h1 { color: #088178; margin-bottom: 20px; }
+    .payment-result p { color: #666; margin-bottom: 10px; font-size: 18px; }
+    .result-actions { margin-top: 30px; display: flex; gap: 15px; justify-content: center; }
+  </style>
+</body>
+</html>s

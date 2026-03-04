@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pago Fallido - AllShop</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+</head>
+<body>
+  <header id="header">
+    <a href="index.html"><img src="img/logo.png" class="logo" alt="logo" /></a>
+  </header>
+
+  <section class="payment-result error">
+    <div class="result-icon">❌</div>
+    <h1>¡Pago no pudo completarse!</h1>
+    <p>Hubo un problema al procesar tu pago.</p>
+    <p>Por favor, intentá nuevamente o elegí otro medio de pago.</p>
+    <div class="result-actions">
+      <a href="cart.html" class="normal">Volver al Carrito</a>
+      <a href="shop.html" class="normal outline">Seguir Comprando</a>
+    </div>
+  </section>
+
+  <style>
+    .payment-result {
+      max-width: 600px;
+      margin: 100px auto;
+      text-align: center;
+      padding: 40px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .result-icon { font-size: 80px; margin-bottom: 20px; }
+    .error .result-icon { color: #ff4444; }
+    .payment-result h1 { color: #088178; margin-bottom: 20px; }
+    .payment-result p { color: #666; margin-bottom: 10px; font-size: 18px; }
+    .result-actions { margin-top: 30px; display: flex; gap: 15px; justify-content: center; }
+  </style>
+</body>
+</html>

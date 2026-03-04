@@ -1,4 +1,5 @@
 // supabase-client.js
+import { log, error } from './config.js';
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
 // Tus credenciales (las obtuviste en paso 3)
@@ -19,7 +20,7 @@ export async function getProducts() {
     
     if (error) throw error;
     
-    console.log('Productos cargados desde Supabase:', productos.length);
+    log('Productos cargados desde Supabase:', productos.length);
     return productos;
   } catch (error) {
     console.warn('Error cargando de Supabase, usando local:', error.message);

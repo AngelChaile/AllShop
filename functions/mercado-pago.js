@@ -1,8 +1,9 @@
 // functions/mercado-pago.js - VERSIÓN CORRECTA PARA SDK v2.x
 const mercadopago = require('mercadopago');
+import { log, error } from './config.js';
 
 exports.handler = async (event) => {
-  console.log('🔵 Función iniciada');
+  log('🔵 Función iniciada');
 
   const headers = {
     'Access-Control-Allow-Origin': '*',
@@ -16,13 +17,13 @@ exports.handler = async (event) => {
       accessToken: process.env.MP_ACCESS_TOKEN
     });
     
-    console.log('Token configurado:', process.env.MP_ACCESS_TOKEN ? '✅ SÍ' : '❌ NO');
+    log('Token configurado:', process.env.MP_ACCESS_TOKEN ? '✅ SÍ' : '❌ NO');
 
     // 2. Crear el cliente de Preference usando el client configurado
     const preferenceClient = new mercadopago.Preference(client);
 
     const { items, customer } = JSON.parse(event.body);
-    console.log('Items recibidos:', items.length);
+    log('Items recibidos:', items.length);
 
     // 3. Crear la preferencia usando el cliente
     const preferenceRequest = {
@@ -47,11 +48,11 @@ exports.handler = async (event) => {
       }
     };
 
-    console.log('Enviando preferencia a MercadoPago...');
+    log('Enviando preferencia a MercadoPago...');
     const response = await preferenceClient.create(preferenceRequest);
     
-    console.log('✅ Respuesta OK de MercadoPago');
-    console.log('Init point:', response.init_point);
+    log('✅ Respuesta OK de MercadoPago');
+    log('Init point:', response.init_point);
 
     return {
       statusCode: 200,

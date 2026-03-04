@@ -1,11 +1,12 @@
-<!-- pago-exitoso.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pago Exitoso - AllShop</title>
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
   <header id="header">
@@ -33,26 +34,29 @@
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
-    .result-icon {
-      font-size: 80px;
-      margin-bottom: 20px;
-    }
+    .result-icon { font-size: 80px; margin-bottom: 20px; }
     .success .result-icon { color: #4CAF50; }
-    .payment-result h1 {
-      color: #088178;
-      margin-bottom: 20px;
-    }
-    .payment-result p {
-      color: #666;
-      margin-bottom: 10px;
-      font-size: 18px;
-    }
-    .result-actions {
-      margin-top: 30px;
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-    }
+    .payment-result h1 { color: #088178; margin-bottom: 20px; }
+    .payment-result p { color: #666; margin-bottom: 10px; font-size: 18px; }
+    .result-actions { margin-top: 30px; display: flex; gap: 15px; justify-content: center; }
   </style>
+
+  <script>
+    (function() {
+      // 1. Vaciar carrito del localStorage
+      localStorage.removeItem('cart');
+      localStorage.removeItem('reservedStock');
+      
+      // 2. Actualizar burbuja del carrito si existe en esta página
+      const cartBubbles = document.querySelectorAll('.cart-bubble');
+      cartBubbles.forEach(bubble => {
+        bubble.textContent = '0';
+        bubble.style.display = 'none';
+      });
+
+      // 3. Opcional: Mostrar mensaje de confirmación
+      log('✅ Carrito vaciado correctamente');
+    })();
+  </script>
 </body>
 </html>
