@@ -1,5 +1,5 @@
 // js/mercado-pago-frontend.js
-const MP_PUBLIC_KEY = 'APP_USR-b4f00727-d0e9-4a0f-8f25-833148ec0b7b'; // Tu Public Key aquí
+const MP_PUBLIC_KEY = 'APP_USR-f524ad24-3063-4dfc-a286-6ffae460fabc'; 
 
 export class MercadoPagoService {
   constructor() {
