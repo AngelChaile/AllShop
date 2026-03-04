@@ -1,9 +1,10 @@
 [build]
   publish = "."
-  functions = "netlify/functions"
+  functions = "functions"
 
 [build.environment]
   NODE_VERSION = "18"
 
 [functions]
   node_bundler = "esbuild"
+  external_node_modules = ["mercadopago"]  # ← Forzar inclusión
