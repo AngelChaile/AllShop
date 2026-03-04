@@ -1,44 +1,61 @@
-// functions/mercado-pago.js - VERSIÓN DE EMERGENCIA
+// functions/mercado-pago.js - VERSIÓN MÍNIMA
 const mercadopago = require('mercadopago');
 
 exports.handler = async (event) => {
+  console.log('🔵 Función iniciada');
+  console.log('Token configurado:', process.env.MP_ACCESS_TOKEN ? '✅ SÍ' : '❌ NO');
+
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Content-Type': 'application/json'
+  };
+
   try {
-    // Configurar aquí mismo
     mercadopago.configure({
       access_token: process.env.MP_ACCESS_TOKEN
     });
 
-    const body = JSON.parse(event.body);
+    const { items } = JSON.parse(event.body);
     
-    const response = await mercadopago.preferences.create({
-      items: body.items.map(item => ({
+    console.log('Items recibidos:', items.length);
+
+    const preference = {
+      items: items.map(item => ({
         title: item.nombre,
         unit_price: Number(item.precioOferta),
         quantity: Number(item.quantity),
         currency_id: 'ARS'
       })),
       back_urls: {
-        success: `${process.env.URL}/pago-exitoso.html`,
-        failure: `${process.env.URL}/pago-fallido.html`,
-        pending: `${process.env.URL}/pago-pendiente.html`
+        success: 'https://allshop1.netlify.app/pago-exitoso.html',
+        failure: 'https://allshop1.netlify.app/pago-fallido.html',
+        pending: 'https://allshop1.netlify.app/pago-pendiente.html'
       },
       auto_return: 'approved'
-    });
+    };
+
+    console.log('Enviando a MercadoPago...');
+    const response = await mercadopago.preferences.create(preference);
+    console.log('✅ Respuesta OK');
 
     return {
       statusCode: 200,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json'
-      },
+      headers,
       body: JSON.stringify({ init_point: response.body.init_point })
     };
 
   } catch (error) {
+    console.error('🔴 ERROR:', error.message);
+    console.error('Stack:', error.stack);
+    
     return {
       statusCode: 500,
-      headers: { 'Access-Control-Allow-Origin': '*' },
-      body: JSON.stringify({ error: error.message })
+      headers,
+      body: JSON.stringify({ 
+        error: error.message,
+        stack: error.stack 
+      })
     };
   }
 };

@@ -35,35 +35,22 @@ export class MercadoPagoService {
 
   async createPayment(cart, customerData) {
     try {
-      // En createPayment, antes del fetch:
-      console.log('Enviando a función:', {
-        items: cart,
-        customer: customerData
-      });
       const response = await fetch('/.netlify/functions/mercado-pago', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          items: cart,
-          customer: customerData,
-          returnUrls: {
-            success: window.location.origin + '/pago-exitoso.html',
-            failure: window.location.origin + '/pago-fallido.html',
-            pending: window.location.origin + '/pago-pendiente.html'
-          }
-        })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: cart, customer: customerData })
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.details || 'Error creando pago');
+        console.error('Error completo:', data); // ← VER ESTO
+        throw new Error(data.error || 'Error creando pago');
       }
 
-      return await response.json();
+      return data;
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error en fetch:', error);
       throw error;
     }
   }
