@@ -1,4 +1,4 @@
-// functions/mercado-pago.js - VERSIÓN MÍNIMA
+// functions/mercado-pago.js - VERSIÓN CORRECTA PARA SDK v2+
 const mercadopago = require('mercadopago');
 
 exports.handler = async (event) => {
@@ -12,11 +12,12 @@ exports.handler = async (event) => {
   };
 
   try {
-    mercadopago.configure({
+    // ✅ FORMA CORRECTA para SDK v2+
+    mercadopago.configurations = {
       access_token: process.env.MP_ACCESS_TOKEN
-    });
+    };
 
-    const { items } = JSON.parse(event.body);
+    const { items, customer } = JSON.parse(event.body);
     
     console.log('Items recibidos:', items.length);
 
@@ -27,6 +28,10 @@ exports.handler = async (event) => {
         quantity: Number(item.quantity),
         currency_id: 'ARS'
       })),
+      payer: {
+        email: customer.email,
+        name: customer.name
+      },
       back_urls: {
         success: 'https://allshop1.netlify.app/pago-exitoso.html',
         failure: 'https://allshop1.netlify.app/pago-fallido.html',
