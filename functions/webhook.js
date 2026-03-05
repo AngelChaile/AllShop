@@ -1,4 +1,4 @@
-// functions/webhook.js - VERSIÓN CORREGIDA (CommonJS)
+// functions/webhook.js
 const crypto = require('crypto');
 const { createClient } = require('@supabase/supabase-js');
 
@@ -9,7 +9,6 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Función de log condicional (sin import)
 function log(...args) {
-  // En producción, los logs de Netlify siempre se ven, así que podemos dejarlos
   console.log(...args);
 }
 
@@ -112,7 +111,7 @@ exports.handler = async (event) => {
         const items = payment.additional_info?.items || [];
         
         for (const item of items) {
-          // Buscar producto (idealmente deberías guardar el ID en un campo personalizado)
+          // Buscar producto (idealmente se debería guardar el ID en un campo personalizado)
           const { data: productos, error: selectError } = await supabase
             .from('productos')
             .select('id, stock')

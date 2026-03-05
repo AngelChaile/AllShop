@@ -1,4 +1,4 @@
-// functions/mercado-pago.js - USAR ESTA VERSIÓN
+// functions/mercado-pago.js
 const mercadopago = require('mercadopago');
 
 exports.handler = async (event) => {

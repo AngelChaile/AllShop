@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login - AllShop</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    body { background: #f5f5f5; display: flex; align-items: center; min-height: 100vh; }
+    .login-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 40px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .login-container h2 {
+      text-align: center;
+      color: #088178;
+      margin-bottom: 30px;
+    }
+    .login-container input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background: #088178;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .login-container button:hover { background: #066a63; }
+    .login-container .logo {
+      display: block;
+      margin: 0 auto 20px;
+      width: 80px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <img src="../img/logo.png" alt="AllShop" class="logo">
+    <h2>Panel de Administración</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Usuario" required>
+      <input type="password" id="password" placeholder="Contraseña" required>
+      <button type="submit">Iniciar Sesión</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      try {
+        const response = await fetch('/.netlify/functions/admin-login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          localStorage.setItem('adminToken', data.token);
+          window.location.href = 'index.html';
+        } else {
+          Swal.fire('Error', data.error || 'Credenciales incorrectas', 'error');
+        }
+      } catch (error) {
+        Swal.fire('Error', 'Error de conexión', 'error');
+      }
+    });
+  </script>
+</body>
+</html>
