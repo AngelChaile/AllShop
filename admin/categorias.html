@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Categorías - Admin AllShop</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    .admin-container { display: flex; }
+    .sidebar { width: 250px; background: #088178; color: white; padding: 20px; min-height: 100vh; }
+    .sidebar a { color: white; text-decoration: none; display: block; padding: 10px; }
+    .sidebar a.active { background: #066a63; }
+    .main-content { flex: 1; padding: 30px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+    .btn { padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; }
+    .btn-primary { background: #088178; color: white; }
+    .btn-edit { background: #ffc107; color: black; margin-right: 5px; }
+    .btn-delete { background: #dc3545; color: white; }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; }
+    .modal-content { background: white; padding: 30px; border-radius: 10px; width: 400px; }
+    .modal-content input { width: 100%; padding: 8px; margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <div class="sidebar">
+      <h2>AllShop Admin</h2>
+      <a href="index.html">📊 Dashboard</a>
+      <a href="productos.html">📦 Productos</a>
+      <a href="categorias.html" class="active">🏷️ Categorías</a>
+      <a href="#" onclick="logout()">🚪 Cerrar Sesión</a>
+    </div>
+    
+    <div class="main-content">
+      <h1>Categorías</h1>
+      <button class="btn btn-primary" onclick="mostrarModal()">+ Nueva Categoría</button>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Slug</th>
+            <th>Icono</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaCategorias"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2 id="modalTitle">Nueva Categoría</h2>
+      <input type="hidden" id="categoriaId">
+      <input type="text" id="nombre" placeholder="Nombre">
+      <input type="text" id="slug" placeholder="Slug (opcional)">
+      <input type="text" id="icono" placeholder="Icono (ej: 👕)">
+      <button class="btn btn-primary" onclick="guardarCategoria()">Guardar</button>
+      <button class="btn" onclick="cerrarModal()">Cancelar</button>
+    </div>
+  </div>
+
+  <script>
+    function logout() {
+      localStorage.removeItem('adminToken');
+      window.location.href = 'login.html';
+    }
+
+    const token = localStorage.getItem('adminToken');
+    if (!token) window.location.href = 'login.html';
+
+    async function cargarCategorias() {
+      try {
+        const res = await fetch('/.netlify/functions/admin-categorias', {
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+        const categorias = await res.json();
+        
+        const tbody = document.getElementById('tablaCategorias');
+        tbody.innerHTML = categorias.map(c => `
+          <tr>
+            <td>${c.id}</td>
+            <td>${c.nombre}</td>
+            <td>${c.slug}</td>
+            <td>${c.icono || '-'}</td>
+            <td>
+              <button class="btn btn-edit" onclick="editarCategoria(${c.id}, '${c.nombre}', '${c.slug}', '${c.icono}')">Editar</button>
+              <button class="btn btn-delete" onclick="eliminarCategoria(${c.id})">Eliminar</button>
+            </td>
+          </tr>
+        `).join('');
+      } catch (error) {
+        Swal.fire('Error', 'No se pudieron cargar las categorías', 'error');
+      }
+    }
+
+    function mostrarModal() {
+      document.getElementById('modalTitle').textContent = 'Nueva Categoría';
+      document.getElementById('categoriaId').value = '';
+      document.getElementById('nombre').value = '';
+      document.getElementById('slug').value = '';
+      document.getElementById('icono').value = '';
+      document.getElementById('modal').style.display = 'flex';
+    }
+
+    function editarCategoria(id, nombre, slug, icono) {
+      document.getElementById('modalTitle').textContent = 'Editar Categoría';
+      document.getElementById('categoriaId').value = id;
+      document.getElementById('nombre').value = nombre;
+      document.getElementById('slug').value = slug;
+      document.getElementById('icono').value = icono || '';
+      document.getElementById('modal').style.display = 'flex';
+    }
+
+    function cerrarModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    async function guardarCategoria() {
+      const data = {
+        id: document.getElementById('categoriaId').value || undefined,
+        nombre: document.getElementById('nombre').value,
+        slug: document.getElementById('slug').value || document.getElementById('nombre').value.toLowerCase().replace(/\s+/g, '-'),
+        icono: document.getElementById('icono').value
+      };
+
+      try {
+        const res = await fetch('/.netlify/functions/admin-categorias', {
+          method: data.id ? 'PUT' : 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (res.ok) {
+          Swal.fire('Éxito', `Categoría ${data.id ? 'actualizada' : 'creada'}`, 'success');
+          cerrarModal();
+          cargarCategorias();
+        } else {
+          throw new Error();
+        }
+      } catch {
+        Swal.fire('Error', 'No se pudo guardar', 'error');
+      }
+    }
+
+    async function eliminarCategoria(id) {
+      const result = await Swal.fire({
+        title: '¿Eliminar?',
+        text: 'Esta acción no se puede deshacer',
+        icon: 'warning',
+        showCancelButton: true
+      });
+
+      if (result.isConfirmed) {
+        try {
+          const res = await fetch(`/.netlify/functions/admin-categorias?id=${id}`, {
+            method: 'DELETE',
+            headers: { 'Authorization': `Bearer ${token}` }
+          });
+
+          if (res.ok) {
+            Swal.fire('Eliminado', 'Categoría eliminada', 'success');
+            cargarCategorias();
+          }
+        } catch {
+          Swal.fire('Error', 'No se pudo eliminar', 'error');
+        }
+      }
+    }
+
+    cargarCategorias();
+  </script>
+</body>
+</html>
