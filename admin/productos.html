@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,33 +7,20 @@
   <link rel="stylesheet" href="../style.css">
   <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- SDK de Supabase para el frontend -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <style>
-    .admin-container {
-      display: flex;
-      min-height: 100vh;
-    }
-
+    /* Estilos existentes más los nuevos */
+    .admin-container { display: flex; min-height: 100vh; }
     .sidebar {
       width: 250px;
       background: #088178;
       color: white;
       padding: 20px;
     }
-
-    .sidebar h2 {
-      color: white;
-      margin-bottom: 30px;
-    }
-
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .sidebar li {
-      margin-bottom: 15px;
-    }
-
+    .sidebar h2 { color: white; margin-bottom: 30px; }
+    .sidebar ul { list-style: none; padding: 0; }
+    .sidebar li { margin-bottom: 15px; }
     .sidebar a {
       color: white;
       text-decoration: none;
@@ -42,28 +28,14 @@
       padding: 10px;
       border-radius: 5px;
     }
-
-    .sidebar a:hover,
-    .sidebar a.active {
-      background: #066a63;
-    }
-
-    .main-content {
-      flex: 1;
-      padding: 30px;
-      background: #f5f5f5;
-    }
-
+    .sidebar a:hover, .sidebar a.active { background: #066a63; }
+    .main-content { flex: 1; padding: 30px; background: #f5f5f5; }
     .logout {
       margin-top: 30px;
       padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      border-top: 1px solid rgba(255,255,255,0.2);
     }
-
-    .logout a {
-      color: white;
-      text-decoration: none;
-    }
+    .logout a { color: white; text-decoration: none; }
 
     /* Estilos para productos */
     .header-actions {
@@ -72,7 +44,6 @@
       align-items: center;
       margin-bottom: 20px;
     }
-
     .btn-nuevo {
       background: #088178;
       color: white;
@@ -81,24 +52,18 @@
       border-radius: 5px;
       cursor: pointer;
     }
-
-    .btn-nuevo:hover {
-      background: #066a63;
-    }
-
+    .btn-nuevo:hover { background: #066a63; }
     .productos-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 20px;
     }
-
     .producto-card {
       background: white;
       border-radius: 10px;
       padding: 15px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-
     .producto-img {
       width: 100%;
       height: 200px;
@@ -106,81 +71,38 @@
       border-radius: 5px;
       margin-bottom: 10px;
     }
-
-    .producto-info h3 {
-      margin: 10px 0;
-      color: #088178;
-    }
-
-    .producto-info p {
-      color: #666;
-      margin: 5px 0;
-    }
-
+    .producto-info h3 { margin: 10px 0; color: #088178; }
+    .producto-info p { color: #666; margin: 5px 0; }
     .producto-precios {
       display: flex;
       gap: 10px;
       margin: 10px 0;
     }
-
-    .precio-original {
-      text-decoration: line-through;
-      color: #999;
-    }
-
-    .precio-oferta {
-      color: #088178;
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-
+    .precio-original { text-decoration: line-through; color: #999; }
+    .precio-oferta { color: #088178; font-weight: bold; font-size: 1.2em; }
     .producto-stock {
       display: inline-block;
       padding: 3px 10px;
       border-radius: 3px;
       font-size: 0.9em;
     }
-
-    .stock-alto {
-      background: #d4edda;
-      color: #155724;
-    }
-
-    .stock-bajo {
-      background: #fff3cd;
-      color: #856404;
-    }
-
-    .stock-cero {
-      background: #f8d7da;
-      color: #721c24;
-    }
-
+    .stock-alto { background: #d4edda; color: #155724; }
+    .stock-bajo { background: #fff3cd; color: #856404; }
+    .stock-cero { background: #f8d7da; color: #721c24; }
     .producto-acciones {
       display: flex;
       gap: 10px;
       margin-top: 15px;
     }
-
-    .btn-editar,
-    .btn-eliminar {
+    .btn-editar, .btn-eliminar {
       flex: 1;
       padding: 8px;
       border: none;
       border-radius: 3px;
       cursor: pointer;
     }
-
-    .btn-editar {
-      background: #088178;
-      color: white;
-    }
-
-    .btn-eliminar {
-      background: #dc3545;
-      color: white;
-    }
-
+    .btn-editar { background: #088178; color: white; }
+    .btn-eliminar { background: #dc3545; color: white; }
     .filtros {
       background: white;
       padding: 15px;
@@ -189,20 +111,73 @@
       display: flex;
       gap: 10px;
     }
-
-    .filtros input,
-    .filtros select {
+    .filtros input, .filtros select {
       padding: 8px;
       border: 1px solid #ddd;
       border-radius: 5px;
     }
+    .filtros input { flex: 1; }
 
-    .filtros input {
-      flex: 1;
+    /* Modal mejorado */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .modal-content h2 { color: #088178; margin-bottom: 20px; }
+    .modal-content label {
+      display: block;
+      margin-bottom: 5px;
+      color: #666;
+      font-weight: 600;
+    }
+    .modal-content input,
+    .modal-content textarea,
+    .modal-content select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .modal-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+    .btn-secondary {
+      background: #6c757d;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .preview-img {
+      max-width: 100%;
+      max-height: 150px;
+      margin-top: 10px;
+      border-radius: 5px;
     }
   </style>
 </head>
-
 <body>
   <div class="admin-container">
     <div class="sidebar">
@@ -220,7 +195,7 @@
     <div class="main-content">
       <div class="header-actions">
         <h1>Productos</h1>
-        <button class="btn-nuevo" onclick="mostrarModalProducto()">+ Nuevo Producto</button>
+        <button class="btn-nuevo" onclick="mostrarModal()">+ Nuevo Producto</button>
       </div>
 
       <div class="filtros">
@@ -241,138 +216,112 @@
     </div>
   </div>
 
-  <!-- Modal para crear/editar producto -->
-  <div id="productoModal"
-    style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 1000;">
-    <div
-      style="background: white; padding: 30px; border-radius: 10px; width: 90%; max-width: 600px; max-height: 90vh; overflow-y: auto;">
+  <!-- Modal para producto -->
+  <div id="productoModal" class="modal-overlay">
+    <div class="modal-content">
       <h2 id="modalTitle">Nuevo Producto</h2>
-      <form id="productoForm">
+      <form id="productoForm" enctype="multipart/form-data">
         <input type="hidden" id="productoId">
+        
+        <label for="nombre">Nombre *</label>
+        <input type="text" id="nombre" required>
 
-        <div style="margin-bottom: 15px;">
-          <label>Nombre *</label>
-          <input type="text" id="nombre" required style="width: 100%; padding: 8px;">
-        </div>
+        <label for="detalle">Detalle</label>
+        <input type="text" id="detalle">
 
-        <div style="margin-bottom: 15px;">
-          <label>Detalle</label>
-          <input type="text" id="detalle" style="width: 100%; padding: 8px;">
-        </div>
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" rows="4"></textarea>
 
-        <div style="margin-bottom: 15px;">
-          <label>Descripción</label>
-          <textarea id="descripcion" rows="4" style="width: 100%; padding: 8px;"></textarea>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
           <div>
-            <label>Precio Original *</label>
-            <input type="number" id="precio" required step="0.01" min="0" style="width: 100%; padding: 8px;">
+            <label for="precio">Precio Original *</label>
+            <input type="number" id="precio" required step="0.01" min="0">
           </div>
           <div>
-            <label>Precio Oferta *</label>
-            <input type="number" id="precioOferta" required step="0.01" min="0" style="width: 100%; padding: 8px;">
+            <label for="precioOferta">Precio Oferta *</label>
+            <input type="number" id="precioOferta" required step="0.01" min="0">
           </div>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
           <div>
-            <label>Stock *</label>
-            <input type="number" id="stock" required min="0" style="width: 100%; padding: 8px;">
+            <label for="stock">Stock *</label>
+            <input type="number" id="stock" required min="0">
           </div>
           <div>
-            <label>Categoría</label>
-            <select id="categoria_id" style="width: 100%; padding: 8px;">
+            <label for="categoria_id">Categoría</label>
+            <select id="categoria_id">
               <option value="">Sin categoría</option>
             </select>
           </div>
         </div>
 
-        <div style="margin-bottom: 15px;">
-          <label>Destacado</label>
-          <input type="checkbox" id="destacado">
-        </div>
+        <label>
+          <input type="checkbox" id="destacado"> Producto destacado
+        </label>
 
-        <div style="margin-bottom: 15px;">
-          <label>URL de imágenes (una por línea)</label>
-          <textarea id="imagenes" rows="3" style="width: 100%; padding: 8px;"
-            placeholder="https://ejemplo.com/imagen1.jpg"></textarea>
-        </div>
+        <label for="imagen">Imagen del producto</label>
+        <input type="file" id="imagen" accept="image/*" onchange="previewImagen(this)">
+        <div id="imagenPreview"></div>
+        <small style="color: #666;">Máximo 5MB. Formatos: JPG, PNG, WEBP</small>
 
-        <div style="display: flex; gap: 10px; justify-content: flex-end;">
-          <button type="button" onclick="cerrarModal()"
-            style="padding: 10px 20px; background: #6c757d; color: white; border: none; border-radius: 5px;">Cancelar</button>
-          <button type="submit"
-            style="padding: 10px 20px; background: #088178; color: white; border: none; border-radius: 5px;">Guardar</button>
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary" onclick="cerrarModal()">Cancelar</button>
+          <button type="submit" class="btn-nuevo">Guardar Producto</button>
         </div>
       </form>
     </div>
   </div>
 
   <script>
+    // ========== CONFIGURACIÓN INICIAL ==========
+    const supabase = window.supabase.createClient(
+      'https://vfwpmpsjqsjtcreedtdv.supabase.co',  // Reemplaza con tu URL
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZmd3BtcHNqcXNqdGNyZWVkdGR2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU4Mzc1MDgsImV4cCI6MjA4MTQxMzUwOH0.7bB0etV70OeZSJPIIZ6IjdZGvr2NPhmyC9NNGIM3sDo'                       // Reemplaza con tu anon key
+    );
+    
+    let productos = [];
+    let categorias = [];
+    let imagenActual = null;
+
     // Verificar autenticación
-    (function () {
-      const token = localStorage.getItem('adminToken');
-      if (!token) window.location.href = 'login.html';
-    })();
+    const token = localStorage.getItem('adminToken');
+    if (!token) window.location.href = 'login.html';
 
     function logout() {
       localStorage.removeItem('adminToken');
       window.location.href = 'login.html';
     }
 
-    // Variables globales
-    let productos = [];
-    let categorias = [];
-
-    // Cargar datos iniciales
+    // ========== CARGA DE DATOS ==========
     async function cargarDatos() {
       try {
-        const token = localStorage.getItem('adminToken');
-        if (!token) {
-          window.location.href = 'login.html';
-          return;
-        }
-
-        const headers = {
-          'Authorization': `Bearer ${token}`
-        };
+        const headers = { 'Authorization': `Bearer ${token}` };
 
         const [productosRes, categoriasRes] = await Promise.all([
           fetch('/.netlify/functions/admin-productos', { headers }),
           fetch('/.netlify/functions/admin-categorias', { headers })
         ]);
 
-        // Verificar respuestas
-        if (!productosRes.ok) {
-          if (productosRes.status === 401) {
+        if (!productosRes.ok || !categoriasRes.ok) {
+          if (productosRes.status === 401 || categoriasRes.status === 401) {
             localStorage.removeItem('adminToken');
             window.location.href = 'login.html';
             return;
           }
-          throw new Error(`Error ${productosRes.status}: ${await productosRes.text()}`);
+          throw new Error('Error al cargar datos');
         }
 
-        if (!categoriasRes.ok) {
-          throw new Error(`Error ${categoriasRes.status}: ${await categoriasRes.text()}`);
-        }
-
-        const productosData = await productosRes.json();
-        const categoriasData = await categoriasRes.json();
-
-        // Verificar que sean arrays
-        productos = Array.isArray(productosData) ? productosData : [];
-        categorias = Array.isArray(categoriasData) ? categoriasData : [];
+        productos = await productosRes.json();
+        categorias = await categoriasRes.json();
 
         // Llenar selects de categorías
         const categoriaFilter = document.getElementById('categoriaFilter');
         const categoriaSelect = document.getElementById('categoria_id');
-
-        // Limpiar opciones existentes (excepto la primera)
+        
         categoriaFilter.innerHTML = '<option value="">Todas las categorías</option>';
         categoriaSelect.innerHTML = '<option value="">Sin categoría</option>';
-
+        
         categorias.forEach(cat => {
           categoriaFilter.innerHTML += `<option value="${cat.id}">${cat.nombre}</option>`;
           categoriaSelect.innerHTML += `<option value="${cat.id}">${cat.nombre}</option>`;
@@ -380,17 +329,12 @@
 
         renderizarProductos();
       } catch (error) {
-        console.error('Error completo:', error);
-        Swal.fire({
-          icon: 'error',
-          title: 'Error',
-          text: error.message || 'No se pudieron cargar los datos',
-          footer: 'Verifica la consola para más detalles'
-        });
+        console.error('Error:', error);
+        Swal.fire('Error', 'No se pudieron cargar los datos', 'error');
       }
     }
 
-    // Renderizar productos con filtros
+    // ========== RENDERIZADO ==========
     function renderizarProductos() {
       const searchTerm = document.getElementById('searchInput').value.toLowerCase();
       const categoriaId = document.getElementById('categoriaFilter').value;
@@ -398,11 +342,11 @@
 
       let filtrados = productos.filter(p => {
         const matchesSearch = p.nombre.toLowerCase().includes(searchTerm) ||
-          (p.detalle && p.detalle.toLowerCase().includes(searchTerm));
+                             (p.detalle && p.detalle.toLowerCase().includes(searchTerm));
         const matchesCategoria = !categoriaId || p.categoria_id == categoriaId;
         const matchesStock = !stockFilter ||
-          (stockFilter === 'bajo' && p.stock < 5 && p.stock > 0) ||
-          (stockFilter === 'cero' && p.stock === 0);
+                            (stockFilter === 'bajo' && p.stock < 5 && p.stock > 0) ||
+                            (stockFilter === 'cero' && p.stock === 0);
         return matchesSearch && matchesCategoria && matchesStock;
       });
 
@@ -434,8 +378,8 @@
     document.getElementById('categoriaFilter').addEventListener('change', renderizarProductos);
     document.getElementById('stockFilter').addEventListener('change', renderizarProductos);
 
-    // Modal funciones
-    function mostrarModalProducto(producto = null) {
+    // ========== MODAL ==========
+    function mostrarModal(producto = null) {
       document.getElementById('modalTitle').textContent = producto ? 'Editar Producto' : 'Nuevo Producto';
       document.getElementById('productoId').value = producto?.id || '';
       document.getElementById('nombre').value = producto?.nombre || '';
@@ -446,62 +390,146 @@
       document.getElementById('stock').value = producto?.stock || 0;
       document.getElementById('categoria_id').value = producto?.categoria_id || '';
       document.getElementById('destacado').checked = producto?.destacado || false;
-      document.getElementById('imagenes').value = producto?.imagenes?.join('\n') || '';
-
+      
+      // Mostrar preview de imagen si existe
+      if (producto?.imagenes?.[0]) {
+        document.getElementById('imagenPreview').innerHTML = `
+          <img src="${producto.imagenes[0]}" class="preview-img" alt="Preview">
+          <p style="color: #666;">Imagen actual. Puedes subir una nueva para reemplazarla.</p>
+        `;
+      } else {
+        document.getElementById('imagenPreview').innerHTML = '';
+      }
+      
+      imagenActual = null;
       document.getElementById('productoModal').style.display = 'flex';
     }
 
     function cerrarModal() {
       document.getElementById('productoModal').style.display = 'none';
+      document.getElementById('productoForm').reset();
+      document.getElementById('imagenPreview').innerHTML = '';
+      imagenActual = null;
     }
 
-    // Guardar producto
+    function editarProducto(id) {
+      const producto = productos.find(p => p.id === id);
+      mostrarModal(producto);
+    }
+
+    // ========== SUBIDA DE IMAGEN ==========
+    function previewImagen(input) {
+      const preview = document.getElementById('imagenPreview');
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          preview.innerHTML = `<img src="${e.target.result}" class="preview-img" alt="Preview">`;
+        };
+        reader.readAsDataURL(input.files[0]);
+        imagenActual = input.files[0];
+      } else {
+        preview.innerHTML = '';
+        imagenActual = null;
+      }
+    }
+
+    async function subirImagen(file) {
+      if (!file) return null;
+
+      const fileName = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.]/g, '')}`;
+      
+      try {
+        const { data, error } = await supabase.storage
+          .from('productos')
+          .upload(fileName, file);
+
+        if (error) throw error;
+
+        const { data: { publicUrl } } = supabase.storage
+          .from('productos')
+          .getPublicUrl(fileName);
+
+        return publicUrl;
+      } catch (error) {
+        console.error('Error subiendo imagen:', error);
+        throw new Error('No se pudo subir la imagen');
+      }
+    }
+
+    // ========== GUARDAR PRODUCTO (FUNCIÓN PRINCIPAL) ==========
     document.getElementById('productoForm').addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const productoData = {
-        id: document.getElementById('productoId').value || undefined,
-        nombre: document.getElementById('nombre').value,
-        detalle: document.getElementById('detalle').value,
-        descripcion: document.getElementById('descripcion').value,
-        precio: parseFloat(document.getElementById('precio').value),
-        precio_oferta: parseFloat(document.getElementById('precioOferta').value),
-        stock: parseInt(document.getElementById('stock').value),
-        categoria_id: document.getElementById('categoria_id').value || null,
-        destacado: document.getElementById('destacado').checked,
-        imagenes: document.getElementById('imagenes').value.split('\n').filter(url => url.trim())
-      };
+      Swal.fire({
+        title: 'Guardando...',
+        allowOutsideClick: false,
+        didOpen: () => Swal.showLoading()
+      });
 
       try {
+        // 1. Subir imagen si hay una nueva
+        let imagenUrl = null;
+        if (imagenActual) {
+          imagenUrl = await subirImagen(imagenActual);
+        }
+
+        // 2. Preparar datos del producto
+        const productoData = {
+          id: document.getElementById('productoId').value || undefined,
+          nombre: document.getElementById('nombre').value,
+          detalle: document.getElementById('detalle').value,
+          descripcion: document.getElementById('descripcion').value,
+          precio: parseFloat(document.getElementById('precio').value),
+          precio_oferta: parseFloat(document.getElementById('precioOferta').value),
+          stock: parseInt(document.getElementById('stock').value),
+          categoria_id: document.getElementById('categoria_id').value || null,
+          destacado: document.getElementById('destacado').checked,
+          imagenes: imagenUrl ? [imagenUrl] : undefined
+        };
+
+        // Si no hay nueva imagen, no enviar el campo imagenes (mantener la existente)
+        if (!imagenUrl) {
+          delete productoData.imagenes;
+        }
+
+        // 3. Guardar en Supabase vía API
         const response = await fetch('/.netlify/functions/admin-productos', {
           method: productoData.id ? 'PUT' : 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
+            'Authorization': `Bearer ${token}`
           },
           body: JSON.stringify(productoData)
         });
 
-        if (response.ok) {
-          Swal.fire('Éxito', `Producto ${productoData.id ? 'actualizado' : 'creado'} correctamente`, 'success');
-          cerrarModal();
-          cargarDatos();
-        } else {
-          const error = await response.json();
-          Swal.fire('Error', error.error || 'No se pudo guardar', 'error');
+        const result = await response.json();
+
+        if (!response.ok) {
+          throw new Error(result.error || 'Error al guardar');
         }
+
+        Swal.fire({
+          icon: 'success',
+          title: 'Éxito',
+          text: `Producto ${productoData.id ? 'actualizado' : 'creado'} correctamente`,
+          timer: 1500,
+          showConfirmButton: false
+        });
+
+        cerrarModal();
+        cargarDatos();
+
       } catch (error) {
-        Swal.fire('Error', 'Error de conexión', 'error');
+        console.error('Error:', error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: error.message || 'No se pudo guardar el producto'
+        });
       }
     });
 
-    // Editar producto
-    function editarProducto(id) {
-      const producto = productos.find(p => p.id === id);
-      mostrarModalProducto(producto);
-    }
-
-    // Eliminar producto
+    // ========== ELIMINAR PRODUCTO ==========
     async function eliminarProducto(id) {
       const result = await Swal.fire({
         title: '¿Eliminar producto?',
@@ -509,7 +537,6 @@
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#dc3545',
-        cancelButtonColor: '#6c757d',
         confirmButtonText: 'Sí, eliminar'
       });
 
@@ -517,26 +544,21 @@
         try {
           const response = await fetch(`/.netlify/functions/admin-productos?id=${id}`, {
             method: 'DELETE',
-            headers: {
-              'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
-            }
+            headers: { 'Authorization': `Bearer ${token}` }
           });
 
-          if (response.ok) {
-            Swal.fire('Eliminado', 'Producto eliminado correctamente', 'success');
-            cargarDatos();
-          } else {
-            Swal.fire('Error', 'No se pudo eliminar', 'error');
-          }
-        } catch (error) {
-          Swal.fire('Error', 'Error de conexión', 'error');
+          if (!response.ok) throw new Error();
+
+          Swal.fire('Eliminado', 'Producto eliminado correctamente', 'success');
+          cargarDatos();
+        } catch {
+          Swal.fire('Error', 'No se pudo eliminar el producto', 'error');
         }
       }
     }
 
-    // Iniciar
+    // ========== INICIALIZAR ==========
     cargarDatos();
   </script>
 </body>
-
 </html>
