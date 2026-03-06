@@ -15,10 +15,10 @@ exports.handler = async (event) => {
   }
 
   if (event.httpMethod !== 'POST') {
-    return { 
-      statusCode: 405, 
-      headers, 
-      body: JSON.stringify({ error: 'Método no permitido' }) 
+    return {
+      statusCode: 405,
+      headers,
+      body: JSON.stringify({ error: 'Método no permitido' })
     };
   }
 
@@ -32,39 +32,32 @@ exports.handler = async (event) => {
 
     if (!ADMIN_PASS) {
       console.error('ADMIN_PASS no configurado en Netlify');
-      return { 
-        statusCode: 500, 
-        headers, 
-        body: JSON.stringify({ error: 'Error de configuración del servidor' }) 
+      return {
+        statusCode: 500,
+        headers,
+        body: JSON.stringify({ error: 'Error de configuración del servidor' })
       };
     }
 
     // Validar credenciales
     if (username !== ADMIN_USER || password !== ADMIN_PASS) {
-      return { 
-        statusCode: 401, 
-        headers, 
-        body: JSON.stringify({ error: 'Usuario o contraseña incorrectos' }) 
+      return {
+        statusCode: 401,
+        headers,
+        body: JSON.stringify({ error: 'Usuario o contraseña incorrectos' })
       };
     }
 
-    // Generar token único basado en timestamp + secreto
-    const token = crypto
-      .createHmac('sha256', ADMIN_TOKEN_SECRET)
-      .update(username + Date.now())
-      .digest('hex');
 
-    // Importante: El token debe ser el mismo que ADMIN_TOKEN para que coincida
-    // Pero por seguridad, usamos el secreto para generarlo
-
+    // ✅ Devuelve el ADMIN_TOKEN real de Netlify
     return {
       statusCode: 200,
-      headers,
-      body: JSON.stringify({ 
-        token,
-        message: 'Login exitoso' 
+      body: JSON.stringify({
+        token: process.env.ADMIN_TOKEN,  // ← Este es el valor real
+        message: 'Login exitoso'
       })
     };
+
 
   } catch (error) {
     console.error('Error en login:', error);
