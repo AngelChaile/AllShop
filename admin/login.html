@@ -8,44 +8,81 @@
   <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
-    body { background: #f5f5f5; display: flex; align-items: center; min-height: 100vh; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: linear-gradient(135deg, #088178 0%, #066a63 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: 'Spartan', sans-serif;
+    }
     .login-container {
+      width: 100%;
       max-width: 400px;
-      margin: 0 auto;
-      padding: 40px;
+      margin: 20px;
+      padding: 40px 30px;
       background: white;
       border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    .login-container .logo {
+      display: block;
+      margin: 0 auto 20px;
+      width: 100px;
+      height: auto;
     }
     .login-container h2 {
       text-align: center;
       color: #088178;
       margin-bottom: 30px;
+      font-size: 1.8rem;
+      font-weight: 600;
+      word-wrap: break-word;
+    }
+    .login-container form {
+      display: flex;
+      flex-direction: column;
     }
     .login-container input {
       width: 100%;
-      padding: 12px;
+      padding: 15px;
       margin-bottom: 20px;
       border: 1px solid #ddd;
       border-radius: 5px;
       font-size: 16px;
+      transition: border-color 0.3s;
+    }
+    .login-container input:focus {
+      outline: none;
+      border-color: #088178;
     }
     .login-container button {
       width: 100%;
-      padding: 12px;
+      padding: 15px;
       background: #088178;
       color: white;
       border: none;
       border-radius: 5px;
       font-size: 16px;
+      font-weight: 600;
       cursor: pointer;
       transition: background 0.3s;
     }
-    .login-container button:hover { background: #066a63; }
-    .login-container .logo {
-      display: block;
-      margin: 0 auto 20px;
-      width: 80px;
+    .login-container button:hover {
+      background: #066a63;
+    }
+    @media (max-width: 480px) {
+      .login-container {
+        padding: 30px 20px;
+      }
+      .login-container h2 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -54,7 +91,7 @@
     <img src="../img/logo.png" alt="AllShop" class="logo">
     <h2>Panel de Administración</h2>
     <form id="loginForm">
-      <input type="text" id="username" placeholder="Usuario" required>
+      <input type="text" id="username" placeholder="Usuario" required autocomplete="off">
       <input type="password" id="password" placeholder="Contraseña" required>
       <button type="submit">Iniciar Sesión</button>
     </form>
@@ -64,8 +101,13 @@
     document.getElementById('loginForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (!username || !password) {
+        Swal.fire('Error', 'Completa todos los campos', 'warning');
+        return;
+      }
 
       try {
         const response = await fetch('/.netlify/functions/admin-login', {
@@ -78,12 +120,21 @@
 
         if (response.ok) {
           localStorage.setItem('adminToken', data.token);
-          window.location.href = 'index.html';
+          Swal.fire({
+            icon: 'success',
+            title: '¡Bienvenido!',
+            text: 'Inicio de sesión exitoso',
+            timer: 1500,
+            showConfirmButton: false
+          }).then(() => {
+            window.location.href = 'index.html';
+          });
         } else {
           Swal.fire('Error', data.error || 'Credenciales incorrectas', 'error');
         }
       } catch (error) {
-        Swal.fire('Error', 'Error de conexión', 'error');
+        console.error('Error:', error);
+        Swal.fire('Error', 'Error de conexión con el servidor', 'error');
       }
     });
   </script>

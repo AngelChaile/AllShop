@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,32 @@
   <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
-    .admin-container { display: flex; min-height: 100vh; }
+    .admin-container {
+      display: flex;
+      min-height: 100vh;
+    }
+
     .sidebar {
       width: 250px;
       background: #088178;
       color: white;
       padding: 20px;
     }
-    .sidebar h2 { color: white; margin-bottom: 30px; }
-    .sidebar ul { list-style: none; padding: 0; }
-    .sidebar li { margin-bottom: 15px; }
+
+    .sidebar h2 {
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 15px;
+    }
+
     .sidebar a {
       color: white;
       text-decoration: none;
@@ -25,14 +42,28 @@
       padding: 10px;
       border-radius: 5px;
     }
-    .sidebar a:hover, .sidebar a.active { background: #066a63; }
-    .main-content { flex: 1; padding: 30px; background: #f5f5f5; }
+
+    .sidebar a:hover,
+    .sidebar a.active {
+      background: #066a63;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      background: #f5f5f5;
+    }
+
     .logout {
       margin-top: 30px;
       padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.2);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
     }
-    .logout a { color: white; text-decoration: none; }
+
+    .logout a {
+      color: white;
+      text-decoration: none;
+    }
 
     /* Estilos para productos */
     .header-actions {
@@ -41,6 +72,7 @@
       align-items: center;
       margin-bottom: 20px;
     }
+
     .btn-nuevo {
       background: #088178;
       color: white;
@@ -49,18 +81,24 @@
       border-radius: 5px;
       cursor: pointer;
     }
-    .btn-nuevo:hover { background: #066a63; }
+
+    .btn-nuevo:hover {
+      background: #066a63;
+    }
+
     .productos-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 20px;
     }
+
     .producto-card {
       background: white;
       border-radius: 10px;
       padding: 15px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
+
     .producto-img {
       width: 100%;
       height: 200px;
@@ -68,38 +106,81 @@
       border-radius: 5px;
       margin-bottom: 10px;
     }
-    .producto-info h3 { margin: 10px 0; color: #088178; }
-    .producto-info p { color: #666; margin: 5px 0; }
+
+    .producto-info h3 {
+      margin: 10px 0;
+      color: #088178;
+    }
+
+    .producto-info p {
+      color: #666;
+      margin: 5px 0;
+    }
+
     .producto-precios {
       display: flex;
       gap: 10px;
       margin: 10px 0;
     }
-    .precio-original { text-decoration: line-through; color: #999; }
-    .precio-oferta { color: #088178; font-weight: bold; font-size: 1.2em; }
+
+    .precio-original {
+      text-decoration: line-through;
+      color: #999;
+    }
+
+    .precio-oferta {
+      color: #088178;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
     .producto-stock {
       display: inline-block;
       padding: 3px 10px;
       border-radius: 3px;
       font-size: 0.9em;
     }
-    .stock-alto { background: #d4edda; color: #155724; }
-    .stock-bajo { background: #fff3cd; color: #856404; }
-    .stock-cero { background: #f8d7da; color: #721c24; }
+
+    .stock-alto {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .stock-bajo {
+      background: #fff3cd;
+      color: #856404;
+    }
+
+    .stock-cero {
+      background: #f8d7da;
+      color: #721c24;
+    }
+
     .producto-acciones {
       display: flex;
       gap: 10px;
       margin-top: 15px;
     }
-    .btn-editar, .btn-eliminar {
+
+    .btn-editar,
+    .btn-eliminar {
       flex: 1;
       padding: 8px;
       border: none;
       border-radius: 3px;
       cursor: pointer;
     }
-    .btn-editar { background: #088178; color: white; }
-    .btn-eliminar { background: #dc3545; color: white; }
+
+    .btn-editar {
+      background: #088178;
+      color: white;
+    }
+
+    .btn-eliminar {
+      background: #dc3545;
+      color: white;
+    }
+
     .filtros {
       background: white;
       padding: 15px;
@@ -108,14 +189,20 @@
       display: flex;
       gap: 10px;
     }
-    .filtros input, .filtros select {
+
+    .filtros input,
+    .filtros select {
       padding: 8px;
       border: 1px solid #ddd;
       border-radius: 5px;
     }
-    .filtros input { flex: 1; }
+
+    .filtros input {
+      flex: 1;
+    }
   </style>
 </head>
+
 <body>
   <div class="admin-container">
     <div class="sidebar">
@@ -155,12 +242,14 @@
   </div>
 
   <!-- Modal para crear/editar producto -->
-  <div id="productoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 1000;">
-    <div style="background: white; padding: 30px; border-radius: 10px; width: 90%; max-width: 600px; max-height: 90vh; overflow-y: auto;">
+  <div id="productoModal"
+    style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 1000;">
+    <div
+      style="background: white; padding: 30px; border-radius: 10px; width: 90%; max-width: 600px; max-height: 90vh; overflow-y: auto;">
       <h2 id="modalTitle">Nuevo Producto</h2>
       <form id="productoForm">
         <input type="hidden" id="productoId">
-        
+
         <div style="margin-bottom: 15px;">
           <label>Nombre *</label>
           <input type="text" id="nombre" required style="width: 100%; padding: 8px;">
@@ -207,12 +296,15 @@
 
         <div style="margin-bottom: 15px;">
           <label>URL de imágenes (una por línea)</label>
-          <textarea id="imagenes" rows="3" style="width: 100%; padding: 8px;" placeholder="https://ejemplo.com/imagen1.jpg"></textarea>
+          <textarea id="imagenes" rows="3" style="width: 100%; padding: 8px;"
+            placeholder="https://ejemplo.com/imagen1.jpg"></textarea>
         </div>
 
         <div style="display: flex; gap: 10px; justify-content: flex-end;">
-          <button type="button" onclick="cerrarModal()" style="padding: 10px 20px; background: #6c757d; color: white; border: none; border-radius: 5px;">Cancelar</button>
-          <button type="submit" style="padding: 10px 20px; background: #088178; color: white; border: none; border-radius: 5px;">Guardar</button>
+          <button type="button" onclick="cerrarModal()"
+            style="padding: 10px 20px; background: #6c757d; color: white; border: none; border-radius: 5px;">Cancelar</button>
+          <button type="submit"
+            style="padding: 10px 20px; background: #088178; color: white; border: none; border-radius: 5px;">Guardar</button>
         </div>
       </form>
     </div>
@@ -220,7 +312,7 @@
 
   <script>
     // Verificar autenticación
-    (function() {
+    (function () {
       const token = localStorage.getItem('adminToken');
       if (!token) window.location.href = 'login.html';
     })();
@@ -237,22 +329,50 @@
     // Cargar datos iniciales
     async function cargarDatos() {
       try {
+        const token = localStorage.getItem('adminToken');
+        if (!token) {
+          window.location.href = 'login.html';
+          return;
+        }
+
+        const headers = {
+          'Authorization': `Bearer ${token}`
+        };
+
         const [productosRes, categoriasRes] = await Promise.all([
-          fetch('/.netlify/functions/admin-productos', {
-            headers: { 'Authorization': `Bearer ${localStorage.getItem('adminToken')}` }
-          }),
-          fetch('/.netlify/functions/admin-categorias', {
-            headers: { 'Authorization': `Bearer ${localStorage.getItem('adminToken')}` }
-          })
+          fetch('/.netlify/functions/admin-productos', { headers }),
+          fetch('/.netlify/functions/admin-categorias', { headers })
         ]);
 
-        productos = await productosRes.json();
-        categorias = await categoriasRes.json();
+        // Verificar respuestas
+        if (!productosRes.ok) {
+          if (productosRes.status === 401) {
+            localStorage.removeItem('adminToken');
+            window.location.href = 'login.html';
+            return;
+          }
+          throw new Error(`Error ${productosRes.status}: ${await productosRes.text()}`);
+        }
+
+        if (!categoriasRes.ok) {
+          throw new Error(`Error ${categoriasRes.status}: ${await categoriasRes.text()}`);
+        }
+
+        const productosData = await productosRes.json();
+        const categoriasData = await categoriasRes.json();
+
+        // Verificar que sean arrays
+        productos = Array.isArray(productosData) ? productosData : [];
+        categorias = Array.isArray(categoriasData) ? categoriasData : [];
 
         // Llenar selects de categorías
         const categoriaFilter = document.getElementById('categoriaFilter');
         const categoriaSelect = document.getElementById('categoria_id');
-        
+
+        // Limpiar opciones existentes (excepto la primera)
+        categoriaFilter.innerHTML = '<option value="">Todas las categorías</option>';
+        categoriaSelect.innerHTML = '<option value="">Sin categoría</option>';
+
         categorias.forEach(cat => {
           categoriaFilter.innerHTML += `<option value="${cat.id}">${cat.nombre}</option>`;
           categoriaSelect.innerHTML += `<option value="${cat.id}">${cat.nombre}</option>`;
@@ -260,8 +380,13 @@
 
         renderizarProductos();
       } catch (error) {
-        console.error('Error:', error);
-        Swal.fire('Error', 'No se pudieron cargar los datos', 'error');
+        console.error('Error completo:', error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: error.message || 'No se pudieron cargar los datos',
+          footer: 'Verifica la consola para más detalles'
+        });
       }
     }
 
@@ -273,11 +398,11 @@
 
       let filtrados = productos.filter(p => {
         const matchesSearch = p.nombre.toLowerCase().includes(searchTerm) ||
-                             (p.detalle && p.detalle.toLowerCase().includes(searchTerm));
+          (p.detalle && p.detalle.toLowerCase().includes(searchTerm));
         const matchesCategoria = !categoriaId || p.categoria_id == categoriaId;
         const matchesStock = !stockFilter ||
-                            (stockFilter === 'bajo' && p.stock < 5 && p.stock > 0) ||
-                            (stockFilter === 'cero' && p.stock === 0);
+          (stockFilter === 'bajo' && p.stock < 5 && p.stock > 0) ||
+          (stockFilter === 'cero' && p.stock === 0);
         return matchesSearch && matchesCategoria && matchesStock;
       });
 
@@ -322,7 +447,7 @@
       document.getElementById('categoria_id').value = producto?.categoria_id || '';
       document.getElementById('destacado').checked = producto?.destacado || false;
       document.getElementById('imagenes').value = producto?.imagenes?.join('\n') || '';
-      
+
       document.getElementById('productoModal').style.display = 'flex';
     }
 
@@ -413,4 +538,5 @@
     cargarDatos();
   </script>
 </body>
+
 </html>
