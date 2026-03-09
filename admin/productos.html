@@ -10,7 +10,7 @@
   <!-- SDK de Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <style>
-    /* ===== ESTILOS (igual que antes) ===== */
+    /* ===== ESTILOS (se mantienen igual) ===== */
     .admin-container { display: flex; min-height: 100vh; }
     .sidebar {
       width: 250px;
@@ -165,11 +165,30 @@
       border-radius: 5px;
       cursor: pointer;
     }
+    .preview-container {
+      min-height: 100px;
+      margin-top: 5px;
+    }
     .preview-img {
       max-width: 100%;
-      max-height: 150px;
-      margin-top: 10px;
+      max-height: 100px;
+      object-fit: cover;
       border-radius: 5px;
+    }
+    .imagenes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    .imagen-campo {
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .imagen-campo label {
+      margin-bottom: 5px;
+      font-size: 0.9em;
     }
   </style>
 </head>
@@ -211,7 +230,7 @@
     </div>
   </div>
 
-  <!-- Modal para producto -->
+  <!-- Modal para producto (con 4 imágenes) -->
   <div id="productoModal" class="modal-overlay">
     <div class="modal-content">
       <h2 id="modalTitle">Nuevo Producto</h2>
@@ -255,10 +274,30 @@
           <input type="checkbox" id="destacado"> Producto destacado
         </label>
 
-        <label for="imagen">Imagen del producto</label>
-        <input type="file" id="imagen" accept="image/*">
-        <div id="imagenPreview"></div>
-        <small style="color: #666;">Máximo 5MB. Formatos: JPG, PNG, WEBP</small>
+        <label>Imágenes del producto (máx 4)</label>
+        <div class="imagenes-grid">
+          <div class="imagen-campo">
+            <label>Imagen 1</label>
+            <input type="file" id="imagen1" accept="image/*" class="imagen-input">
+            <div id="preview1" class="preview-container"></div>
+          </div>
+          <div class="imagen-campo">
+            <label>Imagen 2</label>
+            <input type="file" id="imagen2" accept="image/*" class="imagen-input">
+            <div id="preview2" class="preview-container"></div>
+          </div>
+          <div class="imagen-campo">
+            <label>Imagen 3</label>
+            <input type="file" id="imagen3" accept="image/*" class="imagen-input">
+            <div id="preview3" class="preview-container"></div>
+          </div>
+          <div class="imagen-campo">
+            <label>Imagen 4</label>
+            <input type="file" id="imagen4" accept="image/*" class="imagen-input">
+            <div id="preview4" class="preview-container"></div>
+          </div>
+        </div>
+        <small style="color: #666;">Máximo 5MB por imagen. Formatos: JPG, PNG, WEBP</small>
 
         <div class="modal-actions">
           <button type="button" class="btn-secondary" id="btnCancelar">Cancelar</button>
@@ -271,23 +310,21 @@
   <script>
     // ========== CONFIGURACIÓN ==========
     (function() {
-      // Verificar autenticación
       const token = localStorage.getItem('adminToken');
       if (!token) {
         window.location.href = 'login.html';
         return;
       }
 
-      // Configurar Supabase (solo una vez)
-      const SUPABASE_URL = 'https://vfwpmpsjqsjtcreedtdv.supabase.co'; // ← REEMPLAZAR
-      const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZmd3BtcHNqcXNqdGNyZWVkdGR2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU4Mzc1MDgsImV4cCI6MjA4MTQxMzUwOH0.7bB0etV70OeZSJPIIZ6IjdZGvr2NPhmyC9NNGIM3sDo'; // ← REEMPLAZAR
+      const SUPABASE_URL = 'https://vfwpmpsjqsjtcreedtdv.supabase.co';
+      const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZmd3BtcHNqcXNqdGNyZWVkdGR2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU4Mzc1MDgsImV4cCI6MjA4MTQxMzUwOH0.7bB0etV70OeZSJPIIZ6IjdZGvr2NPhmyC9NNGIM3sDo';
       
       const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-      // Variables globales
       let productos = [];
       let categorias = [];
-      let imagenActual = null;
+      let imagenesParaSubir = [null, null, null, null];
+      let imagenesExistentes = [];
 
       // ========== FUNCIONES ==========
       async function cargarDatos() {
@@ -311,7 +348,6 @@
           productos = await productosRes.json();
           categorias = await categoriasRes.json();
 
-          // Llenar selects
           const categoriaFilter = document.getElementById('categoriaFilter');
           const categoriaSelect = document.getElementById('categoria_id');
           
@@ -375,7 +411,24 @@
         `).join('');
       }
 
-      // Funciones del modal
+      // Preview de imágenes
+      document.querySelectorAll('.imagen-input').forEach((input, index) => {
+        input.addEventListener('change', function(e) {
+          const previewDiv = document.getElementById(`preview${index + 1}`);
+          if (this.files && this.files[0]) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+              previewDiv.innerHTML = `<img src="${e.target.result}" class="preview-img" alt="Preview">`;
+            };
+            reader.readAsDataURL(this.files[0]);
+            imagenesParaSubir[index] = this.files[0];
+          } else {
+            previewDiv.innerHTML = '';
+            imagenesParaSubir[index] = null;
+          }
+        });
+      });
+
       window.mostrarModal = function(producto = null) {
         document.getElementById('modalTitle').textContent = producto ? 'Editar Producto' : 'Nuevo Producto';
         document.getElementById('productoId').value = producto?.id || '';
@@ -388,24 +441,28 @@
         document.getElementById('categoria_id').value = producto?.categoria_id || '';
         document.getElementById('destacado').checked = producto?.destacado || false;
         
-        if (producto?.imagenes?.[0]) {
-          document.getElementById('imagenPreview').innerHTML = `
-            <img src="${producto.imagenes[0]}" class="preview-img" alt="Preview">
-            <p style="color: #666;">Imagen actual</p>
-          `;
-        } else {
-          document.getElementById('imagenPreview').innerHTML = '';
+        imagenesExistentes = producto?.imagenes || [];
+        for (let i = 0; i < 4; i++) {
+          const previewDiv = document.getElementById(`preview${i + 1}`);
+          if (imagenesExistentes[i]) {
+            previewDiv.innerHTML = `<img src="${imagenesExistentes[i]}" class="preview-img" alt="Preview">`;
+          } else {
+            previewDiv.innerHTML = '';
+          }
         }
         
-        imagenActual = null;
+        imagenesParaSubir = [null, null, null, null];
         document.getElementById('productoModal').style.display = 'flex';
       };
 
       window.cerrarModal = function() {
         document.getElementById('productoModal').style.display = 'none';
         document.getElementById('productoForm').reset();
-        document.getElementById('imagenPreview').innerHTML = '';
-        imagenActual = null;
+        for (let i = 0; i < 4; i++) {
+          document.getElementById(`preview${i + 1}`).innerHTML = '';
+        }
+        imagenesParaSubir = [null, null, null, null];
+        imagenesExistentes = [];
       };
 
       window.editarProducto = function(id) {
@@ -440,47 +497,29 @@
         }
       };
 
-      // Preview de imagen
-      document.getElementById('imagen').addEventListener('change', function(e) {
-        const preview = document.getElementById('imagenPreview');
-        if (this.files && this.files[0]) {
-          const reader = new FileReader();
-          reader.onload = (e) => {
-            preview.innerHTML = `<img src="${e.target.result}" class="preview-img" alt="Preview">`;
-          };
-          reader.readAsDataURL(this.files[0]);
-          imagenActual = this.files[0];
-        } else {
-          preview.innerHTML = '';
-          imagenActual = null;
+      async function subirMultiplesImagenes() {
+        const urls = [];
+        for (let i = 0; i < imagenesParaSubir.length; i++) {
+          const file = imagenesParaSubir[i];
+          if (file) {
+            const fileName = `${Date.now()}-${i}-${file.name.replace(/[^a-zA-Z0-9.]/g, '')}`;
+            try {
+              const { data, error } = await supabase.storage
+                .from('productos')
+                .upload(fileName, file);
+              if (error) throw error;
+              const { data: { publicUrl } } = supabase.storage
+                .from('productos')
+                .getPublicUrl(fileName);
+              urls.push(publicUrl);
+            } catch (error) {
+              console.error(`Error subiendo imagen ${i+1}:`, error);
+            }
+          }
         }
-      });
-
-      // Subir imagen a Supabase
-      async function subirImagen(file) {
-        if (!file) return null;
-
-        const fileName = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.]/g, '')}`;
-        
-        try {
-          const { data, error } = await supabase.storage
-            .from('productos')
-            .upload(fileName, file);
-
-          if (error) throw error;
-
-          const { data: { publicUrl } } = supabase.storage
-            .from('productos')
-            .getPublicUrl(fileName);
-
-          return publicUrl;
-        } catch (error) {
-          console.error('Error subiendo imagen:', error);
-          throw new Error('No se pudo subir la imagen');
-        }
+        return urls;
       }
 
-      // Guardar producto
       document.getElementById('productoForm').addEventListener('submit', async (e) => {
         e.preventDefault();
 
@@ -491,10 +530,8 @@
         });
 
         try {
-          let imagenUrl = null;
-          if (imagenActual) {
-            imagenUrl = await subirImagen(imagenActual);
-          }
+          const nuevasImagenes = await subirMultiplesImagenes();
+          const todasLasImagenes = [...nuevasImagenes, ...imagenesExistentes].slice(0, 4);
 
           const productoData = {
             id: document.getElementById('productoId').value || undefined,
@@ -506,12 +543,8 @@
             stock: parseInt(document.getElementById('stock').value),
             categoria_id: document.getElementById('categoria_id').value || null,
             destacado: document.getElementById('destacado').checked,
-            imagenes: imagenUrl ? [imagenUrl] : undefined
+            imagenes: todasLasImagenes.length > 0 ? todasLasImagenes : undefined
           };
-
-          if (!imagenUrl) {
-            delete productoData.imagenes;
-          }
 
           const response = await fetch('/.netlify/functions/admin-productos', {
             method: productoData.id ? 'PUT' : 'POST',
@@ -562,7 +595,6 @@
       document.getElementById('categoriaFilter').addEventListener('change', renderizarProductos);
       document.getElementById('stockFilter').addEventListener('change', renderizarProductos);
 
-      // Iniciar
       cargarDatos();
     })();
   </script>

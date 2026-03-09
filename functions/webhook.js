@@ -2,12 +2,10 @@
 const crypto = require('crypto');
 const { createClient } = require('@supabase/supabase-js');
 
-// Inicializa Supabase
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-// Función de log condicional (sin import)
 function log(...args) {
   console.log(...args);
 }
@@ -36,11 +34,6 @@ exports.handler = async (event) => {
     const dataId = queryParams['data.id'];
     const type = queryParams['type'];
 
-    log('xSignature:', xSignature);
-    log('xRequestId:', xRequestId);
-    log('data.id:', dataId);
-    log('type:', type);
-
     if (type !== 'payment') {
       log('Notificación ignorada (no es payment)');
       return { statusCode: 200, headers, body: JSON.stringify({ received: true }) };
@@ -48,7 +41,7 @@ exports.handler = async (event) => {
 
     const secret = process.env.MP_WEBHOOK_SECRET;
     if (!secret) {
-      errorLog('MP_WEBHOOD_SECRET no está configurada');
+      errorLog('MP_WEBHOOK_SECRET no está configurada');
       throw new Error('Webhook secret missing');
     }
 
@@ -82,8 +75,6 @@ exports.handler = async (event) => {
     log('✅ Firma validada correctamente');
 
     const body = JSON.parse(event.body);
-    log('Body recibido:', JSON.stringify(body, null, 2));
-
     const paymentId = body.data?.id;
     const action = body.action;
 
@@ -92,7 +83,6 @@ exports.handler = async (event) => {
       return { statusCode: 400, headers, body: 'Bad Request' };
     }
 
-    // Obtener detalles del pago
     const mercadopago = require('mercadopago');
     mercadopago.configurations = {
       access_token: process.env.MP_ACCESS_TOKEN
@@ -105,13 +95,33 @@ exports.handler = async (event) => {
       log('Estado del pago:', payment.status);
 
       if (payment.status === 'approved') {
-        const externalReference = payment.external_reference;
-        log('Procesando pago aprobado:', externalReference);
-        
+        // 1. Guardar pedido en la base de datos
+        const { error: pedidoError } = await supabase
+          .from('pedidos')
+          .insert([{
+            cliente_email: payment.payer.email,
+            total: payment.transaction_amount,
+            estado: 'pagado',
+            mp_payment_id: payment.id.toString(),
+            datos_entrega: {
+              items: payment.additional_info?.items,
+              payer: payment.payer,
+              external_reference: payment.external_reference,
+              fecha_pago: new Date().toISOString()
+            }
+          }]);
+
+        if (pedidoError) {
+          errorLog('Error guardando pedido:', pedidoError);
+        } else {
+          log('✅ Pedido guardado correctamente');
+        }
+
+        // 2. Actualizar stock de productos
         const items = payment.additional_info?.items || [];
         
         for (const item of items) {
-          // Buscar producto (idealmente se debería guardar el ID en un campo personalizado)
+          // Buscar producto por título
           const { data: productos, error: selectError } = await supabase
             .from('productos')
             .select('id, stock')
