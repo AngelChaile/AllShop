@@ -389,7 +389,7 @@ async function procesarCheckout() {
 
   // Preguntar método de pago
   const { value: paymentMethod } = await Swal.fire({
-    title: '¿Cómo quieres pagar?',
+    title: '¿Cómo querés pagar?',
     html: `
       <div style="text-align: left; margin: 15px 0; color: #666;">
         <div style="margin-bottom: 10px;">

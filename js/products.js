@@ -227,19 +227,19 @@ marca:        champion
     ],
     detalle: "Champión",
     descripcion: `
-Especificaciones
+  Especificaciones
 
-Marca	Champion
-Color	Gris 
-Género	Hombre
-Diseño Tela	Liso
-Bolsillos	1
-Largo manga	Sin manga
-Modelo	Con capucha
-Calce	Regular Fit
-Material	Algodón
-Temporada	Atemporal
-Talle: XS
+  Marca	Champion
+  Color	Gris 
+  Género	Hombre
+  Diseño Tela	Liso
+  Bolsillos	1
+  Largo manga	Sin manga
+  Modelo	Con capucha
+  Calce	Regular Fit
+  Material	Algodón
+  Temporada	Atemporal
+  Talle: XS
 `,
     stock: 1,
     precio: 20000,

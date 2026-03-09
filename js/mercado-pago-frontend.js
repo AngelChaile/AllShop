@@ -44,7 +44,7 @@ export class MercadoPagoService {
       const data = await response.json();
 
       if (!response.ok) {
-        console.error('Error completo:', data); // ← VER ESTO
+        console.error('Error completo:', data);
         throw new Error(data.error || 'Error creando pago');
       }
 
