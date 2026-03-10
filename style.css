@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -212,7 +213,8 @@ body {
   text-align: center;
   padding: 25px 15px;
   box-shadow: 20px 20px 34px rgb(0, 0, 0, 0.03);
-  border: 1px solid var(--verdeClaro); /* probar el borde de grisClaro y elegir */
+  border: 1px solid var(--verdeClaro);
+  /* probar el borde de grisClaro y elegir */
   border-radius: 4px;
   margin: 15px 0;
 }
@@ -272,7 +274,8 @@ body {
   width: 23%;
   min-width: 250px;
   padding: 10px 12px;
-  border: 1px solid #cce7d0; /* quizas sacando el borde se ve mejor o probar el borde de grisClaro y elegir  */
+  border: 1px solid #cce7d0;
+  /* quizas sacando el borde se ve mejor o probar el borde de grisClaro y elegir  */
   border-radius: 25px;
   cursor: pointer;
   box-shadow: 20px 20px 30px rgb(0, 0, 0, 0.02);
@@ -301,6 +304,7 @@ body {
   color: var(--grisOscuro);
   font-size: 12px;
 }
+
 #product1 .pro .des h5 {
   padding: 7px;
   color: var(--negroMenosOscuro);
@@ -326,7 +330,8 @@ body {
 /* Precio original tachado */
 #product1 .pro .des .price-container .original-price {
   text-decoration: line-through;
-  color: #999; /* Color gris para el precio tachado */
+  color: #999;
+  /* Color gris para el precio tachado */
   margin-right: 10px;
   font-size: 13px;
   padding-top: 7px;
@@ -334,7 +339,8 @@ body {
 
 /* Precio de oferta */
 #product1 .pro .des .price-container .offer-price {
-  color: #e74c3c; /* Color rojo para la oferta */
+  color: #e74c3c;
+  /* Color rojo para la oferta */
   font-size: 15px;
   font-weight: 700;
   margin-left: 22px;
@@ -362,125 +368,257 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: url(img/banner/b2.jpg); /* si no funciona probar poner la ruta de la img con comillas */
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%), url(img/banner/b2.jpg);
   width: 100%;
-  height: 40vh;
+  height: 45vh;
   background-size: cover;
   background-position: center;
+  margin: 40px 0;
 }
 
 #banner h4 {
   color: var(--blanco);
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 #banner h2 {
   color: var(--blanco);
-  font-size: 30px;
-  padding: 10px 0;
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 #banner h2 span {
-  color: var(--rojoSuave);
+  color: #ffd700;
+}
+
+#banner button {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 12px 30px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 #banner button:hover {
-  background-color: var(--verdeAzulado);
-  color: var(--blanco);
+  background: #088178;
+  border-color: #088178;
+  color: #ffffff;
+  transform: scale(1.05);
 }
 
+
+
+/* ===== BANNER SM - VERSIÓN MEJORADA ===== */
 #sm-banner {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 30px;
   flex-wrap: wrap;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
 }
 
 #sm-banner .banner-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   background-image: url("img/banner/b17.jpg");
-  min-width: 815px; /* tambien puede ser 580px */
-  height: 50vh;
+  width: 100%;
+  max-width: 500px;
+  height: 350px;
   background-size: cover;
   background-position: center;
-  padding: 30px;
+  border-radius: 15px;
+  padding: 30px 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+}
+
+/* Efecto overlay oscuro para mejorar legibilidad del texto */
+#sm-banner .banner-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+  z-index: 1;
+}
+
+#sm-banner .banner-box * {
+  position: relative;
+  z-index: 2;
 }
 
 #sm-banner .banner-box2 {
   background-image: url("img/banner/b10.jpg");
 }
 
+#sm-banner .banner-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(8, 129, 120, 0.3);
+}
+
 #sm-banner h4 {
-  color: var(--blanco);
-  font-size: 20px;
-  font-weight: 300;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 #sm-banner h2 {
-  color: var(--blanco);
-  font-size: 28px;
+  color: #ffffff;
+  font-size: 36px;
   font-weight: 800;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
 }
 
 #sm-banner span {
-  color: var(--blanco);
-  font-size: 14px;
-  font-weight: 500;
-  padding-bottom: 15px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 25px;
+  display: block;
+  max-width: 80%;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-#sm-banner .banner-box:hover button {
-  background-color: var(--verdeAzulado);
-  border: 1px solid var(--verdeAzulado);
+#sm-banner button.white {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 12px 30px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
+
+#sm-banner button.white:hover {
+  background: #088178;
+  border-color: #088178;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+#sm-banner button.white a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  #sm-banner {
+    gap: 20px;
+    padding: 20px 15px;
+  }
+
+  #sm-banner .banner-box {
+    height: 280px;
+    max-width: 100%;
+  }
+
+  #sm-banner h2 {
+    font-size: 28px;
+  }
+
+  #sm-banner span {
+    font-size: 14px;
+    max-width: 90%;
+  }
+}
+
+
 
 #banner3 {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 25px;
   flex-wrap: wrap;
-  padding: 0 80px;
+  padding: 40px 20px;
 }
 
 #banner3 .banner-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  background-image: url("img/banner/b7.jpg");
-  min-width: 30%;
-  height: 30vh;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%), url("img/banner/b7.jpg");
+  width: 100%;
+  max-width: 350px;
+  height: 250px;
   background-size: cover;
   background-position: center;
+  border-radius: 12px;
   padding: 20px;
-  margin-bottom: 20px;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+#banner3 .banner-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(8, 129, 120, 0.25);
 }
 
 #banner3 .banner-box2 {
-  background-image: url("img/banner/b4.jpg");
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%), url("img/banner/b4.jpg");
 }
 
-button.white a{
+#banner3 .banner-box3 {
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%), url("img/banner/b18.jpg");
+}
+
+#banner3 h2 {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#banner3 h3 {
+  color: #ffd700;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+button.white a {
   text-decoration: none;
   color: var(--blanco);
 }
 
-#banner3 .banner-box3 {
-  background-image: url("img/banner/b18.jpg");
-}
 
-#banner3 h2 {
-  color: var(--blanco);
-  font-weight: 900;
-  font-size: 22px;
-}
-
-#banner3 h3 {
-  color: var(--roMasSuave);
-  font-weight: 800;
-  font-size: 15px;
-}
 
 #newsletter {
   display: flex;
@@ -669,7 +807,8 @@ footer .copyright {
 
 #prodetails .single-pro-details .price-container .original-price {
   text-decoration: line-through;
-  color: #999; /* Color gris para el precio tachado */
+  color: #999;
+  /* Color gris para el precio tachado */
   margin-right: 10px;
   font-size: 18px;
 }
@@ -733,6 +872,21 @@ pre {
   margin-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Ocultar la barra de scroll del carrusel */
+.swiper-scrollbar {
+  display: none !important;
+}
+
+/* Opcional: Si querés también podés personalizar los bullets de navegación */
+.swiper-pagination-bullet {
+  background: var(--verdeAzulado) !important;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
 }
 
 
@@ -959,6 +1113,7 @@ pre {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -1035,18 +1190,20 @@ pre {
   border: none;
   cursor: pointer;
   transition: transform 0.2s ease, color 0.3s ease;
-  font-size: 1.2rem; 
-  color: #888; 
+  font-size: 1.2rem;
+  color: #888;
 }
 
 .remove-btn:hover {
   color: #ff6347;
-  transform: scale(1.2); /* Aumenta el tamaño ligeramente en hover */
+  transform: scale(1.2);
+  /* Aumenta el tamaño ligeramente en hover */
 }
 
 /* Estilos específicos para el icono */
 .remove-btn i {
-  pointer-events: none; /* Asegura que solo el botón detecte el hover */
+  pointer-events: none;
+  /* Asegura que solo el botón detecte el hover */
 }
 
 /* Estilos para el input de cantidad */
@@ -1057,7 +1214,8 @@ pre {
   border: 1px solid #ddd;
   border-radius: 4px;
   text-align: center;
-  appearance: textfield; /* For cross-browser consistency */
+  appearance: textfield;
+  /* For cross-browser consistency */
   outline: none;
   transition: border-color 0.3s ease;
 }
@@ -1165,7 +1323,8 @@ pre {
   }
 
   #mobile i {
-    color: var(--grisOscuro); /* tambien puede ser color negroMenosOscuro */
+    color: var(--grisOscuro);
+    /* tambien puede ser color negroMenosOscuro */
     font-size: 24px;
     padding-left: 20px;
   }
@@ -1174,7 +1333,7 @@ pre {
     padding: 4px 6px 0px 6px;
     top: 34px;
     right: 111px;
-}
+  }
 
   #close {
     display: initial;
@@ -1417,5 +1576,5 @@ pre {
     font-size: 12px;
     top: 25px;
     right: 58px;
-}
+  }
 }
