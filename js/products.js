@@ -91,91 +91,6 @@ Temporada: 24-Q2
   },
 
   {
-    id: 5,
-    nombre: "PANTALON CHAMPIÓN UNISEX",
-    img: [
-      "img/productos/ropa/pantalonChampionBordo.jpeg",
-      "img/productos/ropa/pantalonChampionBordo1.jpeg",
-      "img/productos/ropa/pantalonChampionBordo2.jpeg",
-      "img/productos/ropa/pantalonChampionBordo3.jpeg",
-    ],
-    detalle: "Champión",
-    descripcion: `
-Género: Unisex
-Color: Rojo
-Disciplina: Moda
-Marca: CHAMPIÓN
-Talle: M
-`,
-    stock: 1,
-    precio: 85700,
-    precioOferta: 35000,
-  },
-  {
-    id: 10,
-    nombre: "PANTALON JOGGER NEGRO",
-    img: [
-      "img/productos/ropa/pantalonChampionNegro.jpg",
-      "img/productos/ropa/pantalonChampionNegro1.jpg",
-      "img/productos/ropa/pantalonChampionNegro2.jpg",
-    ],
-    detalle: "Champión",
-    descripcion: `
-Pantalón Deportivo CH Hombre Logo estampado
-
-Cintura con elastico reforzado
-
-Detalle de puños al tobillo 
-
-Corte Jogger 
-
-con bolsillos laterales
-
-Detalle en pierna de firma champion engomado 
-
-Confeccionado en Algodón
-
-Temporada	Atemporal
-
-Colores 👇
-
-NEGRO
-
-
-Talles 👇👇
-
-XS`,
-    stock: 0,
-    precio: 45000,
-    precioOferta: 40000,
-  },
-  {
-    id: 25,
-    nombre: "PANTALON JOGGER AZUL",
-    img: [
-      "img/productos/ropa/pantalonAzulChampion.jpg",
-      "img/productos/ropa/pantalonAzulChampion1.webp",
-      "img/productos/ropa/pantalonAzulChampion2.webp",
-    ],
-    detalle: "Champión",
-    descripcion: `
-Características técnicas
-Detalles:
-Actividad: Moda
-Características Técnicas:
-Adecuado para: Todo el día.
-Material: Algodón.
-Cintura: Con Elástico y Cordón.
-Bolsillo: Con Bolsillo.
-Estilo de indumentaria: Liso.
-Composición: 100% Algodón.
-Color: Negro.
-Talle: M`,
-    stock: 1,
-    precio: 40000,
-    precioOferta: 22000,
-  },
-  {
     id: 26,
     nombre: "PANTALON JOGGER NEGRO",
     img: ["img/productos/ropa/pantalonMujerChampion.webp","img/productos/ropa/pantalonMujerChampion1.webp","img/productos/ropa/pantalonMujerChampion2.webp",],
@@ -191,32 +106,6 @@ Talle:      XS`,
     precioOferta: 20000,
   },
 
-  {
-    id: 6,
-    nombre: "REMERA CHAMPION",
-    img: [
-      "img/productos/ropa/remeraChampionNaranja.webp",
-      "img/productos/ropa/remeraChampionNaranja1.webp",
-      "img/productos/ropa/remeraChampionNaranja2.webp",
-    ],
-    detalle: "Champión",
-    descripcion: `Remera Champion
-
-La remera Champion es una prenda básica y esencial, confeccionada con algodón de alta calidad que garantiza comodidad y suavidad durante todo el día. Su diseño clásico y versátil la convierte en una opción ideal para cualquier ocasión, ya sea para actividades casuales o deportivas. El tejido de algodón permite una excelente transpirabilidad, manteniéndote fresco y cómodo. Con un ajuste perfecto, esta remera es una elección confiable para quienes buscan una combinación de estilo y confort en su vestimenta diaria.
-
-Especificaciones
-
-talle:        M 
-material:     algodón rustico
-color:        naranja
-género:       hombre
-disciplina:   casual
-marca:        champion
-`,
-    stock: 1,
-    precio: 29099,
-    precioOferta: 20000,
-  },
   {
     id: 27,
     nombre: "REMERA CHAMPION S/MANGA",
@@ -264,44 +153,7 @@ Temporada: 23-Q4`,
     precio: 20000,
     precioOferta: 15000,
   },
-  {
-    id: 7,
-    nombre: "CAMPERA CHAMPION ROMPEVIENTO",
-    img: [
-      "img/productos/ropa/camperaChampionAzul.webp",
-      "img/productos/ropa/camperaChampionAzul1.webp",
-      "img/productos/ropa/camperaChampionAzul2.webp",
-      "img/productos/ropa/camperaChampionAzul3.webp",
-    ],
-    detalle: "Champion",
-    descripcion: `
-Características generales
-Género: Hombre
-Marca: Champion
-Modelo: Full Zip
-Talle: S
 
-Otras características
-Composición: 100% Poliéster
-Es impermeable: No
-Es térmica: No
-Usos recomendados: Urbano
-Cantidad de bolsillos externos: 2
-Material principal: Poliéster
-Es ultra liviana: Si
-Con bolsillos: Si
-Con capucha: Si
-
-Características principales
-Tipo de prenda: Campera Rompeviento
-Edad: Adulto
-Color: Azul marino
-SKU: CHICHHV1015549369072   
-`,
-    stock: 0,
-    precio: 40000,
-    precioOferta: 35000,
-  },
 
   {
     id: 10,
@@ -327,113 +179,6 @@ Temporada: 24-Q2`,
     precioOferta: 20000,
   },
 
-  {
-    id: 8,
-    nombre: "BUZO CHAMPIÓN DAMA",
-    img: [
-      "img/productos/ropa/buzoBeigeChampion.webp",
-      "img/productos/ropa/buzoBeigeChampion1.webp",
-      "img/productos/ropa/buzoBeigeChampion2.webp",
-      "img/productos/ropa/buzoBeigeChampion3.webp",
-    ],
-    detalle: "Champión",
-    descripcion: `
-BUZO CHAMPION DEPORTIVO DE MUJER
-ICHMWL9307 006
-
-Características del producto
-
-Talle: M
-Marca: Champion
-Material principal: Algodón
-Capucha: Sí
-Modelo: DEPORTIVO
-Género: Mujer
-Edad: Adultos
-Tipo de prenda: Hoodie
-
-
-Usos recomendados: Urbano
-Material principal: Algodón
-Composición: 100% algodón
-`,
-    stock: 1,
-    precio: 72000,
-    precioOferta: 50000,
-  },
-
-  {
-    id: 12,
-    nombre: "SHORT RUSTICO CHAMPION",
-    img: [
-      "img/productos/ropa/shortBlanco.webp",
-      "img/productos/ropa/shortBlanco1.webp",
-      "img/productos/ropa/shortBlanco2.webp",
-      "img/productos/ropa/shortBlanco3.webp",
-    ],
-    detalle: "Champion",
-    descripcion: `
-SHORT RUSTICO CHAMPION MUJER XL
-
-Cintura con elastico alto,Bolsillos laterales sin cierre,Diseño de short corto
-Material Algodon
-Color    Blanco
-Talle    L   
-`,
-    stock: 1,
-    precio: 33000,
-    precioOferta: 20000,
-  },
-
-  {
-    id: 9,
-    nombre: "CAMPERA CHAMPIÓN",
-    img: [
-      "img/productos/ropa/camperaChampionGris.jpg",
-      "img/productos/ropa/camperaChampionGris1.jpg",
-      "img/productos/ropa/camperaChampionGris2.jpg",
-      "img/productos/ropa/camperaChampionGris3.jpg",
-    ],
-    detalle: "Champión",
-    descripcion: `Destacá tu estilo con CHAMPION.
-Capucha con cordón de ajuste.
-Cintura y puños elastizados.
-Posee cierre frontal.
-Bolsillos laterales.
-Logo CHAMPION aplicado y estampado.
-    Campera clásica con capucha.
-
-Talle M
-`,
-    stock: 0,
-    precio: 60699,
-    precioOferta: 35000,
-  },
-
-  {
-    id: 13,
-    nombre: "CONJUNTO LOTTO",
-    img: [
-      "img/productos/ropa/conjuntoLotto.png",
-      "img/productos/ropa/conjuntoLotto0.jpeg",
-      "img/productos/ropa/conjuntoLotto1.jpeg",
-      "img/productos/ropa/conjuntoLotto2.jpeg",
-    ],
-    detalle: "Lotto",
-    descripcion: `
-Género: Mujer
-Edad: Adulto
-Talle: S
-Color predominante: Lila y Negro
-
-********************************
-
-Atencion! este es un producto usado pero en excelente estado
-es un conjunto marca Lotto Original!`,
-    stock: 1,
-    precio: 30000,
-    precioOferta: 22000,
-  },
 
   {
     id: 14,
