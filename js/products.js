@@ -1,53 +1,5 @@
 const products = [
   {
-    id: 1,
-    nombre: "BUZO CHAMPION HOMBRE",
-    img: [
-      "img/productos/ropa/buzoChampionGrey.webp",
-      "img/productos/ropa/buzoChampionGrey1.webp",
-      "img/productos/ropa/buzoChampionGrey2.webp",
-      "img/productos/ropa/buzoChampionGrey3.jpg",
-      "img/productos/ropa/buzoChampionGrey4.jpg",
-    ],
-    detalle: "Champion",
-    descripcion: `
-Especificaciones generales
-
-Género: Hombre
-Edad: Adulto
-Color predominante: Gris
-Material Principal: Algodón
-Temporada: 24-Q3
-Talle XS:     
-`,
-    stock: 1,
-    precio: 45000,
-    precioOferta: 26000,
-  },
-
-  {
-    id: 2,
-    nombre: "BUZO CHAMPION",
-    img: ["img/productos/ropa/buzoChampionNegro.webp", "img/productos/ropa/buzoChampionNegro1.webp", "img/productos/ropa/buzoChampionNegro2.webp"],
-    detalle: "Champión",
-    descripcion: `
-SKU	CHHCOGF88H01-006
-Marca:	Champion
-Color:	Negro
-Diseño: Tela	Liso
-Género:	Hombre
-Material:	Algodón
-Modelo:	Cuello redondo
-Bolsillos	-
-Calce:	Regular Fit
-Temporada:	Atemporal
-Talle: M`,
-    stock: 1,
-    precio: 48000,
-    precioOferta: 38000,
-  },
-
-  {
     id: 3,
     nombre: "BUZO CHAMPION",
     img: [
@@ -177,35 +129,6 @@ Temporada: 24-Q2`,
     stock: 2,
     precio: 29099,
     precioOferta: 20000,
-  },
-
-
-  {
-    id: 14,
-    nombre: "BUZO CHAMPION C/ CAPUCHA",
-    img: [
-      "img/productos/ropa/buzoChampionGris.webp",
-      "img/productos/ropa/buzoChampionGris1.webp",
-      "img/productos/ropa/buzoChampionGris2.webp",
-    ],
-    detalle: "Champión",
-    descripcion: `
-Productos 100% originales.
-Buzo Champion Logo Jersey Rustico C/ Capucha Casual Urbano.
-
-Edad: Adultos
-Tipo de prenda: Hoodie
-Material principal: Algodón
-Con capucha: Sí
-Es oversize: Sí
-Tipo de tela: Algodón
-Composición: 100% algodón
-Usos recomendados: Urbano
-
-TALLE XS`,
-    stock: 1,
-    precio: 42000,
-    precioOferta: 26000,
   },
 
   {
