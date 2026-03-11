@@ -1,6 +1,7 @@
-// showProducts.js - VERSIÓN COMPLETA CON BÚSQUEDA Y FILTROS
+// showProducts.js
 import { getProducts } from './supabase-client.js';
 import { log, error } from './config.js';
+import { supabase } from './supabase-client.js';
 
 const proContainer = document.getElementById("pro-container");
 const productsPerPage = 8;
@@ -14,19 +15,21 @@ let currentSearchTerm = '';
 // Función para cargar categorías
 async function cargarCategorias() {
   try {
-    const { data, error } = await supabase
+    log('Cargando categorías...');
+    
+    const { data, error: supabaseError } = await supabase
       .from('categorias')
       .select('*')
       .order('nombre');
     
-    if (error) throw error;
+    if (supabaseError) throw supabaseError;
     
     categorias = data || [];
+    log('Categorías cargadas:', categorias.length);
     
     // Renderizar botones de filtro
     const filtersContainer = document.querySelector('.filters-container');
     if (filtersContainer) {
-      // Limpiar contenedor (dejar solo el botón "Todos")
       filtersContainer.innerHTML = '<button class="filter-btn active" data-categoria="todos">Todos</button>';
       
       // Agregar botones por categoría
@@ -39,9 +42,7 @@ async function cargarCategorias() {
       // Agregar event listeners a los botones
       document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
-          // Remover active de todos
           document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-          // Agregar active al clickeado
           btn.classList.add('active');
           
           currentCategoria = btn.dataset.categoria;
@@ -51,16 +52,25 @@ async function cargarCategorias() {
     }
   } catch (error) {
     console.error('Error cargando categorías:', error);
+    // Si hay error, al menos mostrar el botón "Todos"
+    const filtersContainer = document.querySelector('.filters-container');
+    if (filtersContainer) {
+      filtersContainer.innerHTML = '<button class="filter-btn active" data-categoria="todos">Todos</button>';
+    }
   }
 }
 
 // Función para aplicar filtros (búsqueda + categoría)
 function aplicarFiltros() {
+  log('Aplicando filtros - Categoría:', currentCategoria, 'Búsqueda:', currentSearchTerm);
+  
   // Filtrar por categoría
   let filtrados = allProducts;
   
   if (currentCategoria !== 'todos') {
-    filtrados = filtrados.filter(p => p.categoria_id == currentCategoria);
+    const categoriaId = parseInt(currentCategoria);
+    filtrados = filtrados.filter(p => p.categoria_id === categoriaId);
+    log(`Filtrados por categoría ${currentCategoria}: ${filtrados.length} productos`);
   }
   
   // Filtrar por término de búsqueda
@@ -71,6 +81,7 @@ function aplicarFiltros() {
       (p.detalle && p.detalle.toLowerCase().includes(term)) ||
       (p.descripcion && p.descripcion.toLowerCase().includes(term))
     );
+    log(`Filtrados por búsqueda "${term}": ${filtrados.length} productos`);
   }
   
   filteredProducts = filtrados;
@@ -81,6 +92,7 @@ function aplicarFiltros() {
 // Función para cargar productos desde Supabase
 async function cargarProductos() {
   try {
+    log('Cargando productos desde Supabase...');
     allProducts = await getProducts();
     
     // Adaptar estructura de Supabase
@@ -119,7 +131,12 @@ async function cargarProductos() {
 // Función para mostrar productos con paginación
 function mostrarProductos(page = 1) {
   if (filteredProducts.length === 0) {
-    proContainer.innerHTML = '<p class="no-products">No hay productos que coincidan con tu búsqueda</p>';
+    proContainer.innerHTML = `
+      <div class="no-products">
+        <p>No hay productos que coincidan con tu búsqueda</p>
+        <button class="normal" onclick="limpiarFiltros()">Limpiar filtros</button>
+      </div>
+    `;
     document.getElementById('pagination').innerHTML = '';
     return;
   }
@@ -139,7 +156,7 @@ function mostrarProductos(page = 1) {
     pro.innerHTML = `
       <img src="${primeraImagen}" alt="${product.nombre}" loading="lazy">
       <div class="des">
-        <span>${product.detalle}</span>
+        <span>${product.detalle || 'Categoría'}</span>
         <h5>${product.nombre}</h5>
         <div class="star">
           <i class="fas fa-star"></i>
@@ -196,6 +213,26 @@ function mostrarPaginacion(page) {
   }
 }
 
+// Función para limpiar filtros (global para el botón)
+window.limpiarFiltros = function() {
+  currentSearchTerm = '';
+  currentCategoria = 'todos';
+  
+  // Limpiar input de búsqueda
+  const searchInput = document.getElementById('search-input');
+  if (searchInput) searchInput.value = '';
+  
+  // Resetear botón activo
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.dataset.categoria === 'todos') {
+      btn.classList.add('active');
+    }
+  });
+  
+  aplicarFiltros();
+};
+
 // Agregar estilos CSS
 const style = document.createElement('style');
 style.textContent = `
@@ -209,9 +246,31 @@ style.textContent = `
   }
   .no-products {
     text-align: center;
-    padding: 40px;
+    padding: 60px 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+  .no-products p {
     color: #888;
     font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .no-products button {
+    background: var(--verdeAzulado);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .no-products button:hover {
+    background: #066a63;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(8, 129, 120, 0.3);
   }
   .agotado {
     display: inline-block;
