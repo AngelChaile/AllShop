@@ -12,6 +12,30 @@ let categorias = [];
 let currentCategoria = 'todos';
 let currentSearchTerm = '';
 
+function getQueryParam(name) {
+  const params = new URLSearchParams(window.location.search);
+  return params.get(name) || '';
+}
+
+function setCategoriaFromQuery() {
+  const queryValue = getQueryParam('categoria').toLowerCase().trim();
+  if (!queryValue) return;
+  if (queryValue === 'todos') {
+    currentCategoria = 'todos';
+    return;
+  }
+
+  if (/^\d+$/.test(queryValue)) {
+    currentCategoria = queryValue;
+    return;
+  }
+
+  const matched = categorias.find(cat => String(cat.nombre || '').toLowerCase().trim() === queryValue);
+  if (matched) {
+    currentCategoria = String(matched.id);
+  }
+}
+
 // Función para cargar categorías
 async function cargarCategorias() {
   try {
@@ -49,6 +73,16 @@ async function cargarCategorias() {
           aplicarFiltros();
         });
       });
+
+      setCategoriaFromQuery();
+      if (currentCategoria !== 'todos') {
+        const activeButton = document.querySelector(`.filter-btn[data-categoria="${currentCategoria}"]`);
+        if (activeButton) {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          activeButton.classList.add('active');
+        }
+        aplicarFiltros();
+      }
     }
   } catch (error) {
     console.error('Error cargando categorías:', error);
