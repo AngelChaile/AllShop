@@ -86,26 +86,6 @@ Talle:      XS`,
     precio: 20000,
     precioOferta: 16000,
   },
-  {
-    id: 11,
-    nombre: "REMERA CHAMPIÓN",
-    img: [
-      "img/productos/ropa/remeraChampion.webp",
-      "img/productos/ropa/remeraChampion1.webp",
-    ],
-    detalle: "Champión",
-    descripcion: `
-Género: Hombre
-Edad: Adulto
-Talle: M
-Color predominante: Anaranjado
-Material Principal: Algodón
-Temporada: 23-Q4`,
-    stock: 0,
-    precio: 20000,
-    precioOferta: 15000,
-  },
-
 
   {
     id: 10,
@@ -283,7 +263,7 @@ Es descartable: No
 `,
     stock: 6,
     precio: 10000,
-    precioOferta: 5000,
+    precioOferta: 4500,
   },
   {
     id: 19,

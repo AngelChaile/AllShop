@@ -2,7 +2,7 @@
 import { log, error } from './config.js';
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
-// Tus credenciales (las obtuviste en paso 3)
+
 const SUPABASE_URL = 'https://vfwpmpsjqsjtcreedtdv.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_I_5RshbhJk96n8H_UCtzIw_2P4Sv58T';
 
